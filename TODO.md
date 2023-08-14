@@ -11,6 +11,7 @@
 - Footer
 
 ### 待辦:功能
+- Favicon 無作用?
 - 多語系
 - DarkMode
 
