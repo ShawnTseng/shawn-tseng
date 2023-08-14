@@ -48,6 +48,50 @@ export default function WorkExperiencesChrono() {
     }
     setWorkExperienceDurationInfo(atGames);
 
+    const newegg: WorkExperience = {
+        startDate: moment('2019-01'),
+        endDate: moment('2020-04'),
+        years: 0,
+        months: 0,
+        duration: '',
+        companyName: 'Newegg',
+        jobTitle: 'Senior Front End Developer'
+    }
+    setWorkExperienceDurationInfo(newegg);
+
+    const miniasp: WorkExperience = {
+        startDate: moment('2018-08'),
+        endDate: moment('2018-12'),
+        years: 0,
+        months: 0,
+        duration: '',
+        companyName: 'Miniasp',
+        jobTitle: 'System Analyst'
+    }
+    setWorkExperienceDurationInfo(miniasp);
+
+    const digiwin: WorkExperience = {
+        startDate: moment('2015-05'),
+        endDate: moment('2018-07'),
+        years: 0,
+        months: 0,
+        duration: '',
+        companyName: 'Digiwin',
+        jobTitle: 'Full Stack Developer'
+    }
+    setWorkExperienceDurationInfo(digiwin);
+
+    const bestVisionTechnique: WorkExperience = {
+        startDate: moment('2014-10'),
+        endDate: moment('2015-03'),
+        years: 0,
+        months: 0,
+        duration: '',
+        companyName: 'Best Vision Technique',
+        jobTitle: 'Full Stack Developer'
+    }
+    setWorkExperienceDurationInfo(bestVisionTechnique);
+
     const items = [
         {
             title: vertiv.duration,
@@ -58,6 +102,26 @@ export default function WorkExperiencesChrono() {
             title: atGames.duration,
             cardTitle: atGames.companyName,
             cardSubtitle: atGames.jobTitle,
+        },
+        {
+            title: newegg.duration,
+            cardTitle: newegg.companyName,
+            cardSubtitle: newegg.jobTitle,
+        },
+        {
+            title: miniasp.duration,
+            cardTitle: miniasp.companyName,
+            cardSubtitle: miniasp.jobTitle,
+        },
+        {
+            title: digiwin.duration,
+            cardTitle: digiwin.companyName,
+            cardSubtitle: digiwin.jobTitle,
+        },
+        {
+            title: bestVisionTechnique.duration,
+            cardTitle: bestVisionTechnique.companyName,
+            cardSubtitle: bestVisionTechnique.jobTitle,
         }
     ];
 
