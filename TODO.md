@@ -4,6 +4,7 @@
 - Work Experiences
     - https://github.com/prabhuignoto/react-chrono
     - https://github.com/stephane-monnot/react-vertical-timeline(Broken with Nextjs)
+        - video: https://www.youtube.com/watch?v=-rnkToU2_lw
 - Summary
 - Skills
 - Personal Information
