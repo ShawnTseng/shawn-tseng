@@ -126,9 +126,22 @@ export default function WorkExperiencesChrono() {
     ];
 
     return (
-        <div>
-            <Chrono items={items} mode="VERTICAL_ALTERNATING">
-            </Chrono>
+        <div className="flex justify-center">
+            <div className="w-11/12">
+                <Chrono
+                    items={items} mode="VERTICAL_ALTERNATING"
+                    hideControls
+                    theme={{
+                        primary: "#0ea5e9",
+                        secondary: "white",
+                        cardBgColor: "white",
+                        cardForeColor: "white",
+                        titleColor: "black",
+                        titleColorActive: "black",
+                    }}
+                >
+                </Chrono>
+            </div>
         </div>
     )
 }
