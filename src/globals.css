@@ -16,10 +16,8 @@ ul {
 
 /* TODO:change to tailwind */
 .skill-per {
-  animation: progress 0.4s ease-in-out forwards;
+  animation: progress 1s ease-in-out forwards;
 }
-
-/* TODO:change to tailwind */
 
 /* TODO:change to tailwind */
 @keyframes progress {
@@ -31,10 +29,6 @@ ul {
     opacity: 1;
   }
 }
-
-/* TODO:change to tailwind */
-
-/* TODO:change to tailwind */
 
 @layer components {
   .btn-sky {
