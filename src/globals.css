@@ -10,10 +10,6 @@ body {
   @apply shadow-2xl p-2;
 }
 
-.date {
-  @apply text-sky-700;
-}
-
 a {
   @apply text-sky-500;
 }
