@@ -10,6 +10,7 @@
 - Summary
 - Skills
   > https://www.youtube.com/watch?v=kk3FcHCxi8Q
+  > https://dev.to/ramonak/react-how-to-create-a-custom-progress-bar-component-in-5-minutes-2lcl
 - Personal Information
 - Contact me
 - Footer
