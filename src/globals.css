@@ -44,35 +44,14 @@ ul {
 }
 
 /* TODO:change to tailwind */
-.tooltip {
-  position: absolute;
-  right: -14px;
-  top: -28px;
-  font-size: 9px;
-  font-weight: 500;
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 3px;
-  @apply bg-sky-500;
-}
 
 /* TODO:change to tailwind */
-.tooltip::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -2px;
-  height: 10px;
-  width: 10px;
-  z-index: 1;
-  transform: translateX(-50%) rotate(45deg);
-  @apply bg-sky-500;
-}
 
 @layer components {
   .btn-sky {
     @apply py-2 px-4 bg-sky-500 rounded shadow;
   }
+
   .btn-sky:hover {
     @apply bg-sky-400;
   }

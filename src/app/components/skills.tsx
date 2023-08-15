@@ -7,7 +7,10 @@ export default function Skills() {
           <div className="h-2 w-full rounded-md mt-2 bg-sky-950">
             {/* TODO:remove skill-per, html, tooltip */}
             <span className="skill-per html">
-              <span className="tooltip">75%</span>
+              <span className="absolute right-[-14px] top-[-32px] text-sm font-medium text-sky-50 rounded bg-sky-500 px-[6px] py-[2px]
+                               before:content-[''] before:absolute before:left-1/2 before:bottom-[-5px] before:h-[10px] before:w-[10px] z-10 before:translate-x-[-50%] before:rotate-45 before:bg-sky-500">
+                75%
+              </span>
             </span>
           </div>
         </div>
