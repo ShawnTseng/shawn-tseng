@@ -5,6 +5,7 @@ export default function PersonalInformation() {
   return (
     <div className="flex flex-col justify-center items-center mb-4">
       <h1>Personal Info.</h1>
+      <div>Nationality: Taiwan(R.O.C.)</div>
       <div>Name: Shawn TSENG</div>
       <div>Gender: Male</div>
       <div>Age: {age}</div>
