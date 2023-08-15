@@ -16,21 +16,10 @@ ul {
 
 /* TODO:change to tailwind */
 .skill-per {
-  position: relative;
-  display: block;
-  height: 100%;
-  width: 80%;
-  border-radius: 6px;
   animation: progress 0.4s ease-in-out forwards;
-  opacity: 0;
-  @apply bg-sky-500;
 }
 
 /* TODO:change to tailwind */
-.skill-per .html {
-  width: 75%;
-  animation-delay: 0.1s;
-}
 
 /* TODO:change to tailwind */
 @keyframes progress {
