@@ -78,7 +78,7 @@ export default function WorkExperiencesChrono() {
     const yearString = years > 0 ? `${years}y` : "";
     const monthString = months > 0 ? `${months}m` : "";
     const conjunction = yearString && monthString ? "" : "";
-    const duration = `${startDate} - ${endDate}(${yearString}${conjunction}${monthString})`;
+    const duration = `${startDate} - ${endDate} (${yearString}${conjunction}${monthString})`;
     exp.years = years;
     exp.months = months;
     exp.duration = duration;
