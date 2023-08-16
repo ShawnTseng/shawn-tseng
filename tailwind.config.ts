@@ -20,18 +20,7 @@ const config: Config = {
         '900': '#033669',
         '950': '#011d42'
       }
-    },
-    extend: {
-      animation: {
-        'bar-percent': 'progress 0.4s ease-in-out forwards'
-      },
-      keyframes: {
-        progress: {
-          '0%': { width: '', opacity: '1' },
-          '100%': { opacity: '1' },
-        }
-      }
-    },
+    }
   },
   plugins: [],
 }
