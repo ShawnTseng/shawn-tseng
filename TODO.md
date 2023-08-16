@@ -38,11 +38,13 @@
     - Angular material
     - PrimeNG
   - Language
-    - Javascript
-    - Typescript
+    V Javascript
+    V Typescript
+    V css
+    V html
     - C#
     - T-SQL
-    - C+ within MQL4, MQL5
+    - C++ within MQL4, MQL5
   - Tool
       V Git
       V SourceTree
@@ -51,9 +53,9 @@
       V k6
       - TFS
   - Team scale
-    - 3-5
-    - 5-10
-    - 10-30
+    V 3-5
+    V 5-10
+    V 10-30
   - Special contribution
     - performance tuning
     - refactor

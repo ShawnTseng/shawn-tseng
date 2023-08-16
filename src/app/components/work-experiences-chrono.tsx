@@ -99,7 +99,9 @@ export default function WorkExperiencesChrono() {
     location: "Taipei, Taiwan",
     description: (
       <>
-
+        <video controls autoPlay muted>
+          <source src="/adx-platform.mp4" type="video/mp4" />
+        </video>
         <div className="flex">
           Framework:&nbsp;<Image src="/angular.svg" width={24} height={24} alt="Angular" />
         </div>
