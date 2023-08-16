@@ -1,6 +1,7 @@
 'use client';
 
 import moment from "moment";
+import Image from "next/image";
 import { ReactNode } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
@@ -13,6 +14,7 @@ enum ExperienceType {
 type WorkExperience = {
   startDate: moment.Moment;
   endDate: moment.Moment;
+  icon?: ReactNode;
   companyName: string;
   jobTitle: string;
   location: string;
@@ -25,6 +27,7 @@ type WorkExperience = {
 type SchoolExperience = {
   startDate: moment.Moment;
   endDate: moment.Moment;
+  icon?: ReactNode;
   schoolName: string;
   department: string;
   location: string;
@@ -37,6 +40,7 @@ type SchoolExperience = {
 type ExperienceNode = {
   type: ExperienceType;
   duration?: string;
+  icon?: ReactNode;
   title: string;
   subTitle: string;
   location: string;
@@ -89,71 +93,86 @@ export default function WorkExperiencesChrono() {
   const vertiv: WorkExperience = {
     startDate: moment("2021-03"),
     endDate: moment(),
+    icon: <Image src="/vertiv.svg" width={24} height={24} alt="Vertiv" />,
     companyName: "VERTIV",
     jobTitle: "Senior Software Engineer",
     location: "Taipei, Taiwan",
     description: (
-      <ul>
-        <li>Main framework/library - Angular、Vertiv's own library(based on Ng-Zorro)</li>
-        <li>Source code control - git</li>
-        <li>
-          Responsible for engaging in&nbsp;
-          <a
-            target="_blank"
-            href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ecosystem/"
-          >
-            ADX Ecosystem
-          </a>
-        </li>
-        <li>
-          Responsible for UI project maintenance and management
+      <>
+
+        <div className="flex">
+          Framework:&nbsp;<Image src="/angular.svg" width={24} height={24} alt="Angular" />
+        </div>
+        <div className="flex">
+          Library:&nbsp;
+          <Image src="/lerna.svg" width={24} height={24} alt="lerna" />
+          <Image src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" />
+        </div>
+        <div className="flex">
+          Language:&nbsp;
+          <Image src="/typescript.svg" width={24} height={24} alt="typescript" />
+          <Image src="/javascript.svg" width={24} height={24} alt="javascript" />
+          <Image src="/css.svg" width={24} height={24} alt="css" />
+          <Image src="/html5.svg" width={24} height={24} alt="html5" />
+        </div>
+        <div className="flex">
+          Tool:&nbsp;
+          <Image src="/grafana.svg" width={24} height={24} alt="grafana" />
+          <Image src="/k6.svg" width={24} height={24} alt="k6" />
+          <Image src="/postman.svg" width={24} height={24} alt="postman" />
+          <Image src="/git.svg" width={24} height={24} alt="git" />
+          <Image src="/sourcetree.svg" width={24} height={24} alt="sourcetree" />
+          <Image src="/vs-code.svg" width={24} height={24} alt="vs-code" />
+        </div>
+        <div className="flex">
+          Team size:&nbsp;
+          <Image src="/large-group.svg" width={24} height={24} alt="large-group" />
+        </div>
+        <div>
+          Project:
           <ul>
-            <li>INC(In development)</li>
             <li>
               <a
                 target="_blank"
-                href="https://www.vertiv.com/en-asia/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipsl-serial-device/"
+                href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ecosystem/"
               >
-                IPSL
+                Vertiv™ Avocent® ADX Platform
               </a>
             </li>
             <li>
               <a
-                target="_blank"
-                href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipuhd-4k-ip-kvm/"
-              >
-                IPUHD
-              </a>
-            </li>
-            <li>
-              <a
+                className="mr-4"
                 target="_blank"
                 href="https://www.vertiv.com/en-us/products/monitoring-control--management/avocent-embedded-management-systems/"
               >
-                ACI
+                Avocent® Core Insight
               </a>
             </li>
+            <li>
+              <a
+                className="mr-4"
+                target="_blank"
+                href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipuhd-4k-ip-kvm/"
+              >
+                Vertiv™ Avocent® ADX IPUHD 4K IP KVM
+              </a>
+            </li>
+            <li>
+              INC(Unpublished)
+            </li>
           </ul>
-        </li>
-        <li>Propose and apply new architectures to UI project - monorepo</li>
-        <li>Manage a scrum team of 5-8 members</li>
-        <li>Manage a front-end team of 4-7 members</li>
-        <li>
-          Performance tuned
+        </div>
+        <div>
+          Special Contribution:
           <ul>
-            <li>Leveraging Grafana to perform stress test for ADX product</li>
+            <li>Build monorepo for redfish based UI</li>
+            <li>Lead team to perform stress testing on products</li>
+            <li>Establish team communication channels, resource management rules, technology sharing systems, and talent training</li>
+            <li>Scrum team leader(5-8 members)</li>
+            <li>Front-end team leader(4-7 members)</li>
           </ul>
-        </li>
-        <li>
-          Miscellaneous
-          <ul>
-            <li>Establish effective communication links between Taipei team and U.S. team</li>
-            <li>Establish rules for managing resources(hardware, dev env, etc.)</li>
-            <li>Establish a weekly new tech sharing system</li>
-            <li>Train members to acquire project management skills</li>
-          </ul>
-        </li>
-      </ul>
+        </div>
+      </>
     ),
   };
   setExperienceDurationInfo(vertiv);
@@ -368,6 +387,7 @@ export default function WorkExperiencesChrono() {
     {
       type: ExperienceType.Work,
       duration: vertiv.duration,
+      icon: vertiv.icon,
       title: vertiv.companyName,
       subTitle: vertiv.jobTitle,
       location: vertiv.location,
@@ -446,8 +466,14 @@ export default function WorkExperiencesChrono() {
             iconStyle={isWork ? workIconStyle : schoolIconStyle}
             icon={isWork ? <WorkIcon /> : <SchoolIcon />}
           >
-            <h3>{exp.title}</h3>
-            <h5>{exp.location}</h5>
+            <h3 className="flex">
+              <span className="mr-2">{exp?.icon}</span>
+              {exp.title}
+            </h3>
+            <h5 className="flex">
+              <Image className="mr-2" src="/location.svg" width={16} height={16} alt="location" />
+              {exp.location}
+            </h5>
             {exp.description}
           </VerticalTimelineElement>
         );

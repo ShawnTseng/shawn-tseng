@@ -28,12 +28,13 @@
 - Visualize tech stack
   - Architecture?
     - Lerna
-  - Framework
-    - Angular
+  V Framework
+    V Angular
     - React eco.
     - Vue.js
   - Library(UI library...)
-    - Ng-zorro
+    V Lerna
+    V Ng-zorro
     - Angular material
     - PrimeNG
   - Language
@@ -43,13 +44,12 @@
     - T-SQL
     - C+ within MQL4, MQL5
   - Tool
-    - Version control
-      - Git
+      V Git
+      V SourceTree
+      V Visual Studio Code
+      V Grafana
+      V k6
       - TFS
-      - SourceTree
-    - Editor
-      - Visual Studio
-      - Visual Studio Code
   - Team scale
     - 3-5
     - 5-10
