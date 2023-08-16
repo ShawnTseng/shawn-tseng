@@ -345,8 +345,8 @@ export default function WorkExperiencesChrono() {
   setExperienceDurationInfo(bestVisionTechnique);
 
   const yuntech: SchoolExperience = {
-    startDate: moment("2010-9"),
-    endDate: moment("2014-6"),
+    startDate: moment("2010-09"),
+    endDate: moment("2014-06"),
     schoolName: "National Yunlin University of Science and Technology",
     department: "Information Management",
     location: "Yunlin, Taiwan",
@@ -355,8 +355,8 @@ export default function WorkExperiencesChrono() {
   setExperienceDurationInfo(yuntech);
 
   const shalu: SchoolExperience = {
-    startDate: moment("2007-9"),
-    endDate: moment("2010-6"),
+    startDate: moment("2007-09"),
+    endDate: moment("2010-06"),
     schoolName: "National Sha-Lu Industrial Vocational Senior High School",
     department: "Data Processing",
     location: "Taichung, Taiwan",
