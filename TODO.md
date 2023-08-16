@@ -6,6 +6,11 @@
   V <https://github.com/prabhuignoto/react-chrono>
   V <https://github.com/stephane-monnot/react-vertical-timeline(Broken> with Nextjs)
     V video: <https://www.youtube.com/watch?v=-rnkToU2_lw>
+  > ATGames video
+    > ArcadeNet
+      > https://www.youtube.com/watch?v=OBTME0Tp-c0&list=PLT7fasiZVuJTaFi69USmAmi2aQC91AlgJ&index=14
+    > Direct2Drive
+      > https://www.youtube.com/watch?v=C0zt2JO52uo
   > School
 - Summary
 - Skills
