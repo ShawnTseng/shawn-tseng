@@ -457,7 +457,7 @@ export default function WorkExperiencesChrono() {
   const schoolIconStyle = { background: "#f9c74f" };
 
   return (
-    <VerticalTimeline lineColor=''>
+    <VerticalTimeline layout="1-column-left" lineColor=''>
       {experiences.map((exp) => {
         let isWork = exp.type === ExperienceType.Work;
         return (
