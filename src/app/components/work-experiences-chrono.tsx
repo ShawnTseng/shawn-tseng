@@ -1,3 +1,5 @@
+'use client';
+
 import moment from "moment";
 import { ReactNode } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
@@ -433,7 +435,7 @@ export default function WorkExperiencesChrono() {
   const schoolIconStyle = { background: "#f9c74f" };
 
   return (
-    <VerticalTimeline>
+    <VerticalTimeline lineColor=''>
       {experiences.map((exp) => {
         let isWork = exp.type === ExperienceType.Work;
         return (
