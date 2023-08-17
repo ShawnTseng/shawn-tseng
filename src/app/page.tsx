@@ -6,7 +6,7 @@ import Navigation from "./components/navigation";
 import PersonalInformation from "./components/personal-information";
 import Skills from "./components/skills";
 import Summary from "./components/summary";
-import WorkExperiences from "./components/work-experiences";
+import Experiences from "./components/experiences/experiences";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       <Navigation />
       <LaunchPage />
       <Brief />
-      <WorkExperiences />
+      <Experiences />
       <Summary />
       <Skills />
       <PersonalInformation />
