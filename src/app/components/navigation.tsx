@@ -1,15 +1,4 @@
 import Image from 'next/image';
-import { Poppins } from 'next/font/google';
-
-const poppinsMedium = Poppins({
-    weight: '500',
-    subsets: ['latin']
-});
-
-const poppinsBold = Poppins({
-    weight: '700',
-    subsets: ['latin']
-});
 
 export default function Navigation() {
     return (
@@ -17,22 +6,26 @@ export default function Navigation() {
             <div className='max-w-[1440px] w-full h-20 px-[120px] py-4 flex items-center'>
                 <span className='inline-flex items-center gap-4'>
                     <Image src="/favicon.ico" className='pb-1' width={33} height={36.59} alt="logo" />
-                    <span className='flex items-center text-[26px] leading-[39px] gap-[1px] text-[#000000B2]'>
-                        <span className={`${poppinsMedium.className} tracking-[-0.015em]`}>
+                    <span className='flex items-center text-[26px] leading-[39px] gap-[1px]'>
+                        <span className={`tracking-[-0.015em]`}>
                             SHAWN
                         </span>
-                        <span className={`${poppinsBold.className} tracking-[0.02em]`}>
+                        <span className={`font-poppins-bold tracking-[0.02em]`}>
                             TSENG
                         </span>
                     </span>
                 </span>
                 <div className='flex-1'></div>
-                <nav className="p-6 lg:px-8 flex max-w-7xl items-center">
+                <nav className="gap-6 inline-flex items-center">
                     <div className="flex-1"></div>
-                    <button className="btn-sky mr-2">Resume</button>
-                    <button className="btn-sky mr-2">Portfolio</button>
-                    <button className="btn-sky mr-2">About me</button>
-                    <button className="btn-sky">Contact me</button>
+                    {/* TODO:i18n icon */}
+                    <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">Resume</button>
+                    <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">Portfolio</button>
+                    <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">About me</button>
+                    <button className="h-12 pt-5 pb-4 flex items-center btn-sky font-poppins-semibold">
+                        {/* TODO:phone icon */}
+                        Contact me
+                    </button>
                 </nav>
             </div>
         </header >
