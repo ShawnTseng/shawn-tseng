@@ -13,26 +13,28 @@ const poppinsBold = Poppins({
 
 export default function Navigation() {
     return (
-        <header className="w-full h-20 px-40 py-4 shadow-md gap-[400px] flex items-center">
-            <span className='inline-flex items-center gap-4'>
-                <Image src="/favicon.ico" className='pb-1' width={33} height={36.59} alt="logo" />
-                <span className='flex items-center text-[26px] leading-[39px] gap-[1px] text-[#000000B2]'>
-                    <span className={`${poppinsMedium.className} tracking-[-0.015em]`}>
-                        SHAWN
-                    </span>
-                    <span className={`${poppinsBold.className} tracking-[0.02em]`}>
-                        TSENG
+        <header className="w-full shadow-[0_4px_10px_0_#00000033] flex justify-center">
+            <div className='max-w-[1440px] w-full h-20 px-[120px] py-4 flex items-center'>
+                <span className='inline-flex items-center gap-4'>
+                    <Image src="/favicon.ico" className='pb-1' width={33} height={36.59} alt="logo" />
+                    <span className='flex items-center text-[26px] leading-[39px] gap-[1px] text-[#000000B2]'>
+                        <span className={`${poppinsMedium.className} tracking-[-0.015em]`}>
+                            SHAWN
+                        </span>
+                        <span className={`${poppinsBold.className} tracking-[0.02em]`}>
+                            TSENG
+                        </span>
                     </span>
                 </span>
-            </span>
-
-            <nav className="p-6 lg:px-8 flex max-w-7xl items-center">
-                <div className="flex-1"></div>
-                <button className="btn-sky mr-2">Resume</button>
-                <button className="btn-sky mr-2">Portfolio</button>
-                <button className="btn-sky mr-2">About me</button>
-                <button className="btn-sky">Contact me</button>
-            </nav>
+                <div className='flex-1'></div>
+                <nav className="p-6 lg:px-8 flex max-w-7xl items-center">
+                    <div className="flex-1"></div>
+                    <button className="btn-sky mr-2">Resume</button>
+                    <button className="btn-sky mr-2">Portfolio</button>
+                    <button className="btn-sky mr-2">About me</button>
+                    <button className="btn-sky">Contact me</button>
+                </nav>
+            </div>
         </header >
     )
 }
