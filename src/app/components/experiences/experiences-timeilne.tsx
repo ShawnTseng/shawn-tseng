@@ -442,8 +442,45 @@ export default function ExperiencesTimeline() {
   return (
     <>
       <h1 className="font-poppins-bold text-center">
-       WORK EXPERIENCE
+        WORK EXPERIENCE
       </h1>
+      {/* timeline container */}
+      <div className="w-full px-10 mb-20 flex flex-row">
+        {/* vertical line */}
+        <div className="w-[1px] h-auto bg-[#00000099] relative left-6 top-12 z-0" />
+        {/* experience container */}
+        <div className="w-full z-10">
+          {/* Indicator and Logo */}
+          <div className="inline-flex items-center gap-4">
+            {/* Indicator */}
+            <div className="w-12 h-12 rounded-full bg-[#ffffff] border-2 border-[#00000099] flex justify-center items-center" >
+              <div className="w-9 h-9 rounded-full bg-[#D9D9D9]" />
+            </div>
+            {/* Logo */}
+            <h4 className="font-poppins-bold text-[#00000099]">VERTIV</h4>
+          </div>
+          {/* Content */}
+          <div className="h-fit mt-5 ml-20 p-5 bg-[#EFEFEF]">
+            {/* Top Section */}
+            <div className="relative w-full top-[-32px] inline-flex justify-between px-5">
+              <span>Duration</span>
+              <span>Location</span>
+            </div>
+
+            <h6 className="font-poppins-semibold underline underline-offset-4">SKILLS</h6>
+            {/* grid */}
+            <div className="mx-10 my-5 grid grid-cols-2 gap-x-20 gap-y-3">
+              <p>Framework:</p>
+              <p>Tool:</p>
+              <p>Library:</p>
+              <p>Team Size:</p>
+              <p>Language:</p>
+            </div>
+            <h6 className="font-poppins-semibold underline underline-offset-4">PROJECT</h6>
+            <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
+          </div>
+        </div>
+      </div>
       <VerticalTimeline layout="1-column-left" lineColor=''>
         {experiences.map((exp) => {
           let isWork = exp.type === ExperienceType.Work;
