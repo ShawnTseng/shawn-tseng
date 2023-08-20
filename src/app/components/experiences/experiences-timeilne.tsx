@@ -3,8 +3,6 @@
 import moment from "moment";
 import Image from "next/image";
 import { ReactNode } from "react";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import Timeline, { Framework, Language, Library, TeamSize, TimelineItem, Tool } from "./timeline";
 
 enum ExperienceType {
@@ -36,16 +34,6 @@ type SchoolExperience = {
   years?: number;
   months?: number;
   duration?: string;
-};
-
-type ExperienceNode = {
-  type: ExperienceType;
-  duration?: string;
-  icon?: ReactNode;
-  title: string;
-  subTitle: string;
-  location: string;
-  description: ReactNode;
 };
 
 export default function ExperiencesTimeline() {
@@ -368,77 +356,6 @@ export default function ExperiencesTimeline() {
     description: <div>TODO:</div>,
   };
   setExperienceDurationInfo(shalu);
-
-  const experiences: Array<ExperienceNode> = [
-    {
-      type: ExperienceType.Work,
-      duration: vertiv.duration,
-      icon: vertiv.icon,
-      title: vertiv.companyName,
-      subTitle: vertiv.jobTitle,
-      location: vertiv.location,
-      description: vertiv.description,
-    },
-    {
-      type: ExperienceType.Work,
-      duration: atGames.duration,
-      title: atGames.companyName,
-      subTitle: atGames.jobTitle,
-      location: atGames.location,
-      description: atGames.description,
-    },
-    {
-      type: ExperienceType.Work,
-      duration: newegg.duration,
-      title: newegg.companyName,
-      subTitle: newegg.jobTitle,
-      location: newegg.location,
-      description: newegg.description,
-    },
-    {
-      type: ExperienceType.Work,
-      duration: miniasp.duration,
-      title: miniasp.companyName,
-      subTitle: miniasp.jobTitle,
-      location: miniasp.location,
-      description: miniasp.description,
-    },
-    {
-      type: ExperienceType.Work,
-      duration: digiwin.duration,
-      title: digiwin.companyName,
-      subTitle: digiwin.jobTitle,
-      location: digiwin.location,
-      description: digiwin.description,
-    },
-    {
-      type: ExperienceType.Work,
-      duration: bestVisionTechnique.duration,
-      title: bestVisionTechnique.companyName,
-      subTitle: bestVisionTechnique.jobTitle,
-      location: bestVisionTechnique.location,
-      description: bestVisionTechnique.description,
-    },
-    {
-      type: ExperienceType.School,
-      duration: yuntech.duration,
-      title: yuntech.schoolName,
-      subTitle: yuntech.department,
-      location: yuntech.location,
-      description: yuntech.description,
-    },
-    {
-      type: ExperienceType.School,
-      duration: shalu.duration,
-      title: shalu.schoolName,
-      subTitle: shalu.department,
-      location: shalu.location,
-      description: shalu.description,
-    },
-  ];
-
-  const workIconStyle = { background: "#06d6a0" };
-  const schoolIconStyle = { background: "#f9c74f" };
 
   const items: Array<TimelineItem> = [{
     title: vertiv.companyName,

@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  --line-color: #fff;
-}
-
 body {
   @apply bg-sky-100 text-[#000000B2];
 }

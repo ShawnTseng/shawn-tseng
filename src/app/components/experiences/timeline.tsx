@@ -66,21 +66,21 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
             case TeamSize.Small:
                 return (
                     <>
-                        <Image src="/small-group.svg" width={24} height={24} alt="small-group" />
+                        <Image className="w-6 h-6" src="/small-group.svg" width={24} height={24} alt="small-group" />
                         ~8
                     </>
                 )
             case TeamSize.Medium:
                 return (
                     <>
-                        <Image src="/medium-group.svg" width={24} height={24} alt="medium-group" />
+                        <Image className="w-6 h-6" src="/medium-group.svg" width={24} height={24} alt="medium-group" />
                         8~20
                     </>
                 )
             case TeamSize.Large:
                 return (
                     <>
-                        <Image src="/large-group.svg" width={24} height={24} alt="large-group" />
+                        <Image className="w-6 h-6" src="/large-group.svg" width={24} height={24} alt="large-group" />
                         20~30
                     </>
                 )
@@ -122,7 +122,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 {item.skills.framework.map(f => {
                                     switch (f) {
                                         case Framework.Angular:
-                                            return <Image key={f} src="/angular.svg" width={24} height={24} alt="Angular" />
+                                            return <Image className="w-6 h-6" key={f} src="/angular.svg" width={24} height={24} alt="Angular" />
                                         default:
                                             return;
                                     }
@@ -135,17 +135,17 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 {item.skills.tool.map(t => {
                                     switch (t) {
                                         case Tool.Grafana:
-                                            return <Image key={t} src="/grafana.svg" width={24} height={24} alt="grafana" />
+                                            return <Image className="w-6 h-6" key={t} src="/grafana.svg" width={24} height={24} alt="grafana" />
                                         case Tool.K6:
-                                            return <Image key={t} src="/k6.svg" width={24} height={24} alt="k6" />
+                                            return <Image className="w-6 h-6" key={t} src="/k6.svg" width={24} height={24} alt="k6" />
                                         case Tool.Postman:
-                                            return <Image key={t} src="/postman.svg" width={24} height={24} alt="postman" />
+                                            return <Image className="w-6 h-6" key={t} src="/postman.svg" width={24} height={24} alt="postman" />
                                         case Tool.Git:
-                                            return <Image key={t} src="/git.svg" width={24} height={24} alt="git" />
+                                            return <Image className="w-6 h-6" key={t} src="/git.svg" width={24} height={24} alt="git" />
                                         case Tool.Sourcetree:
-                                            return <Image key={t} src="/sourcetree.svg" width={24} height={24} alt="sourcetree" />
+                                            return <Image className="w-6 h-6" key={t} src="/sourcetree.svg" width={24} height={24} alt="sourcetree" />
                                         case Tool.VsCode:
-                                            return <Image key={t} src="/vs-code.svg" width={24} height={24} alt="vs-code" />
+                                            return <Image className="w-6 h-6" key={t} src="/vs-code.svg" width={24} height={24} alt="vs-code" />
                                         default:
                                             return;
                                     }
@@ -159,9 +159,9 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 {item.skills.library.map(l => {
                                     switch (l) {
                                         case Library.Lerna:
-                                            return <Image key={l} src="/lerna.svg" width={24} height={24} alt="lerna" />
+                                            return <Image className="w-6 h-6" key={l} src="/lerna.svg" width={24} height={24} alt="lerna" />
                                         case Library.NgZorro:
-                                            return <Image key={l} src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" />
+                                            return <Image className="w-6 h-6" key={l} src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" />
                                         default:
                                             return;
                                     }
@@ -174,13 +174,13 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 {item.skills.language.map(l => {
                                     switch (l) {
                                         case Language.Typescript:
-                                            return <Image key={l} src="/typescript.svg" width={24} height={24} alt="typescript" />
+                                            return <Image className="w-6 h-6" key={l} src="/typescript.svg" width={24} height={24} alt="typescript" />
                                         case Language.Javascript:
-                                            return <Image key={l} src="/javascript.svg" width={24} height={24} alt="javascript" />
+                                            return <Image className="w-6 h-6" key={l} src="/javascript.svg" width={24} height={24} alt="javascript" />
                                         case Language.CSS:
-                                            return <Image key={l} src="/css.svg" width={24} height={24} alt="css" />
+                                            return <Image className="w-6 h-6" key={l} src="/css.svg" width={24} height={24} alt="css" />
                                         case Language.Html5:
-                                            return <Image key={l} src="/html5.svg" width={24} height={24} alt="html5" />
+                                            return <Image className="w-6 h-6" key={l} src="/html5.svg" width={24} height={24} alt="html5" />
                                         default:
                                             return;
                                     }
