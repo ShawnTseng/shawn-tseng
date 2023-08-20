@@ -132,7 +132,7 @@ export default function ExperiencesTimeline() {
               >
                 Vertiv™ Avocent® ADX IPUHD 4K IP KVM
               </a>
-            </li>            
+            </li>
             <li>
               <a
                 className="mr-4"
@@ -440,32 +440,37 @@ export default function ExperiencesTimeline() {
   const schoolIconStyle = { background: "#f9c74f" };
 
   return (
-    <VerticalTimeline layout="1-column-left" lineColor=''>
-      {experiences.map((exp) => {
-        let isWork = exp.type === ExperienceType.Work;
-        return (
-          <VerticalTimelineElement
-            key={exp.duration}
-            date={exp.duration}
-            dateClassName="text-sky-700"
-            iconStyle={isWork ? workIconStyle : schoolIconStyle}
-            icon={isWork ?
-              <Image src="/work-icon.svg" width={512} height={512} alt="work" /> :
-              <Image src="/school-icon.svg" width={512} height={512} alt="school" />
-            }
-          >
-            <h3 className="flex">
-              <span className="mr-2">{exp?.icon}</span>
-              {exp.title}
-            </h3>
-            <h5 className="flex">
-              <Image className="mr-2" src="/location.svg" width={16} height={16} alt="location" />
-              {exp.location}
-            </h5>
-            {exp.description}
-          </VerticalTimelineElement>
-        );
-      })}
-    </VerticalTimeline>
+    <>
+      <h1 className="font-poppins-bold text-center">
+       WORK EXPERIENCE
+      </h1>
+      <VerticalTimeline layout="1-column-left" lineColor=''>
+        {experiences.map((exp) => {
+          let isWork = exp.type === ExperienceType.Work;
+          return (
+            <VerticalTimelineElement
+              key={exp.duration}
+              date={exp.duration}
+              dateClassName="text-sky-700"
+              iconStyle={isWork ? workIconStyle : schoolIconStyle}
+              icon={isWork ?
+                <Image src="/work-icon.svg" width={512} height={512} alt="work" /> :
+                <Image src="/school-icon.svg" width={512} height={512} alt="school" />
+              }
+            >
+              <h3 className="flex">
+                <span className="mr-2">{exp?.icon}</span>
+                {exp.title}
+              </h3>
+              <h5 className="flex">
+                <Image className="mr-2" src="/location.svg" width={16} height={16} alt="location" />
+                {exp.location}
+              </h5>
+              {exp.description}
+            </VerticalTimelineElement>
+          );
+        })}
+      </VerticalTimeline>
+    </>
   );
 }
