@@ -7,7 +7,9 @@ export type TimelineItem = {
     title: string;
     location: string;
     skills: Skills;
-    teamSize: TeamSize
+    teamSize: TeamSize;
+    projects: Array<Project>;
+    specialContribution: Array<string>;
 }
 
 export enum Framework {
@@ -46,6 +48,11 @@ export type Skills = {
     tool: Array<Tool>;
     library: Array<Library>;
     language: Array<Language>
+}
+
+export type Project = {
+    name: string;
+    url?: string;
 }
 
 export default function Timeline({ items }: { items: Array<TimelineItem> }) {
@@ -194,17 +201,22 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                             </p>
                         </div>
                     </div>
-                    <h6 className="font-poppins-semibold underline underline-offset-4">PROJECT</h6>
+                    <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
                     <ul className="mx-14 my-5">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
+                        {item.projects.map(p => (p.url ?
+                            <li>
+                                <a href={p.url} target="_blank">
+                                    {p.name}
+                                </a>
+                            </li> :
+                            <li>{p.name}</li>
+                        ))}
                     </ul>
                     <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
                     <ul className="mx-14 my-5">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
+                        {item.specialContribution.map(p =>
+                            <li>{p}</li>
+                        )}
                     </ul>
                 </div>
             </div>

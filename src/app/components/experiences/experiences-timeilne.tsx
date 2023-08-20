@@ -5,11 +5,6 @@ import Image from "next/image";
 import { ReactNode } from "react";
 import Timeline, { Framework, Language, Library, TeamSize, TimelineItem, Tool } from "./timeline";
 
-enum ExperienceType {
-  Work,
-  School,
-}
-
 type WorkExperience = {
   startDate: moment.Moment;
   endDate: moment.Moment;
@@ -17,6 +12,8 @@ type WorkExperience = {
   companyName: string;
   jobTitle: string;
   location: string;
+  projects: Array<{ name: string, url?: string }>;
+  specialContribution: Array<string>;
   description: ReactNode;
   years?: number;
   months?: number;
@@ -37,22 +34,6 @@ type SchoolExperience = {
 };
 
 export default function ExperiencesTimeline() {
-  const setExperienceDurationInfo = (exp: WorkExperience | SchoolExperience) => {
-    const startDate = exp.startDate.format("yyyy/MM");
-    const endDate = exp.endDate.format("yyyy-MM") === moment().format("yyyy-MM") ? "CURRENT" : exp.endDate.format("yyyy/MM");
-    const years = exp.endDate.diff(exp.startDate, "years");
-    const months = exp.endDate.diff(exp.startDate, "months") - years * 12;
-    // const yearString = years > 0 ? `${years} y${years > 1 ? "s" : ""}` : "";
-    // const monthString = months > 0 ? `${months} m${months > 1 ? "s" : ""}` : "";
-    const yearString = years > 0 ? `${years}Y` : "";
-    const monthString = months > 0 ? `${months}M` : "";
-    const conjunction = yearString && monthString ? "" : "";
-    const duration = `${yearString}${conjunction}${monthString} (${startDate} - ${endDate})`;
-    exp.years = years;
-    exp.months = months;
-    exp.duration = duration;
-  };
-
   const vertiv: WorkExperience = {
     startDate: moment("2021-03"),
     endDate: moment(),
@@ -60,6 +41,32 @@ export default function ExperiencesTimeline() {
     companyName: "VERTIV",
     jobTitle: "Senior Software Engineer",
     location: "TAIPEI, TAIWAN",
+    projects: [{
+      name: 'Vertiv™ Avocent® ADX Platform',
+      url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ecosystem/'
+    },
+    {
+      name: 'Avocent® Core Insight',
+      url: 'https://www.vertiv.com/en-us/products/monitoring-control--management/avocent-embedded-management-systems/'
+    },
+    {
+      name: 'Vertiv™ Avocent® ADX IPUHD 4K IP KVM',
+      url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipuhd-4k-ip-kvm/'
+    },
+    {
+      name: 'Vertiv™ Avocent® ADX IPSL Serial Device',
+      url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipsl-serial-device/'
+    },
+    {
+      name: 'INC(Unpublished)'
+    }],
+    specialContribution: [
+      'Build monorepo for redfish based UI',
+      'Lead team to perform stress testing on products',
+      'Establish team communication channels, resource management rules, technology sharing systems, and talent training',
+      'Scrum team leader(5-8 members)',
+      'Front-end team leader(4-7 members)'
+    ],
     description: (
       <>
         <video controls autoPlay muted>
@@ -149,7 +156,6 @@ export default function ExperiencesTimeline() {
       </>
     ),
   };
-  setExperienceDurationInfo(vertiv);
 
   const atGames: WorkExperience = {
     startDate: moment("2020-08"),
@@ -157,6 +163,8 @@ export default function ExperiencesTimeline() {
     companyName: "ATGames",
     jobTitle: "Senior Front End Developer",
     location: "Taipei, Taiwan",
+    projects: [],
+    specialContribution: [],
     description: (
       <ul>
         <li>Main framework/library - react.js, Angular, angular.js, vue.js</li>
@@ -184,7 +192,6 @@ export default function ExperiencesTimeline() {
       </ul>
     ),
   };
-  setExperienceDurationInfo(atGames);
 
   const newegg: WorkExperience = {
     startDate: moment("2019-01"),
@@ -192,6 +199,8 @@ export default function ExperiencesTimeline() {
     companyName: "Newegg",
     jobTitle: "Senior Front End Developer",
     location: "Taichung, Taiwan",
+    projects: [],
+    specialContribution: [],
     description: (
       <ul>
         <li>Responsible for the maintenance of the seller's website</li>
@@ -231,7 +240,6 @@ export default function ExperiencesTimeline() {
       </ul>
     ),
   };
-  setExperienceDurationInfo(newegg);
 
   const miniasp: WorkExperience = {
     startDate: moment("2018-08"),
@@ -239,6 +247,8 @@ export default function ExperiencesTimeline() {
     companyName: "Miniasp",
     jobTitle: "System Analyst",
     location: "Taipei, Taiwan",
+    projects: [],
+    specialContribution: [],
     description: (
       <ul>
         <li>Responsible for refactoring bank app logic</li>
@@ -264,7 +274,6 @@ export default function ExperiencesTimeline() {
       </ul>
     ),
   };
-  setExperienceDurationInfo(miniasp);
 
   const digiwin: WorkExperience = {
     startDate: moment("2015-05"),
@@ -272,6 +281,8 @@ export default function ExperiencesTimeline() {
     companyName: "Digiwin",
     jobTitle: "Full Stack Developer",
     location: "Taichung, Taiwan",
+    projects: [],
+    specialContribution: [],
     description: (
       <ul>
         <li>Responsible for engaging in CRM (Customer Relationship Management)</li>
@@ -310,7 +321,6 @@ export default function ExperiencesTimeline() {
       </ul>
     ),
   };
-  setExperienceDurationInfo(digiwin);
 
   const bestVisionTechnique: WorkExperience = {
     startDate: moment("2014-10"),
@@ -318,6 +328,8 @@ export default function ExperiencesTimeline() {
     companyName: "Best Vision Technique",
     jobTitle: "Full Stack Developer",
     location: "Taichung, Taiwan",
+    projects: [],
+    specialContribution: [],
     description: (
       <ul>
         <li>Responsible for import AOI (Automated Optical Inspection) solution into AUO</li>
@@ -335,7 +347,6 @@ export default function ExperiencesTimeline() {
       </ul>
     ),
   };
-  setExperienceDurationInfo(bestVisionTechnique);
 
   const yuntech: SchoolExperience = {
     startDate: moment("2010-09"),
@@ -345,7 +356,6 @@ export default function ExperiencesTimeline() {
     location: "Yunlin, Taiwan",
     description: <div>TODO:</div>,
   };
-  setExperienceDurationInfo(yuntech);
 
   const shalu: SchoolExperience = {
     startDate: moment("2007-09"),
@@ -355,7 +365,6 @@ export default function ExperiencesTimeline() {
     location: "Taichung, Taiwan",
     description: <div>TODO:</div>,
   };
-  setExperienceDurationInfo(shalu);
 
   const items: Array<TimelineItem> = [{
     title: vertiv.companyName,
@@ -368,7 +377,9 @@ export default function ExperiencesTimeline() {
       library: [Library.Lerna, Library.NgZorro],
       language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5]
     },
-    teamSize: TeamSize.Large
+    teamSize: TeamSize.Large,
+    projects: vertiv.projects,
+    specialContribution: vertiv.specialContribution
   }];
 
   return (
