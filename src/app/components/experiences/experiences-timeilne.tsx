@@ -14,7 +14,7 @@ type WorkExperience = {
   location: string;
   projects: Array<{ name: string, url?: string }>;
   specialContribution: Array<string>;
-  description: ReactNode;
+  description?: ReactNode;
   years?: number;
   months?: number;
   duration?: string;
@@ -66,95 +66,10 @@ export default function ExperiencesTimeline() {
       'Establish team communication channels, resource management rules, technology sharing systems, and talent training',
       'Scrum team leader(5-8 members)',
       'Front-end team leader(4-7 members)'
-    ],
-    description: (
-      <>
-        <video controls autoPlay muted>
-          <source src="/adx-platform.mp4" type="video/mp4" />
-        </video>
-        <div className="flex">
-          Framework:&nbsp;<Image src="/angular.svg" width={24} height={24} alt="Angular" />
-        </div>
-        <div className="flex">
-          Library:&nbsp;
-          <Image src="/lerna.svg" width={24} height={24} alt="lerna" />
-          <Image src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" />
-        </div>
-        <div className="flex">
-          Language:&nbsp;
-          <Image src="/typescript.svg" width={24} height={24} alt="typescript" />
-          <Image src="/javascript.svg" width={24} height={24} alt="javascript" />
-          <Image src="/css.svg" width={24} height={24} alt="css" />
-          <Image src="/html5.svg" width={24} height={24} alt="html5" />
-        </div>
-        <div className="flex">
-          Tool:&nbsp;
-          <Image src="/grafana.svg" width={24} height={24} alt="grafana" />
-          <Image src="/k6.svg" width={24} height={24} alt="k6" />
-          <Image src="/postman.svg" width={24} height={24} alt="postman" />
-          <Image src="/git.svg" width={24} height={24} alt="git" />
-          <Image src="/sourcetree.svg" width={24} height={24} alt="sourcetree" />
-          <Image src="/vs-code.svg" width={24} height={24} alt="vs-code" />
-        </div>
-        <div className="flex">
-          Team size:&nbsp;
-          <Image src="/large-group.svg" width={24} height={24} alt="large-group" />
-        </div>
-        <div>
-          Project:
-          <ul>
-            <li>
-              <a
-                target="_blank"
-                href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ecosystem/"
-              >
-                Vertiv™ Avocent® ADX Platform
-              </a>
-            </li>
-            <li>
-              <a
-                className="mr-4"
-                target="_blank"
-                href="https://www.vertiv.com/en-us/products/monitoring-control--management/avocent-embedded-management-systems/"
-              >
-                Avocent® Core Insight
-              </a>
-            </li>
-            <li>
-              <a
-                className="mr-4"
-                target="_blank"
-                href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipuhd-4k-ip-kvm/"
-              >
-                Vertiv™ Avocent® ADX IPUHD 4K IP KVM
-              </a>
-            </li>
-            <li>
-              <a
-                className="mr-4"
-                target="_blank"
-                href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipsl-serial-device/"
-              >
-                Vertiv™ Avocent® ADX IPSL Serial Device
-              </a>
-            </li>
-            <li>
-              INC(Unpublished)
-            </li>
-          </ul>
-        </div>
-        <div>
-          Special Contribution:
-          <ul>
-            <li>Build monorepo for redfish based UI</li>
-            <li>Lead team to perform stress testing on products</li>
-            <li>Establish team communication channels, resource management rules, technology sharing systems, and talent training</li>
-            <li>Scrum team leader(5-8 members)</li>
-            <li>Front-end team leader(4-7 members)</li>
-          </ul>
-        </div>
-      </>
-    ),
+    ]
+    // <video controls autoPlay muted>
+    //   <source src="/adx-platform.mp4" type="video/mp4" />
+    // </video>
   };
 
   const atGames: WorkExperience = {
