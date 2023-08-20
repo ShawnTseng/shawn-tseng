@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import Timeline, { Framework, Language, Library, TeamSize, TimelineItem, Tool } from "./timeline";
 
 enum ExperienceType {
   Work,
@@ -50,15 +51,15 @@ type ExperienceNode = {
 export default function ExperiencesTimeline() {
   const setExperienceDurationInfo = (exp: WorkExperience | SchoolExperience) => {
     const startDate = exp.startDate.format("yyyy/MM");
-    const endDate = exp.endDate.format("yyyy-MM") === moment().format("yyyy-MM") ? "Current" : exp.endDate.format("yyyy/MM");
+    const endDate = exp.endDate.format("yyyy-MM") === moment().format("yyyy-MM") ? "CURRENT" : exp.endDate.format("yyyy/MM");
     const years = exp.endDate.diff(exp.startDate, "years");
     const months = exp.endDate.diff(exp.startDate, "months") - years * 12;
     // const yearString = years > 0 ? `${years} y${years > 1 ? "s" : ""}` : "";
     // const monthString = months > 0 ? `${months} m${months > 1 ? "s" : ""}` : "";
-    const yearString = years > 0 ? `${years}y` : "";
-    const monthString = months > 0 ? `${months}m` : "";
+    const yearString = years > 0 ? `${years}Y` : "";
+    const monthString = months > 0 ? `${months}M` : "";
     const conjunction = yearString && monthString ? "" : "";
-    const duration = `${startDate} - ${endDate} (${yearString}${conjunction}${monthString})`;
+    const duration = `${yearString}${conjunction}${monthString} (${startDate} - ${endDate})`;
     exp.years = years;
     exp.months = months;
     exp.duration = duration;
@@ -70,7 +71,7 @@ export default function ExperiencesTimeline() {
     icon: <Image src="/vertiv.svg" width={24} height={24} alt="Vertiv" />,
     companyName: "VERTIV",
     jobTitle: "Senior Software Engineer",
-    location: "Taipei, Taiwan",
+    location: "TAIPEI, TAIWAN",
     description: (
       <>
         <video controls autoPlay muted>
@@ -439,49 +440,27 @@ export default function ExperiencesTimeline() {
   const workIconStyle = { background: "#06d6a0" };
   const schoolIconStyle = { background: "#f9c74f" };
 
+  const items: Array<TimelineItem> = [{
+    title: vertiv.companyName,
+    startDate: vertiv.startDate,
+    endDate: vertiv.endDate,
+    location: vertiv.location,
+    skills: {
+      framework: [Framework.Angular],
+      tool: [Tool.Grafana, Tool.K6, Tool.Postman, Tool.Git, Tool.Sourcetree, Tool.VsCode],
+      library: [Library.Lerna, Library.NgZorro],
+      language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5]
+    },
+    teamSize: TeamSize.Large
+  }];
+
   return (
     <>
       <h1 className="font-poppins-bold text-center">
         WORK EXPERIENCE
       </h1>
-      {/* timeline container */}
-      <div className="w-full px-10 mb-20 flex flex-row">
-        {/* vertical line */}
-        <div className="w-[1px] h-auto bg-[#00000099] relative left-6 top-12 z-0" />
-        {/* experience container */}
-        <div className="w-full z-10">
-          {/* Indicator and Logo */}
-          <div className="inline-flex items-center gap-4">
-            {/* Indicator */}
-            <div className="w-12 h-12 rounded-full bg-[#ffffff] border-2 border-[#00000099] flex justify-center items-center" >
-              <div className="w-9 h-9 rounded-full bg-[#D9D9D9]" />
-            </div>
-            {/* Logo */}
-            <h4 className="font-poppins-bold text-[#00000099]">VERTIV</h4>
-          </div>
-          {/* Content */}
-          <div className="h-fit mt-5 ml-20 p-5 bg-[#EFEFEF]">
-            {/* Top Section */}
-            <div className="relative w-full top-[-32px] inline-flex justify-between px-5">
-              <span>Duration</span>
-              <span>Location</span>
-            </div>
-
-            <h6 className="font-poppins-semibold underline underline-offset-4">SKILLS</h6>
-            {/* grid */}
-            <div className="mx-10 my-5 grid grid-cols-2 gap-x-20 gap-y-3">
-              <p>Framework:</p>
-              <p>Tool:</p>
-              <p>Library:</p>
-              <p>Team Size:</p>
-              <p>Language:</p>
-            </div>
-            <h6 className="font-poppins-semibold underline underline-offset-4">PROJECT</h6>
-            <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
-          </div>
-        </div>
-      </div>
-      <VerticalTimeline layout="1-column-left" lineColor=''>
+      <Timeline items={items} />
+      {/* <VerticalTimeline layout="1-column-left" lineColor=''>
         {experiences.map((exp) => {
           let isWork = exp.type === ExperienceType.Work;
           return (
@@ -507,7 +486,7 @@ export default function ExperiencesTimeline() {
             </VerticalTimelineElement>
           );
         })}
-      </VerticalTimeline>
+      </VerticalTimeline> */}
     </>
   );
 }
