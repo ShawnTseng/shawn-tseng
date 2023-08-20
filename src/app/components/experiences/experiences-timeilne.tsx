@@ -132,6 +132,15 @@ export default function ExperiencesTimeline() {
               >
                 Vertiv™ Avocent® ADX IPUHD 4K IP KVM
               </a>
+            </li>            
+            <li>
+              <a
+                className="mr-4"
+                target="_blank"
+                href="https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipsl-serial-device/"
+              >
+                Vertiv™ Avocent® ADX IPSL Serial Device
+              </a>
             </li>
             <li>
               INC(Unpublished)
