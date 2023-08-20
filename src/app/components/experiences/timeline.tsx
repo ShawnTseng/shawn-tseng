@@ -116,10 +116,9 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                     <h6 className="font-poppins-semibold underline underline-offset-4">SKILLS</h6>
                     {/* grid */}
                     <div className="mx-10 my-5 grid grid-cols-2 gap-x-20 gap-y-3">
-                        <div className="grid grid-cols-[120px_minmax(900px,_1fr)]">
+                        <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Framework:</h6>
                             <p className="inline-flex gap-2">
-
                                 {item.skills.framework.map(f => {
                                     switch (f) {
                                         case Framework.Angular:
@@ -130,7 +129,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 })}
                             </p>
                         </div>
-                        <div className="grid grid-cols-[120px_minmax(900px,_1fr)]">
+                        <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Tool:</h6>
                             <p className="inline-flex gap-2">
                                 {item.skills.tool.map(t => {
@@ -154,7 +153,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-[120px_minmax(900px,_1fr)]">
+                        <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Library:</h6>
                             <p className="inline-flex gap-2">
                                 {item.skills.library.map(l => {
@@ -169,7 +168,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 })}
                             </p>
                         </div>
-                        <div className="grid grid-cols-[120px_minmax(900px,_1fr)]">
+                        <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Language:</h6>
                             <p className="inline-flex gap-2">
                                 {item.skills.language.map(l => {
@@ -188,7 +187,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 })}
                             </p>
                         </div>
-                        <div className="grid grid-cols-[120px_minmax(900px,_1fr)]">
+                        <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Team Size:</h6>
                             <p className="inline-flex gap-2">
                                 {getTeamSizeDOM(item)}
