@@ -125,7 +125,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                     <div className="mx-10 my-5 grid grid-cols-2 gap-x-20 gap-y-3">
                         <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Framework:</h6>
-                            <p className="inline-flex gap-2">
+                            <p className="inline-flex gap-2 max-w-xs">
                                 {item.skills.framework.map(f => {
                                     switch (f) {
                                         case Framework.Angular:
@@ -138,7 +138,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                         </div>
                         <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Tool:</h6>
-                            <p className="inline-flex gap-2">
+                            <p className="inline-flex gap-2 max-w-xs">
                                 {item.skills.tool.map(t => {
                                     switch (t) {
                                         case Tool.Grafana:
@@ -162,7 +162,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
 
                         <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Library:</h6>
-                            <p className="inline-flex gap-2">
+                            <p className="inline-flex gap-2 max-w-xs">
                                 {item.skills.library.map(l => {
                                     switch (l) {
                                         case Library.Lerna:
@@ -177,7 +177,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                         </div>
                         <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Language:</h6>
-                            <p className="inline-flex gap-2">
+                            <p className="inline-flex gap-2 max-w-xs">
                                 {item.skills.language.map(l => {
                                     switch (l) {
                                         case Language.Typescript:
@@ -196,22 +196,31 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                         </div>
                         <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                             <h6>Team Size:</h6>
-                            <p className="inline-flex gap-2">
+                            <p className="inline-flex gap-2 max-w-xs">
                                 {getTeamSizeDOM(item)}
                             </p>
                         </div>
                     </div>
-                    <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
-                    <ul className="mx-14 my-5">
-                        {item.projects.map(p => (p.url ?
-                            <li key={p.name}>
-                                <a href={p.url} target="_blank">
-                                    {p.name}
-                                </a>
-                            </li> :
-                            <li key={p.name}>{p.name}</li>
-                        ))}
-                    </ul>
+                    <div className="grid grid-cols-2 gap-x-20 gap-y-3">
+                        <div>
+                            <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
+                            <ul className="mx-14 my-5">
+                                {item.projects.map(p => (p.url ?
+                                    <li key={p.name}>
+                                        <a href={p.url} target="_blank">
+                                            {p.name}
+                                        </a>
+                                    </li> :
+                                    <li key={p.name}>{p.name}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="max-w-xs">
+                            <video controls muted>
+                                <source src="/adx-platform.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
                     <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
                     <ul className="mx-14 my-5">
                         {item.specialContribution.map(p =>
