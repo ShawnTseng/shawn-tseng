@@ -14,6 +14,7 @@ type WorkExperience = {
   location: string;
   projects: Array<{ name: string, url?: string }>;
   specialContribution: Array<string>;
+  videoUrl?: string;
   description?: ReactNode;
   years?: number;
   months?: number;
@@ -66,10 +67,8 @@ export default function ExperiencesTimeline() {
       'Establish team communication channels, resource management rules, technology sharing systems, and talent training',
       'Scrum team leader(5-8 members)',
       'Front-end team leader(4-7 members)'
-    ]
-    // <video controls autoPlay muted>
-    //   <source src="/adx-platform.mp4" type="video/mp4" />
-    // </video>
+    ],
+    videoUrl: '/adx-platform.mp4'
   };
 
   const atGames: WorkExperience = {
@@ -294,7 +293,23 @@ export default function ExperiencesTimeline() {
     },
     teamSize: TeamSize.Large,
     projects: vertiv.projects,
-    specialContribution: vertiv.specialContribution
+    specialContribution: vertiv.specialContribution,
+    videoUrl: vertiv.videoUrl
+  }, {
+    title: atGames.companyName,
+    startDate: atGames.startDate,
+    endDate: atGames.endDate,
+    location: atGames.location,
+    skills: {
+      framework: [],
+      tool: [],
+      library: [],
+      language: []
+    },
+    teamSize: TeamSize.Small,
+    projects: [],
+    specialContribution: [],
+    // videoUrl: ''
   }];
 
   return (
@@ -303,33 +318,6 @@ export default function ExperiencesTimeline() {
         WORK EXPERIENCE
       </h1>
       <Timeline items={items} />
-      {/* <VerticalTimeline layout="1-column-left" lineColor=''>
-        {experiences.map((exp) => {
-          let isWork = exp.type === ExperienceType.Work;
-          return (
-            <VerticalTimelineElement
-              key={exp.duration}
-              date={exp.duration}
-              dateClassName="text-sky-700"
-              iconStyle={isWork ? workIconStyle : schoolIconStyle}
-              icon={isWork ?
-                <Image src="/work-icon.svg" width={512} height={512} alt="work" /> :
-                <Image src="/school-icon.svg" width={512} height={512} alt="school" />
-              }
-            >
-              <h3 className="flex">
-                <span className="mr-2">{exp?.icon}</span>
-                {exp.title}
-              </h3>
-              <h5 className="flex">
-                <Image className="mr-2" src="/location.svg" width={16} height={16} alt="location" />
-                {exp.location}
-              </h5>
-              {exp.description}
-            </VerticalTimelineElement>
-          );
-        })}
-      </VerticalTimeline> */}
     </>
   );
 }
