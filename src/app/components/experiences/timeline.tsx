@@ -8,6 +8,7 @@ export type TimelineItem = {
     location: string;
     skills: Skills;
     teamSize: TeamSize;
+    teamSizeText: string;
     projects: Array<Project>;
     specialContribution: Array<string>;
     videoUrl?: string;
@@ -80,21 +81,18 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                 return (
                     <>
                         <Image className="w-6 h-6" src="/small-group.svg" width={24} height={24} alt="small-group" />
-                        ~8
                     </>
                 )
             case TeamSize.Medium:
                 return (
                     <>
                         <Image className="w-6 h-6" src="/medium-group.svg" width={24} height={24} alt="medium-group" />
-                        8~20
                     </>
                 )
             case TeamSize.Large:
                 return (
                     <>
                         <Image className="w-6 h-6" src="/large-group.svg" width={24} height={24} alt="large-group" />
-                        20~30
                     </>
                 )
             default:
@@ -218,6 +216,7 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 <h6>Team Size:</h6>
                                 <p className="inline-flex gap-2 max-w-xs">
                                     {getTeamSizeDOM(item)}
+                                    {item.teamSizeText}
                                 </p>
                             </div>
                         </div>

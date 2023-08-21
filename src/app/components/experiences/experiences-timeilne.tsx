@@ -284,6 +284,7 @@ export default function ExperiencesTimeline() {
       language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5]
     },
     teamSize: TeamSize.Large,
+    teamSizeText: '20-30',
     projects: vertiv.projects,
     specialContribution: vertiv.specialContribution,
     videoUrl: vertiv.videoUrl
@@ -299,6 +300,7 @@ export default function ExperiencesTimeline() {
       language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5]
     },
     teamSize: TeamSize.Small,
+    teamSizeText: '1-3',
     projects: atGames.projects,
     specialContribution: atGames.specialContribution,
     videoUrl: atGames.videoUrl
