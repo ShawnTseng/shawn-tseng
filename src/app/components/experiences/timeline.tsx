@@ -165,16 +165,19 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                             <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                                 <h6>Library:</h6>
                                 <p className="inline-flex gap-2 max-w-xs">
-                                    {item.skills.library.map(l => {
-                                        switch (l) {
-                                            case Library.Lerna:
-                                                return <Image className="w-6 h-6" key={l} src="/lerna.svg" width={24} height={24} alt="lerna" />
-                                            case Library.NgZorro:
-                                                return <Image className="w-6 h-6" key={l} src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" />
-                                            default:
-                                                return;
-                                        }
-                                    })}
+                                    {item.skills.library && item.skills.library.length > 0 ?
+                                        item.skills.library.map(l => {
+                                            switch (l) {
+                                                case Library.Lerna:
+                                                    return <Image className="w-6 h-6" key={l} src="/lerna.svg" width={24} height={24} alt="lerna" />
+                                                case Library.NgZorro:
+                                                    return <Image className="w-6 h-6" key={l} src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" />
+                                                default:
+                                                    return;
+                                            }
+                                        }) :
+                                        <div>N/A</div>
+                                    }
                                 </p>
                             </div>
                             <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
@@ -218,16 +221,22 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 </ul>
                             </div>
                             <div className="max-w-xs">
-                                <video controls muted>
-                                    <source src={item.videoUrl} type="video/mp4" />
-                                </video>
+                                {item.videoUrl ?
+                                    <video controls muted>
+                                        <source src={item.videoUrl} type="video/mp4" />
+                                    </video> :
+                                    <span></span>
+                                }
                             </div>
                         </div>
                         <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
                         <ul className="mx-14 my-5">
-                            {item.specialContribution.map(p =>
-                                <li key={p}>{p}</li>
-                            )}
+                            {item.specialContribution && item.specialContribution.length > 0 ?
+                                item.specialContribution.map(p =>
+                                    <li key={p}>{p}</li>
+                                ) :
+                                <div>N/A</div>
+                            }
                         </ul>
                     </div>
                 </div>

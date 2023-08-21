@@ -1,7 +1,6 @@
 'use client';
 
 import moment from "moment";
-import Image from "next/image";
 import { ReactNode } from "react";
 import Timeline, { Framework, Language, Library, TeamSize, TimelineItem, Tool } from "./timeline";
 
@@ -38,7 +37,6 @@ export default function ExperiencesTimeline() {
   const vertiv: WorkExperience = {
     startDate: moment("2021-03"),
     endDate: moment(),
-    icon: <Image src="/vertiv.svg" width={24} height={24} alt="Vertiv" />,
     companyName: "VERTIV",
     jobTitle: "Senior Software Engineer",
     location: "TAIPEI, TAIWAN",
@@ -77,34 +75,20 @@ export default function ExperiencesTimeline() {
     companyName: "ATGames",
     jobTitle: "Senior Front End Developer",
     location: "Taipei, Taiwan",
-    projects: [],
+    projects: [{
+      name: 'Direct2Drive',
+      url: 'https://www.direct2drive.com/'
+    },
+    {
+      name: 'Direct2Drive Mobile',
+      url: 'https://m.direct2drive.com/'
+    },
+    {
+      name: 'ArcadeNet',
+      url: 'https://www.atgames.net/arcadenet/'
+    }],
     specialContribution: [],
-    description: (
-      <ul>
-        <li>Main framework/library - react.js, Angular, angular.js, vue.js</li>
-        <li>Source code control - git</li>
-        <li>
-          Maintain and feature developing
-          <ul>
-            <li>
-              <a target="_blank" href="https://www.direct2drive.com/">
-                D2D Website
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="https://m.direct2drive.com/">
-                D2D Mobile Site
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="https://www.atgames.net/arcadenet/">
-                ArcadeNet Website
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    ),
+    // videoUrl: ''
   };
 
   const newegg: WorkExperience = {
@@ -301,15 +285,15 @@ export default function ExperiencesTimeline() {
     endDate: atGames.endDate,
     location: atGames.location,
     skills: {
-      framework: [],
-      tool: [],
-      library: [],
-      language: []
+      framework: [Framework.Angular], // TODO:angular.js, stripe
+      tool: [Tool.Git], // TODO:wordpress
+      library: [], // TODO:Angular Material, Bootstrap
+      language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5]
     },
     teamSize: TeamSize.Small,
-    projects: [],
-    specialContribution: [],
-    // videoUrl: ''
+    projects: atGames.projects,
+    specialContribution: atGames.specialContribution,
+    videoUrl: atGames.videoUrl
   }];
 
   return (
