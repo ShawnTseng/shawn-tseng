@@ -14,7 +14,8 @@ export type TimelineItem = {
 }
 
 export enum Framework {
-    Angular = 'Angular'
+    Angular = 'Angular',
+    AngularJs = 'AngularJs'
 }
 
 export enum Tool {
@@ -23,12 +24,16 @@ export enum Tool {
     Postman = 'Postman',
     Git = 'Git',
     Sourcetree = 'Sourcetree',
-    VsCode = 'VsCode'
+    VsCode = 'VsCode',
+    WordPress = 'WordPress'
 }
 
 export enum Library {
     Lerna = 'Lerna',
-    NgZorro = 'NgZorro'
+    NgZorro = 'NgZorro',
+    Stripe = 'Stripe',
+    Bootstrap = 'Bootstrap',
+    AngularMaterial = 'AngularMaterial'
 }
 
 export enum TeamSize {
@@ -132,6 +137,8 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                         switch (f) {
                                             case Framework.Angular:
                                                 return <Image className="w-6 h-6" key={f} src="/angular.svg" width={24} height={24} alt="Angular" />
+                                            case Framework.AngularJs:
+                                                return <Image className="w-6 h-6" key={f} src="/angularjs.svg" width={24} height={24} alt="AngularJs" />
                                             default:
                                                 return;
                                         }
@@ -155,6 +162,8 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                                 return <Image className="w-6 h-6" key={t} src="/sourcetree.svg" width={24} height={24} alt="sourcetree" />
                                             case Tool.VsCode:
                                                 return <Image className="w-6 h-6" key={t} src="/vs-code.svg" width={24} height={24} alt="vs-code" />
+                                            case Tool.WordPress:
+                                                return <Image className="w-6 h-6" key={t} src="/wordpress.svg" width={24} height={24} alt="wordpress" />
                                             default:
                                                 return;
                                         }
@@ -169,14 +178,20 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                         item.skills.library.map(l => {
                                             switch (l) {
                                                 case Library.Lerna:
-                                                    return <Image className="w-6 h-6" key={l} src="/lerna.svg" width={24} height={24} alt="lerna" />
+                                                    return <Image className="w-6 h-6" key={l} src="/lerna.svg" width={24} height={24} alt="Lerna" />
                                                 case Library.NgZorro:
                                                     return <Image className="w-6 h-6" key={l} src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" />
+                                                case Library.Stripe:
+                                                    return <Image className="w-6 h-6" key={l} src="/stripe.svg" width={24} height={24} alt="Stripe" />
+                                                case Library.Bootstrap:
+                                                    return <Image className="w-6 h-6" key={l} src="/bootstrap.svg" width={24} height={24} alt="Bootstrap" />
+                                                case Library.AngularMaterial:
+                                                    return <Image className="w-6 h-6" key={l} src="/angular-material.svg" width={24} height={24} alt="Angular-Material" />
                                                 default:
                                                     return;
                                             }
                                         }) :
-                                        <div>N/A</div>
+                                        <span>N/A</span>
                                     }
                                 </p>
                             </div>

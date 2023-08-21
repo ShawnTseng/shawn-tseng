@@ -285,9 +285,9 @@ export default function ExperiencesTimeline() {
     endDate: atGames.endDate,
     location: atGames.location,
     skills: {
-      framework: [Framework.Angular], // TODO:angular.js, stripe
-      tool: [Tool.Git], // TODO:wordpress
-      library: [], // TODO:Angular Material, Bootstrap
+      framework: [Framework.Angular, Framework.AngularJs],
+      tool: [Tool.WordPress, Tool.Sourcetree, Tool.Git, Tool.VsCode],
+      library: [Library.Stripe, Library.AngularMaterial, Library.Bootstrap],
       language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5]
     },
     teamSize: TeamSize.Small,
