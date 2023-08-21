@@ -86,9 +86,17 @@ export default function ExperiencesTimeline() {
     {
       name: 'ArcadeNet',
       url: 'https://www.atgames.net/arcadenet/'
+    },
+    {
+      name: 'Arcades',
+      url: 'https://www.atgames.net/arcades'
+    },
+    {
+      name: 'Leaderboards',
+      url: 'https://www.atgames.net/leaderboards/'
     }],
     specialContribution: [],
-    // videoUrl: ''
+    videoUrl: '/atgames.mp4'
   };
 
   const newegg: WorkExperience = {
