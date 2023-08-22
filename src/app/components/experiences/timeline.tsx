@@ -11,12 +11,17 @@ export type TimelineItem = {
     teamSizeText: string;
     projects: Array<Project>;
     specialContribution: Array<string>;
+    isOpen?: boolean;
     videoUrl?: string;
 }
 
 export enum Framework {
     Angular = 'Angular',
-    AngularJs = 'AngularJs'
+    AngularJs = 'AngularJs',
+    React = 'React',
+    Vue = 'Vue',
+    TestNG = 'TestNG',
+    Selenium = 'Selenium'
 }
 
 export enum Tool {
@@ -62,7 +67,7 @@ export type Project = {
     url?: string;
 }
 
-export default function Timeline({ items }: { items: Array<TimelineItem> }) {
+export default function Timeline({ items, showItemDetail }: { items: TimelineItem[]; showItemDetail: (item: TimelineItem) => void; }) {
     const getDuration = (exp: TimelineItem) => {
         const startDate = exp.startDate.format("yyyy/MM");
         const endDate = exp.endDate.format("yyyy-MM") === moment().format("yyyy-MM") ? "CURRENT" : exp.endDate.format("yyyy/MM");
@@ -100,7 +105,6 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
         }
     }
 
-
     return <div className="w-full px-10 mb-20 flex">
         {/* vertical line */}
         <div className="w-[1px] h-auto bg-[#00000099] relative left-6 top-12 z-0" />
@@ -137,6 +141,15 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                                 return <Image className="w-6 h-6" key={f} src="/angular.svg" width={24} height={24} alt="Angular" />
                                             case Framework.AngularJs:
                                                 return <Image className="w-6 h-6" key={f} src="/angularjs.svg" width={24} height={24} alt="AngularJs" />
+                                            case Framework.React:
+                                                return <Image className="w-6 h-6" key={f} src="/react.svg" width={24} height={24} alt="React" />
+                                            case Framework.Vue:
+                                                return <Image className="w-6 h-6" key={f} src="/vue.svg" width={24} height={24} alt="vue" />
+                                            case Framework.TestNG:
+                                                return <Image className="w-6 h-6" key={f} src="/testng.svg" width={24} height={24} alt="testng" />
+                                            case Framework.Selenium:
+                                                return <Image className="w-6 h-6" key={f} src="/selenium.svg" width={24} height={24} alt="selenium" />
+                                                return
                                             default:
                                                 return;
                                         }
@@ -220,38 +233,48 @@ export default function Timeline({ items }: { items: Array<TimelineItem> }) {
                                 </p>
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-x-20 gap-y-3">
-                            <div>
-                                <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
+                        {!item.isOpen ?
+                            <div className="w-full flex flex-col justify-center items-center"
+                                onClick={() => showItemDetail(item)}
+                            >
+                                <span>Read More</span>
+                                <p>V</p>{/* TODO: change it to be icon */}
+                            </div> :
+                            <>
+                                <div className="grid grid-cols-2 gap-x-20 gap-y-3">
+                                    <div>
+                                        <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
+                                        <ul className="mx-14 my-5">
+                                            {item.projects.map(p => (p.url ?
+                                                <li key={p.name}>
+                                                    <a href={p.url} target="_blank">
+                                                        {p.name}
+                                                    </a>
+                                                </li> :
+                                                <li key={p.name}>{p.name}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div className="max-w-xs">
+                                        {item.videoUrl ?
+                                            <video controls muted>
+                                                <source src={item.videoUrl} type="video/mp4" />
+                                            </video> :
+                                            <span></span>
+                                        }
+                                    </div>
+                                </div>
+                                <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
                                 <ul className="mx-14 my-5">
-                                    {item.projects.map(p => (p.url ?
-                                        <li key={p.name}>
-                                            <a href={p.url} target="_blank">
-                                                {p.name}
-                                            </a>
-                                        </li> :
-                                        <li key={p.name}>{p.name}</li>
-                                    ))}
+                                    {item.specialContribution && item.specialContribution.length > 0 ?
+                                        item.specialContribution.map(p =>
+                                            <li key={p}>{p}</li>
+                                        ) :
+                                        <div>N/A</div>
+                                    }
                                 </ul>
-                            </div>
-                            <div className="max-w-xs">
-                                {item.videoUrl ?
-                                    <video controls muted>
-                                        <source src={item.videoUrl} type="video/mp4" />
-                                    </video> :
-                                    <span></span>
-                                }
-                            </div>
-                        </div>
-                        <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
-                        <ul className="mx-14 my-5">
-                            {item.specialContribution && item.specialContribution.length > 0 ?
-                                item.specialContribution.map(p =>
-                                    <li key={p}>{p}</li>
-                                ) :
-                                <div>N/A</div>
-                            }
-                        </ul>
+                            </>
+                        }
                     </div>
                 </div>
             ))}

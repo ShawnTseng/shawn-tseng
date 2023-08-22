@@ -1,7 +1,7 @@
 'use client';
 
 import moment from "moment";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Timeline, { Framework, Language, Library, TeamSize, TimelineItem, Tool } from "./timeline";
 
 type WorkExperience = {
@@ -33,120 +33,130 @@ type SchoolExperience = {
   duration?: string;
 };
 
+const vertiv: WorkExperience = {
+  startDate: moment("2021-03"),
+  endDate: moment(),
+  companyName: "VERTIV",
+  jobTitle: "Senior Software Engineer",
+  location: "TAIPEI, TAIWAN",
+  projects: [{
+    name: 'Vertiv™ Avocent® ADX Platform',
+    url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ecosystem/'
+  },
+  {
+    name: 'Avocent® Core Insight',
+    url: 'https://www.vertiv.com/en-us/products/monitoring-control--management/avocent-embedded-management-systems/'
+  },
+  {
+    name: 'Vertiv™ Avocent® ADX IPUHD 4K IP KVM',
+    url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipuhd-4k-ip-kvm/'
+  },
+  {
+    name: 'Vertiv™ Avocent® ADX IPSL Serial Device',
+    url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipsl-serial-device/'
+  },
+  {
+    name: 'INC(Unpublished)'
+  }],
+  specialContribution: [
+    'Build monorepo for redfish based UI',
+    'Lead team to perform stress testing on products',
+    'Establish team communication channels, resource management rules, technology sharing systems, and talent training',
+    'Scrum team leader(5-8 members)',
+    'Front-end team leader(4-7 members)'
+  ],
+  videoUrl: '/adx-platform.mp4'
+};
+
+const atGames: WorkExperience = {
+  startDate: moment("2020-08"),
+  endDate: moment("2021-03"),
+  companyName: "ATGames",
+  jobTitle: "Senior Front End Developer",
+  location: "TAIPEI, TAIWAN",
+  projects: [{
+    name: 'Direct2Drive',
+    url: 'https://www.direct2drive.com/'
+  },
+  {
+    name: 'Direct2Drive Mobile',
+    url: 'https://m.direct2drive.com/'
+  },
+  {
+    name: 'ArcadeNet',
+    url: 'https://www.atgames.net/arcadenet/'
+  },
+  {
+    name: 'Arcades',
+    url: 'https://www.atgames.net/arcades'
+  },
+  {
+    name: 'Leaderboards',
+    url: 'https://www.atgames.net/leaderboards/'
+  }],
+  specialContribution: [],
+  videoUrl: '/atgames.mp4'
+};
+
+
+const newegg: WorkExperience = {
+  startDate: moment("2019-01"),
+  endDate: moment("2020-04"),
+  companyName: "Newegg",
+  jobTitle: "Senior Front End Developer",
+  location: "Taichung, Taiwan",
+  projects: [{
+    name: 'Seller Portal',
+    url: 'https://partner.newegg.com/euf/sellerportal/sign-in'
+  }, {
+    name: 'Newegg Mobile',
+    url: 'https://m.newegg.com/'
+  }, {
+    name: 'Internal HR system',
+    url: ''
+  }],
+  specialContribution: [],
+  description: (
+    <ul>
+      <li>Responsible for the maintenance of the seller's website</li>
+      <li>Develop internal HR system UI</li>
+      <li>Maintain cloud storage system</li>
+      <li>Responsible for the maintenance of the buyer's mobile website</li>
+      <li>Main framework/library - angular.js, Angular, react.js, vue.js, TestNG with selenium </li>
+      <li>The number of team member - 3~10</li>
+      <li>Source code control - git</li>
+      <li>
+        Maintain and feature developing
+        <ul>
+          <li>Adjusting a seller site depends on the demand side and policy change coming from the USA.</li>
+          <li>Develop HR system for targeting to replace SAP</li>
+          <li>Change buyer site's country support due to company policy vary</li>
+        </ul>
+      </li>
+      <li>
+        Refactoring
+        <ul>
+          <li>Buyer mobile site's auto test project</li>
+        </ul>
+      </li>
+      <li>
+        Performance tuned
+        <ul>
+          <li>Split large request size into multiple parallel requests when upload/download files.</li>
+        </ul>
+      </li>
+      <li>
+        Miscellaneous
+        <ul>
+          <li>Share new software technologies, such as Angular, NSwag, Postman, auto test theory, etc.</li>
+        </ul>
+      </li>
+      <li>Reason for leave: Signed a contract with hunter for getting a better package</li>
+    </ul>
+  ),
+};
+
 export default function ExperiencesTimeline() {
-  const vertiv: WorkExperience = {
-    startDate: moment("2021-03"),
-    endDate: moment(),
-    companyName: "VERTIV",
-    jobTitle: "Senior Software Engineer",
-    location: "TAIPEI, TAIWAN",
-    projects: [{
-      name: 'Vertiv™ Avocent® ADX Platform',
-      url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ecosystem/'
-    },
-    {
-      name: 'Avocent® Core Insight',
-      url: 'https://www.vertiv.com/en-us/products/monitoring-control--management/avocent-embedded-management-systems/'
-    },
-    {
-      name: 'Vertiv™ Avocent® ADX IPUHD 4K IP KVM',
-      url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipuhd-4k-ip-kvm/'
-    },
-    {
-      name: 'Vertiv™ Avocent® ADX IPSL Serial Device',
-      url: 'https://www.vertiv.com/en-us/products-catalog/monitoring-control-and-management/digital-infrastructure-solutions/vertiv-avocent-adx-ipsl-serial-device/'
-    },
-    {
-      name: 'INC(Unpublished)'
-    }],
-    specialContribution: [
-      'Build monorepo for redfish based UI',
-      'Lead team to perform stress testing on products',
-      'Establish team communication channels, resource management rules, technology sharing systems, and talent training',
-      'Scrum team leader(5-8 members)',
-      'Front-end team leader(4-7 members)'
-    ],
-    videoUrl: '/adx-platform.mp4'
-  };
-
-  const atGames: WorkExperience = {
-    startDate: moment("2020-08"),
-    endDate: moment("2021-03"),
-    companyName: "ATGames",
-    jobTitle: "Senior Front End Developer",
-    location: "Taipei, Taiwan",
-    projects: [{
-      name: 'Direct2Drive',
-      url: 'https://www.direct2drive.com/'
-    },
-    {
-      name: 'Direct2Drive Mobile',
-      url: 'https://m.direct2drive.com/'
-    },
-    {
-      name: 'ArcadeNet',
-      url: 'https://www.atgames.net/arcadenet/'
-    },
-    {
-      name: 'Arcades',
-      url: 'https://www.atgames.net/arcades'
-    },
-    {
-      name: 'Leaderboards',
-      url: 'https://www.atgames.net/leaderboards/'
-    }],
-    specialContribution: [],
-    videoUrl: '/atgames.mp4'
-  };
-
-  const newegg: WorkExperience = {
-    startDate: moment("2019-01"),
-    endDate: moment("2020-04"),
-    companyName: "Newegg",
-    jobTitle: "Senior Front End Developer",
-    location: "Taichung, Taiwan",
-    projects: [],
-    specialContribution: [],
-    description: (
-      <ul>
-        <li>Responsible for the maintenance of the seller's website</li>
-        <li>Develop internal HR system UI</li>
-        <li>Maintain cloud storage system</li>
-        <li>Responsible for the maintenance of the buyer's mobile website</li>
-        <li>Main framework/library - angular.js, Angular, react.js, vue.js, TestNG with selenium </li>
-        <li>The number of team member - 3~10</li>
-        <li>Source code control - git</li>
-        <li>
-          Maintain and feature developing
-          <ul>
-            <li>Adjusting a seller site depends on the demand side and policy change coming from the USA.</li>
-            <li>Develop HR system for targeting to replace SAP</li>
-            <li>Change buyer site's country support due to company policy vary</li>
-          </ul>
-        </li>
-        <li>
-          Refactoring
-          <ul>
-            <li>Buyer mobile site's auto test project</li>
-          </ul>
-        </li>
-        <li>
-          Performance tuned
-          <ul>
-            <li>Split large request size into multiple parallel requests when upload/download files.</li>
-          </ul>
-        </li>
-        <li>
-          Miscellaneous
-          <ul>
-            <li>Share new software technologies, such as Angular, NSwag, Postman, auto test theory, etc.</li>
-          </ul>
-        </li>
-        <li>Reason for leave: Signed a contract with hunter for getting a better package</li>
-      </ul>
-    ),
-  };
-
   const miniasp: WorkExperience = {
     startDate: moment("2018-08"),
     endDate: moment("2018-12"),
@@ -272,7 +282,7 @@ export default function ExperiencesTimeline() {
     description: <div>TODO:</div>,
   };
 
-  const items: Array<TimelineItem> = [{
+  const itemsValue: Array<TimelineItem> = [{
     title: vertiv.companyName,
     startDate: vertiv.startDate,
     endDate: vertiv.endDate,
@@ -287,6 +297,7 @@ export default function ExperiencesTimeline() {
     teamSizeText: '20-30',
     projects: vertiv.projects,
     specialContribution: vertiv.specialContribution,
+    isOpen: false,
     videoUrl: vertiv.videoUrl
   }, {
     title: atGames.companyName,
@@ -303,15 +314,51 @@ export default function ExperiencesTimeline() {
     teamSizeText: '1-3',
     projects: atGames.projects,
     specialContribution: atGames.specialContribution,
+    isOpen: false,
     videoUrl: atGames.videoUrl
+  }, {
+    title: newegg.companyName,
+    startDate: newegg.startDate,
+    endDate: newegg.endDate,
+    location: newegg.location,
+    skills: {
+      framework: [Framework.Angular, Framework.AngularJs, Framework.React, Framework.Vue, Framework.TestNG, Framework.Selenium],
+      tool: [Tool.Postman, Tool.Git, Tool.Sourcetree, Tool.VsCode],
+      library: [],
+      language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5] // TODO:java
+    },
+    teamSize: TeamSize.Medium,
+    teamSizeText: '5-8',
+    projects: newegg.projects,
+    specialContribution: newegg.specialContribution,
+    isOpen: false,
+    // videoUrl: ''
   }];
+
+  const showItemDetail = (selectedItem: TimelineItem) => {
+    const nextItems = items.map(item => {
+      if (item.title === selectedItem.title) {
+        return {
+          ...item,
+          isOpen: true
+        }
+      } else {
+        return {
+          ...item
+        }
+      }
+    });
+    setItems(nextItems);
+  }
+
+  const [items, setItems] = useState(itemsValue);
 
   return (
     <>
       <h1 className="font-poppins-bold text-center">
         WORK EXPERIENCE
       </h1>
-      <Timeline items={items} />
+      <Timeline items={items} showItemDetail={showItemDetail} />
     </>
   );
 }

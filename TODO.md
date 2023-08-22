@@ -86,6 +86,7 @@
 ## 待辦:功能
 - 多語系
 - DarkMode
+- ChatBot https://www.youtube.com/watch?v=Bv8FORu-ACA
 
 ### 學習
 
