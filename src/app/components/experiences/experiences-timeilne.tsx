@@ -127,7 +127,7 @@ const duotify: WorkExperience = {
   endDate: moment("2018-12"),
   companyName: "Duotify",
   jobTitle: "System Analyst",
-  location: "Taipei, Taiwan",
+  location: "TAIPEI, TAIWAN",
   projects: [{
     name: 'SKBank APP',
     url: 'https://play.google.com/store/apps/details?id=com.willmobile.mobilebank.skbbank&pcampaignid=web_share'
@@ -143,7 +143,7 @@ const digiwin: WorkExperience = {
   endDate: moment("2018-07"),
   companyName: "Digiwin",
   jobTitle: "Full Stack Developer",
-  location: "Taichung, Taiwan",
+  location: "TAICHUNG, TAIWAN",
   projects: [{
     name: 'CRM(Customer Relationship Management System)',
     url: 'https://www.digiwin.com/tw/software/708.html'
@@ -169,7 +169,7 @@ export default function ExperiencesTimeline() {
     endDate: moment("2015-03"),
     companyName: "Best Vision Technique",
     jobTitle: "Full Stack Developer",
-    location: "Taichung, Taiwan",
+    location: "TAICHUNG, TAIWAN",
     projects: [],
     specialContribution: [],
     description: (
@@ -195,7 +195,7 @@ export default function ExperiencesTimeline() {
     endDate: moment("2014-06"),
     schoolName: "National Yunlin University of Science and Technology",
     department: "Information Management",
-    location: "Yunlin, Taiwan",
+    location: "YUNLIN, TAIWAN",
     description: <div>TODO:</div>,
   };
 
@@ -204,7 +204,7 @@ export default function ExperiencesTimeline() {
     endDate: moment("2010-06"),
     schoolName: "National Sha-Lu Industrial Vocational Senior High School",
     department: "Data Processing",
-    location: "Taichung, Taiwan",
+    location: "TAICHUNG, TAIWAN",
     description: <div>TODO:</div>,
   };
 
