@@ -47,7 +47,8 @@ export enum Library {
     NgZorro = 'NgZorro',
     Stripe = 'Stripe',
     Bootstrap = 'Bootstrap',
-    AngularMaterial = 'AngularMaterial'
+    AngularMaterial = 'AngularMaterial',
+    MatroxImaging = 'MatroxImaging'
 }
 
 export enum TeamSize {
@@ -230,6 +231,8 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     return <Image className="w-6 h-6" key={l} src="/bootstrap.svg" width={24} height={24} alt="Bootstrap" />
                                                 case Library.AngularMaterial:
                                                     return <Image className="w-6 h-6" key={l} src="/angular-material.svg" width={24} height={24} alt="Angular-Material" />
+                                                case Library.MatroxImaging:
+                                                    return <Image className="w-6 h-6" key={l} src="/matrox-imaging.svg" width={24} height={24} alt="Matrox Imaging" />
                                                 default:
                                                     return;
                                             }

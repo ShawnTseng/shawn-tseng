@@ -163,51 +163,43 @@ const digiwin: WorkExperience = {
   videoUrl: '/digiwin.mp4'
 };
 
+const bestVisionTechnique: WorkExperience = {
+  startDate: moment("2014-10"),
+  endDate: moment("2015-03"),
+  companyName: "Best Vision Technique",
+  jobTitle: "Full Stack Developer",
+  location: "TAICHUNG, TAIWAN",
+  projects: [{
+    name: 'Developing AOI (Automated Optical Inspection) LCE panel solutions.',
+    url: 'https://bestvision-technique.com/product/cf-pi-seal-aoi%e6%aa%a2%e6%9f%a5%e6%a9%9f/'
+  }],
+  specialContribution: [
+    'Integrating image algorithms, machine slide track APIs, and camera APIs.',
+    'Experimenting with driver control for the machine, utilizing embedded boards.',
+    'Organizing the APIs for a set of cameras into a library.',
+    'Installing a server within the cleanroom environment.'
+  ]
+};
+
+// const yuntech: SchoolExperience = {
+//   startDate: moment("2010-09"),
+//   endDate: moment("2014-06"),
+//   schoolName: "National Yunlin University of Science and Technology",
+//   department: "Information Management",
+//   location: "YUNLIN, TAIWAN",
+//   description: <div>TODO:</div>,
+// };
+
+// const shalu: SchoolExperience = {
+//   startDate: moment("2007-09"),
+//   endDate: moment("2010-06"),
+//   schoolName: "National Sha-Lu Industrial Vocational Senior High School",
+//   department: "Data Processing",
+//   location: "TAICHUNG, TAIWAN",
+//   description: <div>TODO:</div>,
+// };
+
 export default function ExperiencesTimeline() {
-  const bestVisionTechnique: WorkExperience = {
-    startDate: moment("2014-10"),
-    endDate: moment("2015-03"),
-    companyName: "Best Vision Technique",
-    jobTitle: "Full Stack Developer",
-    location: "TAICHUNG, TAIWAN",
-    projects: [],
-    specialContribution: [],
-    description: (
-      <ul>
-        <li>Responsible for import AOI (Automated Optical Inspection) solution into AUO</li>
-        <li>Main framework/library - graphic algorithm (Matron imaging library), hardware API (camera, machinery)</li>
-        <li>The number of team member - 3</li>
-        <li>
-          Miscellaneous
-          <ul>
-            <li>Experiment control machine with driver, embedded board</li>
-            <li>Arrange number of cameras API into library</li>
-            <li>Install server at cleanroom</li>
-          </ul>
-        </li>
-        <li>Reason for leave: Our organization collapsed from a controversy between manager and boss</li>
-      </ul>
-    ),
-  };
-
-  const yuntech: SchoolExperience = {
-    startDate: moment("2010-09"),
-    endDate: moment("2014-06"),
-    schoolName: "National Yunlin University of Science and Technology",
-    department: "Information Management",
-    location: "YUNLIN, TAIWAN",
-    description: <div>TODO:</div>,
-  };
-
-  const shalu: SchoolExperience = {
-    startDate: moment("2007-09"),
-    endDate: moment("2010-06"),
-    schoolName: "National Sha-Lu Industrial Vocational Senior High School",
-    department: "Data Processing",
-    location: "TAICHUNG, TAIWAN",
-    description: <div>TODO:</div>,
-  };
-
   const itemsValue: Array<TimelineItem> = [{
     title: vertiv.companyName,
     startDate: vertiv.startDate,
@@ -293,6 +285,23 @@ export default function ExperiencesTimeline() {
     specialContribution: digiwin.specialContribution,
     isOpen: false,
     videoUrl: digiwin.videoUrl
+  }, {
+    title: bestVisionTechnique.companyName,
+    startDate: bestVisionTechnique.startDate,
+    endDate: bestVisionTechnique.endDate,
+    location: bestVisionTechnique.location,
+    skills: {
+      framework: [Framework.DotNetFramework],
+      tool: [Tool.VisualStudio],
+      library: [Library.MatroxImaging],
+      language: [Language.CSharp]
+    },
+    teamSize: TeamSize.Small,
+    teamSizeText: '3',
+    projects: bestVisionTechnique.projects,
+    specialContribution: bestVisionTechnique.specialContribution,
+    isOpen: false,
+    // videoUrl: ''
   }];
 
   const showItemDetail = (selectedItem: TimelineItem) => {
