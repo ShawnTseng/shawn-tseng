@@ -23,7 +23,8 @@ export enum Framework {
     TestNG = 'TestNG',
     Selenium = 'Selenium',
     DotNetFramework = 'DotNetFramework',
-    DotNetCore = 'DotNetCore'
+    DotNetCore = 'DotNetCore',
+    MSSql = 'MSSql'
 }
 
 export enum Tool {
@@ -33,10 +34,12 @@ export enum Tool {
     Git = 'Git',
     Sourcetree = 'Sourcetree',
     VsCode = 'VsCode',
+    VisualStudio = 'VisualStudio',
     WordPress = 'WordPress',
     Trello = 'Trello',
     Word = 'Word',
-    Powerpoint = 'Powerpoint'
+    Powerpoint = 'Powerpoint',
+    TFS = 'TFS'
 }
 
 export enum Library {
@@ -58,7 +61,9 @@ export enum Language {
     Javascript = 'Javascript',
     CSS = 'CSS',
     Html5 = 'Html5',
-    Java = 'Java'
+    Java = 'Java',
+    CSharp = 'CSharp',
+    TSQL = 'TSQL'
 }
 
 export type Skills = {
@@ -160,11 +165,13 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     return <Image className="w-6 h-6" key={f} src="/dot-net-framework.svg" width={24} height={24} alt="DotNetFramework" />
                                                 case Framework.DotNetCore:
                                                     return <Image className="w-6 h-6" key={f} src="/dot-net-core.svg" width={24} height={24} alt="DotNetCore" />
+                                                case Framework.MSSql:
+                                                    return <Image className="w-6 h-6" key={f} src="/ms-sql.svg" width={24} height={24} alt="ms sql" />
                                                 default:
                                                     return;
                                             }
                                         }) :
-                                        <div>N/A</div>
+                                        <span>N/A</span>
                                     }
                                 </p>
                             </div>
@@ -186,6 +193,8 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     return <Image className="w-6 h-6" key={t} src="/sourcetree.svg" width={24} height={24} alt="sourcetree" />
                                                 case Tool.VsCode:
                                                     return <Image className="w-6 h-6" key={t} src="/vs-code.svg" width={24} height={24} alt="vs-code" />
+                                                case Tool.VisualStudio:
+                                                    return <Image className="w-6 h-6" key={t} src="/visual-studio.svg" width={24} height={24} alt="visual studio" />
                                                 case Tool.WordPress:
                                                     return <Image className="w-6 h-6" key={t} src="/wordpress.svg" width={24} height={24} alt="wordpress" />
                                                 case Tool.Trello:
@@ -194,11 +203,13 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     return <Image className="w-6 h-6" key={t} src="/word.svg" width={24} height={24} alt="word" />
                                                 case Tool.Powerpoint:
                                                     return <Image className="w-6 h-6" key={t} src="/powerpoint.svg" width={24} height={24} alt="powerpoint" />
+                                                case Tool.TFS:
+                                                    return <Image className="w-6 h-6" key={t} src="/tfs.svg" width={24} height={24} alt="tfs" />
                                                 default:
                                                     return;
                                             }
                                         }) :
-                                        <div>N/A</div>
+                                        <span>N/A</span>
                                     }
                                 </p>
                             </div>
@@ -243,11 +254,15 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     return <Image className="w-6 h-6" key={l} src="/html5.svg" width={24} height={24} alt="html5" />
                                                 case Language.Java:
                                                     return <Image className="w-6 h-6" key={l} src="/java.svg" width={24} height={24} alt="java" />
+                                                case Language.CSharp:
+                                                    return <Image className="w-6 h-6" key={l} src="/c-sharp.svg" width={24} height={24} alt="c#" />
+                                                case Language.TSQL:
+                                                    return <Image className="w-6 h-6" key={l} src="/t-sql.svg" width={24} height={24} alt="T-SQL" />
                                                 default:
                                                     return;
                                             }
                                         }) :
-                                        <div>N/A</div>
+                                        <span>N/A</span>
                                     }
                                 </p>
                             </div>
@@ -280,7 +295,7 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     </li> :
                                                     <li key={p.name}>{p.name}</li>
                                                 )) :
-                                                <div>N/A</div>
+                                                <span>N/A</span>
                                             }
                                         </ul>
                                     </div>
@@ -299,7 +314,7 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                         item.specialContribution.map(p =>
                                             <li key={p}>{p}</li>
                                         ) :
-                                        <div>N/A</div>
+                                        <span>N/A</span>
                                     }
                                 </ul>
                             </>
