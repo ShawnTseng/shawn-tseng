@@ -98,13 +98,12 @@ const atGames: WorkExperience = {
   videoUrl: '/atgames.mp4'
 };
 
-
 const newegg: WorkExperience = {
   startDate: moment("2019-01"),
   endDate: moment("2020-04"),
   companyName: "Newegg",
   jobTitle: "Senior Front End Developer",
-  location: "Taichung, Taiwan",
+  location: "TAICHUNG, TAIWAN",
   projects: [{
     name: 'Seller Portal',
     url: 'https://partner.newegg.com/euf/sellerportal/sign-in'
@@ -115,45 +114,12 @@ const newegg: WorkExperience = {
     name: 'Internal HR system',
     url: ''
   }],
-  specialContribution: [],
-  description: (
-    <ul>
-      <li>Responsible for the maintenance of the seller's website</li>
-      <li>Develop internal HR system UI</li>
-      <li>Maintain cloud storage system</li>
-      <li>Responsible for the maintenance of the buyer's mobile website</li>
-      <li>Main framework/library - angular.js, Angular, react.js, vue.js, TestNG with selenium </li>
-      <li>The number of team member - 3~10</li>
-      <li>Source code control - git</li>
-      <li>
-        Maintain and feature developing
-        <ul>
-          <li>Adjusting a seller site depends on the demand side and policy change coming from the USA.</li>
-          <li>Develop HR system for targeting to replace SAP</li>
-          <li>Change buyer site's country support due to company policy vary</li>
-        </ul>
-      </li>
-      <li>
-        Refactoring
-        <ul>
-          <li>Buyer mobile site's auto test project</li>
-        </ul>
-      </li>
-      <li>
-        Performance tuned
-        <ul>
-          <li>Split large request size into multiple parallel requests when upload/download files.</li>
-        </ul>
-      </li>
-      <li>
-        Miscellaneous
-        <ul>
-          <li>Share new software technologies, such as Angular, NSwag, Postman, auto test theory, etc.</li>
-        </ul>
-      </li>
-      <li>Reason for leave: Signed a contract with hunter for getting a better package</li>
-    </ul>
-  ),
+  specialContribution: [
+    "Refactor Automated Testing Project",
+    "Performance Optimization - Splitting Large Requests into Multiple Concurrent Requests for Uploading/Downloading Files.",
+    "Introducing New Software Technologies: Angular, NSwag, Postman, Automated Testing Theory, and More."
+  ],
+  videoUrl: '/newegg.mp4'
 };
 
 export default function ExperiencesTimeline() {
@@ -322,17 +288,17 @@ export default function ExperiencesTimeline() {
     endDate: newegg.endDate,
     location: newegg.location,
     skills: {
-      framework: [Framework.Angular, Framework.AngularJs, Framework.React, Framework.Vue, Framework.TestNG, Framework.Selenium],
+      framework: [Framework.React, Framework.Vue, Framework.Angular, Framework.AngularJs, Framework.TestNG, Framework.Selenium],
       tool: [Tool.Postman, Tool.Git, Tool.Sourcetree, Tool.VsCode],
       library: [],
       language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5] // TODO:java
     },
     teamSize: TeamSize.Medium,
-    teamSizeText: '5-8',
+    teamSizeText: '3-10',
     projects: newegg.projects,
     specialContribution: newegg.specialContribution,
     isOpen: false,
-    // videoUrl: ''
+    videoUrl: newegg.videoUrl
   }];
 
   const showItemDetail = (selectedItem: TimelineItem) => {

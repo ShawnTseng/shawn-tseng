@@ -87,6 +87,8 @@
 - 多語系
 - DarkMode
 - ChatBot https://www.youtube.com/watch?v=Bv8FORu-ACA
+- 各個工作的離職原因
+- 職稱放哪裡?
 
 ### 學習
 
