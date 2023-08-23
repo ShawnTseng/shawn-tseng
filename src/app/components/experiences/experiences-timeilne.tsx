@@ -291,7 +291,7 @@ export default function ExperiencesTimeline() {
       framework: [Framework.React, Framework.Vue, Framework.Angular, Framework.AngularJs, Framework.TestNG, Framework.Selenium],
       tool: [Tool.Postman, Tool.Git, Tool.Sourcetree, Tool.VsCode],
       library: [],
-      language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5] // TODO:java
+      language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5, Language.Java]
     },
     teamSize: TeamSize.Medium,
     teamSizeText: '3-10',

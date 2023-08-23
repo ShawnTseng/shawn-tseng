@@ -52,7 +52,8 @@ export enum Language {
     Typescript = 'Typescript',
     Javascript = 'Javascript',
     CSS = 'CSS',
-    Html5 = 'Html5'
+    Html5 = 'Html5',
+    Java = 'Java'
 }
 
 export type Skills = {
@@ -219,6 +220,8 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                 return <Image className="w-6 h-6" key={l} src="/css.svg" width={24} height={24} alt="css" />
                                             case Language.Html5:
                                                 return <Image className="w-6 h-6" key={l} src="/html5.svg" width={24} height={24} alt="html5" />
+                                            case Language.Java:
+                                                return <Image className="w-6 h-6" key={l} src="/java.svg" width={24} height={24} alt="java" />
                                             default:
                                                 return;
                                         }
