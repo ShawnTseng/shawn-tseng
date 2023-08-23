@@ -301,7 +301,7 @@ export default function ExperiencesTimeline() {
     projects: bestVisionTechnique.projects,
     specialContribution: bestVisionTechnique.specialContribution,
     isOpen: false,
-    // videoUrl: ''
+    videoUrl: '/bestvision.mp4'
   }];
 
   const showItemDetail = (selectedItem: TimelineItem) => {
