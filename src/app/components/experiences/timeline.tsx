@@ -21,7 +21,9 @@ export enum Framework {
     React = 'React',
     Vue = 'Vue',
     TestNG = 'TestNG',
-    Selenium = 'Selenium'
+    Selenium = 'Selenium',
+    DotNetFramework = 'DotNetFramework',
+    DotNetCore = 'DotNetCore'
 }
 
 export enum Tool {
@@ -31,7 +33,10 @@ export enum Tool {
     Git = 'Git',
     Sourcetree = 'Sourcetree',
     VsCode = 'VsCode',
-    WordPress = 'WordPress'
+    WordPress = 'WordPress',
+    Trello = 'Trello',
+    Word = 'Word',
+    Powerpoint = 'Powerpoint'
 }
 
 export enum Library {
@@ -151,7 +156,10 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     return <Image className="w-6 h-6" key={f} src="/testng.svg" width={24} height={24} alt="testng" />
                                                 case Framework.Selenium:
                                                     return <Image className="w-6 h-6" key={f} src="/selenium.svg" width={24} height={24} alt="selenium" />
-                                                    return
+                                                case Framework.DotNetFramework:
+                                                    return <Image className="w-6 h-6" key={f} src="/dot-net-framework.svg" width={24} height={24} alt="DotNetFramework" />
+                                                case Framework.DotNetCore:
+                                                    return <Image className="w-6 h-6" key={f} src="/dot-net-core.svg" width={24} height={24} alt="DotNetCore" />
                                                 default:
                                                     return;
                                             }
@@ -180,6 +188,12 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                                     return <Image className="w-6 h-6" key={t} src="/vs-code.svg" width={24} height={24} alt="vs-code" />
                                                 case Tool.WordPress:
                                                     return <Image className="w-6 h-6" key={t} src="/wordpress.svg" width={24} height={24} alt="wordpress" />
+                                                case Tool.Trello:
+                                                    return <Image className="w-6 h-6" key={t} src="/trello.svg" width={24} height={24} alt="trello" />
+                                                case Tool.Word:
+                                                    return <Image className="w-6 h-6" key={t} src="/word.svg" width={24} height={24} alt="word" />
+                                                case Tool.Powerpoint:
+                                                    return <Image className="w-6 h-6" key={t} src="/powerpoint.svg" width={24} height={24} alt="powerpoint" />
                                                 default:
                                                     return;
                                             }

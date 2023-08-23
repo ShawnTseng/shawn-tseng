@@ -122,41 +122,41 @@ const newegg: WorkExperience = {
   videoUrl: '/newegg.mp4'
 };
 
-export default function ExperiencesTimeline() {
-  const miniasp: WorkExperience = {
-    startDate: moment("2018-08"),
-    endDate: moment("2018-12"),
-    companyName: "Miniasp",
-    jobTitle: "System Analyst",
-    location: "Taipei, Taiwan",
-    projects: [],
-    specialContribution: [],
-    description: (
-      <ul>
-        <li>Responsible for refactoring bank app logic</li>
-        <li>Main framework/library - .NET Web API, Angular, dot net Core API </li>
-        <li>The number of team member - 5</li>
-        <li>Source code control - git</li>
-        <li>
-          Document writing
-          <ul>
-            <li>Transfer old logic into document</li>
-            <li>Clarify current demand with client</li>
-            <li>Produce requirement doc and specification doc</li>
-            <li>Code review and doing acceptance check</li>
-          </ul>
-        </li>
-        <li>
-          Miscellaneous
-          <ul>
-            <li>Take tech courses after get off work or in the weekend, including entity framework, LINQ, SOLID</li>
-          </ul>
-        </li>
-        <li>Reason for leave: When project completed, I was asked for going to another city through commuting daily for next project.</li>
-      </ul>
-    ),
-  };
+const duotify: WorkExperience = {
+  startDate: moment("2018-08"),
+  endDate: moment("2018-12"),
+  companyName: "Duotify",
+  jobTitle: "System Analyst",
+  location: "Taipei, Taiwan",
+  projects: [],
+  specialContribution: [],
+  description: (
+    <ul>
+      <li>Responsible for refactoring bank app logic</li>
+      <li>Main framework/library - .NET Web API, Angular, dot net Core API </li>
+      <li>The number of team member - 5</li>
+      <li>Source code control - git</li>
+      <li>
+        Document writing
+        <ul>
+          <li>Transfer old logic into document</li>
+          <li>Clarify current demand with client</li>
+          <li>Produce requirement doc and specification doc</li>
+          <li>Code review and doing acceptance check</li>
+        </ul>
+      </li>
+      <li>
+        Miscellaneous
+        <ul>
+          <li>Take tech courses after get off work or in the weekend, including entity framework, LINQ, SOLID</li>
+        </ul>
+      </li>
+      <li>Reason for leave: When project completed, I was asked for going to another city through commuting daily for next project.</li>
+    </ul>
+  ),
+};
 
+export default function ExperiencesTimeline() {
   const digiwin: WorkExperience = {
     startDate: moment("2015-05"),
     endDate: moment("2018-07"),
@@ -299,6 +299,29 @@ export default function ExperiencesTimeline() {
     specialContribution: newegg.specialContribution,
     isOpen: false,
     videoUrl: newegg.videoUrl
+  }, {
+    title: duotify.companyName,
+    startDate: duotify.startDate,
+    endDate: duotify.endDate,
+    location: duotify.location,
+    skills: {
+      framework: [Framework.Angular, Framework.DotNetFramework, Framework.DotNetCore],
+      tool: [Tool.Trello, Tool.Word, Tool.Powerpoint],
+      library: [],
+      language: []
+    },
+    teamSize: TeamSize.Small,
+    teamSizeText: '5',
+    projects: [{
+      name: 'SKBank APP',
+      url: 'https://play.google.com/store/apps/details?id=com.willmobile.mobilebank.skbbank&pcampaignid=web_share'
+    }],
+    specialContribution: [
+      'Engage in document writing, including transferring existing logic into documentation, clarifying current requirements with the client, generating requirement and specification documents, and conducting code reviews along with acceptance checks.',
+      'Enroll in Technology Courses After Work Hours or During Weekends, Covering Entity Framework, LINQ, and SOLID Principles.'
+    ],
+    isOpen: false,
+    // videoUrl: ''
   }];
 
   const showItemDetail = (selectedItem: TimelineItem) => {
