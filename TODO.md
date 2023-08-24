@@ -1,5 +1,8 @@
 ## 待辦:功能
-
+- Hello,
+- 名字
+- 一句話描述我是誰
+- Summary
 - 多語系
 - DarkMode
 - ChatBot https://www.youtube.com/watch?v=Bv8FORu-ACA
