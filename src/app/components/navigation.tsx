@@ -5,8 +5,8 @@ export default function Navigation() {
         <header className="w-full shadow-[0_4px_10px_0_#00000033] flex justify-center">
             <div className='max-w-[1440px] w-full h-20 px-[120px] py-4 flex items-center'>
                 <span className='inline-flex items-center gap-4'>
-                    <Image src="/favicon.ico" className='pb-1 w-8 h-8' width={33} height={36.59} alt="logo" />
-                    <span className='flex items-center text-[26px] leading-[39px] gap-[1px]'>
+                    <Image src="/favicon.ico" className='w-8 h-8' width={32} height={32} alt="logo" />
+                    <span className='text-[26px]'>
                         <span className={`tracking-[-0.015em]`}>
                             SHAWN
                         </span>
