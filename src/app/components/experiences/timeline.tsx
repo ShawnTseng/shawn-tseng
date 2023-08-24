@@ -112,7 +112,12 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
         {/* experience container */}
         <div className="w-full z-10">
             {items.map(item => (
-                <div key={item.title} className=" my-9">
+                <motion.div key={item.title} className="my-9"
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, type: 'spring' }}
+                >
                     {/* Indicator and Logo */}
                     <div className="inline-flex items-center gap-4">
                         {/* Indicator */}
@@ -140,23 +145,23 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                         item.skills.framework.map(f => {
                                             switch (f) {
                                                 case Framework.Angular:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/angular.svg" width={24} height={24} alt="Angular" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/angular.svg" width={24} height={24} alt="Angular" /></motion.span>
                                                 case Framework.AngularJs:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/angularjs.svg" width={24} height={24} alt="AngularJs" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/angularjs.svg" width={24} height={24} alt="AngularJs" /></motion.span>
                                                 case Framework.React:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/react.svg" width={24} height={24} alt="React" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/react.svg" width={24} height={24} alt="React" /></motion.span>
                                                 case Framework.Vue:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/vue.svg" width={24} height={24} alt="vue" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/vue.svg" width={24} height={24} alt="vue" /></motion.span>
                                                 case Framework.TestNG:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/testng.svg" width={24} height={24} alt="testng" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/testng.svg" width={24} height={24} alt="testng" /></motion.span>
                                                 case Framework.Selenium:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/selenium.svg" width={24} height={24} alt="selenium" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/selenium.svg" width={24} height={24} alt="selenium" /></motion.span>
                                                 case Framework.DotNetFramework:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/dot-net-framework.svg" width={24} height={24} alt="DotNetFramework" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/dot-net-framework.svg" width={24} height={24} alt="DotNetFramework" /></motion.span>
                                                 case Framework.DotNetCore:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/dot-net-core.svg" width={24} height={24} alt="DotNetCore" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/dot-net-core.svg" width={24} height={24} alt="DotNetCore" /></motion.span>
                                                 case Framework.MSSql:
-                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/ms-sql.svg" width={24} height={24} alt="ms sql" /></motion.span>
+                                                    return <motion.span key={f} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/ms-sql.svg" width={24} height={24} alt="ms sql" /></motion.span>
                                                 default:
                                                     return;
                                             }
@@ -312,7 +317,7 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                             </>
                         }
                     </div>
-                </div>
+                </motion.div>
             ))}
         </div>
     </div>
