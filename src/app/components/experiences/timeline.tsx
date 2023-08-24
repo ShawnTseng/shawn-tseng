@@ -140,23 +140,23 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                         item.skills.framework.map(f => {
                                             switch (f) {
                                                 case Framework.Angular:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/angular.svg" width={24} height={24} alt="Angular" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/angular.svg" width={24} height={24} alt="Angular" /></motion.span>
                                                 case Framework.AngularJs:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/angularjs.svg" width={24} height={24} alt="AngularJs" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/angularjs.svg" width={24} height={24} alt="AngularJs" /></motion.span>
                                                 case Framework.React:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/react.svg" width={24} height={24} alt="React" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/react.svg" width={24} height={24} alt="React" /></motion.span>
                                                 case Framework.Vue:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/vue.svg" width={24} height={24} alt="vue" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/vue.svg" width={24} height={24} alt="vue" /></motion.span>
                                                 case Framework.TestNG:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/testng.svg" width={24} height={24} alt="testng" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/testng.svg" width={24} height={24} alt="testng" /></motion.span>
                                                 case Framework.Selenium:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/selenium.svg" width={24} height={24} alt="selenium" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/selenium.svg" width={24} height={24} alt="selenium" /></motion.span>
                                                 case Framework.DotNetFramework:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/dot-net-framework.svg" width={24} height={24} alt="DotNetFramework" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/dot-net-framework.svg" width={24} height={24} alt="DotNetFramework" /></motion.span>
                                                 case Framework.DotNetCore:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/dot-net-core.svg" width={24} height={24} alt="DotNetCore" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/dot-net-core.svg" width={24} height={24} alt="DotNetCore" /></motion.span>
                                                 case Framework.MSSql:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={f} src="/ms-sql.svg" width={24} height={24} alt="ms sql" /></motion.span>
+                                                    return <motion.span key={f}  whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/ms-sql.svg" width={24} height={24} alt="ms sql" /></motion.span>
                                                 default:
                                                     return;
                                             }
@@ -172,29 +172,29 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                         item.skills.tool.map(t => {
                                             switch (t) {
                                                 case Tool.Grafana:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/grafana.svg" width={24} height={24} alt="grafana" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/grafana.svg" width={24} height={24} alt="grafana" /></motion.span>
                                                 case Tool.K6:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/k6.svg" width={24} height={24} alt="k6" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/k6.svg" width={24} height={24} alt="k6" /></motion.span>
                                                 case Tool.Postman:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/postman.svg" width={24} height={24} alt="postman" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/postman.svg" width={24} height={24} alt="postman" /></motion.span>
                                                 case Tool.Git:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/git.svg" width={24} height={24} alt="git" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/git.svg" width={24} height={24} alt="git" /></motion.span>
                                                 case Tool.Sourcetree:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/sourcetree.svg" width={24} height={24} alt="sourcetree" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/sourcetree.svg" width={24} height={24} alt="sourcetree" /></motion.span>
                                                 case Tool.VsCode:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/vs-code.svg" width={24} height={24} alt="vs-code" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/vs-code.svg" width={24} height={24} alt="vs-code" /></motion.span>
                                                 case Tool.VisualStudio:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/visual-studio.svg" width={24} height={24} alt="visual studio" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/visual-studio.svg" width={24} height={24} alt="visual studio" /></motion.span>
                                                 case Tool.WordPress:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/wordpress.svg" width={24} height={24} alt="wordpress" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/wordpress.svg" width={24} height={24} alt="wordpress" /></motion.span>
                                                 case Tool.Trello:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/trello.svg" width={24} height={24} alt="trello" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/trello.svg" width={24} height={24} alt="trello" /></motion.span>
                                                 case Tool.Word:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/word.svg" width={24} height={24} alt="word" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/word.svg" width={24} height={24} alt="word" /></motion.span>
                                                 case Tool.Powerpoint:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/powerpoint.svg" width={24} height={24} alt="powerpoint" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/powerpoint.svg" width={24} height={24} alt="powerpoint" /></motion.span>
                                                 case Tool.TFS:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={t} src="/tfs.svg" width={24} height={24} alt="tfs" /></motion.span>
+                                                    return <motion.span key={t} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/tfs.svg" width={24} height={24} alt="tfs" /></motion.span>
                                                 default:
                                                     return;
                                             }
@@ -211,17 +211,17 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                         item.skills.library.map(l => {
                                             switch (l) {
                                                 case Library.Lerna:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/lerna.svg" width={24} height={24} alt="Lerna" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/lerna.svg" width={24} height={24} alt="Lerna" /></motion.span>
                                                 case Library.NgZorro:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/ng-zorro.svg" width={24} height={24} alt="NG-ZORRO" /></motion.span>
                                                 case Library.Stripe:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/stripe.svg" width={24} height={24} alt="Stripe" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/stripe.svg" width={24} height={24} alt="Stripe" /></motion.span>
                                                 case Library.Bootstrap:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/bootstrap.svg" width={24} height={24} alt="Bootstrap" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/bootstrap.svg" width={24} height={24} alt="Bootstrap" /></motion.span>
                                                 case Library.AngularMaterial:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/angular-material.svg" width={24} height={24} alt="Angular-Material" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/angular-material.svg" width={24} height={24} alt="Angular-Material" /></motion.span>
                                                 case Library.MatroxImaging:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/matrox-imaging.svg" width={24} height={24} alt="Matrox Imaging" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/matrox-imaging.svg" width={24} height={24} alt="Matrox Imaging" /></motion.span>
                                                 default:
                                                     return;
                                             }
@@ -237,19 +237,19 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                         item.skills.language.map(l => {
                                             switch (l) {
                                                 case Language.Typescript:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/typescript.svg" width={24} height={24} alt="typescript" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/typescript.svg" width={24} height={24} alt="typescript" /></motion.span>
                                                 case Language.Javascript:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/javascript.svg" width={24} height={24} alt="javascript" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/javascript.svg" width={24} height={24} alt="javascript" /></motion.span>
                                                 case Language.CSS:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/css.svg" width={24} height={24} alt="css" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/css.svg" width={24} height={24} alt="css" /></motion.span>
                                                 case Language.Html5:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/html5.svg" width={24} height={24} alt="html5" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/html5.svg" width={24} height={24} alt="html5" /></motion.span>
                                                 case Language.Java:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/java.svg" width={24} height={24} alt="java" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/java.svg" width={24} height={24} alt="java" /></motion.span>
                                                 case Language.CSharp:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/c-sharp.svg" width={24} height={24} alt="c#" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/c-sharp.svg" width={24} height={24} alt="c#" /></motion.span>
                                                 case Language.TSQL:
-                                                    return <motion.span whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" key={l} src="/t-sql.svg" width={24} height={24} alt="T-SQL" /></motion.span>
+                                                    return <motion.span key={l} whileHover={{ scale: 1.2 }}><Image className="w-6 h-6" src="/t-sql.svg" width={24} height={24} alt="T-SQL" /></motion.span>
                                                 default:
                                                     return;
                                             }
