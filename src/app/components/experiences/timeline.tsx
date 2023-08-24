@@ -112,7 +112,7 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
         {/* experience container */}
         <div className="w-full z-10">
             {items.map(item => (
-                <div key={item.title} >
+                <div key={item.title} className=" my-9">
                     {/* Indicator and Logo */}
                     <div className="inline-flex items-center gap-4">
                         {/* Indicator */}
@@ -267,7 +267,7 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                             </div>
                         </div>
                         {!item.isOpen ?
-                            <div className="w-full flex flex-col justify-center items-center"
+                            <div className="w-full flex flex-col justify-center items-center cursor-pointer"
                                 onClick={() => showItemDetail(item)}
                             >
                                 <span>Read More</span>
