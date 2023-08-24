@@ -30,25 +30,19 @@ export default function Footer() {
                 </div>
                 <div className='grid gap-4 grid-cols-3 my-2'>
                     <motion.a href="https://www.linkedin.com/in/%E5%AD%A3%E6%9A%98-%E6%9B%BE-551247166/" target="_blank"
-                        whileHover={{
-                            scale: 1.2,
-                        }}
+                        whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
                         <Image className='w-6 h-6' src="linkedin.svg" width={24} height={24} alt="linkedin" />
                     </motion.a>
                     <motion.a href="https://github.com/ShawnTseng" target="_blank"
-                        whileHover={{
-                            scale: 1.2,
-                        }}
+                        whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
                         <Image className='w-6 h-6' src="github.svg" width={24} height={24} alt="github" />
                     </motion.a>
                     <motion.a href="https://shawntseng.blogspot.com/" target="_blank"
-                        whileHover={{
-                            scale: 1.2,
-                        }}
+                        whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
                         <Image className='w-6 h-6' src="blogger.svg" width={24} height={24} alt="blogger" />
