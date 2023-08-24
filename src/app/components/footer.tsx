@@ -1,5 +1,8 @@
+'use client';
+
 import moment from 'moment';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
     const age = moment().diff(moment("1992-02-15"), "years");
@@ -26,15 +29,30 @@ export default function Footer() {
                     <span>Project</span>
                 </div>
                 <div className='grid gap-4 grid-cols-3 my-2'>
-                    <a href="https://www.linkedin.com/in/%E5%AD%A3%E6%9A%98-%E6%9B%BE-551247166/" target="_blank">
+                    <motion.a href="https://www.linkedin.com/in/%E5%AD%A3%E6%9A%98-%E6%9B%BE-551247166/" target="_blank"
+                        whileHover={{
+                            scale: 1.2,
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    >
                         <Image className='w-6 h-6' src="linkedin.svg" width={24} height={24} alt="linkedin" />
-                    </a>
-                    <a href="https://github.com/ShawnTseng" target="_blank">
+                    </motion.a>
+                    <motion.a href="https://github.com/ShawnTseng" target="_blank"
+                        whileHover={{
+                            scale: 1.2,
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    >
                         <Image className='w-6 h-6' src="github.svg" width={24} height={24} alt="github" />
-                    </a>
-                    <a href="https://shawntseng.blogspot.com/" target="_blank">
+                    </motion.a>
+                    <motion.a href="https://shawntseng.blogspot.com/" target="_blank"
+                        whileHover={{
+                            scale: 1.2,
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    >
                         <Image className='w-6 h-6' src="blogger.svg" width={24} height={24} alt="blogger" />
-                    </a>
+                    </motion.a>
                 </div>
                 <span className='my-2'>
                     shawntseng40@gmail.com
