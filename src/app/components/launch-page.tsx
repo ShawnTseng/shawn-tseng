@@ -1,13 +1,12 @@
+import Image from "next/image";
+
 export default function LaunchPage() {
     return (
         <>
-            <div className="relative h-[720px]">
-                <div className="w-1/2 h-full flex justify-center items-center">
-                    {/* TODO: add text block */}
-                    TODO
-                </div>
-                <div className="absolute left-[693px] top-0 w-[440px] h-[784px] bg-[#D9D9D966]" />
-                <div className="absolute left-[811px] top-[176px] w-[442px] h-[522px] bg-[#D9D9D9]" />
+            <div className="w-full h-[800px] bg-gradient-to-r from-[#B9E1FF] from-20% via-[#7BC6FF] via-[90.67%] to-[#49B1FF]">
+                <h1 className="relative top-[360px] left-[150px] w-fit font-poppins-bold">Hi~ I'm Software Developer</h1>
+                <Image src="/portrait.svg" width={506} height={646} alt="portrait"
+                    className="relative top-[87px] left-[673.2px]" />
             </div>
         </>
     )
