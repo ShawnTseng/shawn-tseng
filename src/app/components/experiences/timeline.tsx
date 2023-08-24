@@ -80,7 +80,7 @@ export type Project = {
     url?: string;
 }
 
-export default function Timeline({ items, showItemDetail }: { items: TimelineItem[]; showItemDetail: (item: TimelineItem) => void; }) {
+export default function Timeline({ items, toggleItemDetail }: { items: TimelineItem[]; toggleItemDetail: (item: TimelineItem) => void; }) {
     const getDuration = (exp: TimelineItem) => {
         const startDate = exp.startDate.format("yyyy/MM");
         const endDate = exp.endDate.format("yyyy-MM") === moment().format("yyyy-MM") ? "CURRENT" : exp.endDate.format("yyyy/MM");
@@ -271,51 +271,60 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                                 </p>
                             </div>
                         </div>
-                        {!item.isOpen ?
-                            <div className="w-full flex flex-col justify-center items-center cursor-pointer"
-                                onClick={() => showItemDetail(item)}
-                            >
-                                <span>Read More</span>
-                                <p>V</p>{/* TODO: change it to be icon */}
-                            </div> :
-                            <>
-                                <div className="grid grid-cols-2 gap-x-20 gap-y-3">
-                                    <div>
-                                        <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
-                                        <ul className="mx-14 my-5">
-                                            {item.projects.length > 0 ?
-                                                item.projects.map(p => (p.url ?
-                                                    <li key={p.name}>
-                                                        <a href={p.url} target="_blank">
-                                                            {p.name}
-                                                        </a>
-                                                    </li> :
-                                                    <li key={p.name}>{p.name}</li>
-                                                )) :
-                                                <span>N/A</span>
-                                            }
-                                        </ul>
-                                    </div>
-                                    <div className="max-w-xs">
-                                        {item.videoUrl ?
-                                            <video controls muted>
-                                                <source src={item.videoUrl} type="video/mp4" />
-                                            </video> :
-                                            <span></span>
+                        <motion.div animate={item.isOpen ? "open" : "closed"} variants={{
+                            open: { opacity: 1 },
+                            closed: { opacity: 0, height: 0 },
+                        }}>
+                            <div className="grid grid-cols-2 gap-x-20 gap-y-3">
+                                <div>
+                                    <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
+                                    <ul className="mx-14 my-5">
+                                        {item.projects.length > 0 ?
+                                            item.projects.map(p => (p.url ?
+                                                <li key={p.name}>
+                                                    <a href={p.url} target="_blank">
+                                                        {p.name}
+                                                    </a>
+                                                </li> :
+                                                <li key={p.name}>{p.name}</li>
+                                            )) :
+                                            <span>N/A</span>
                                         }
-                                    </div>
+                                    </ul>
                                 </div>
-                                <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
-                                <ul className="mx-14 my-5">
-                                    {item.specialContribution && item.specialContribution.length > 0 ?
-                                        item.specialContribution.map(p =>
-                                            <li key={p}>{p}</li>
-                                        ) :
-                                        <span>N/A</span>
+                                <div className="max-w-xs">
+                                    {item.videoUrl ?
+                                        <video controls muted>
+                                            <source src={item.videoUrl} type="video/mp4" />
+                                        </video> :
+                                        <span></span>
                                     }
-                                </ul>
-                            </>
-                        }
+                                </div>
+                            </div>
+                            <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
+                            <ul className="mx-14 my-5">
+                                {item.specialContribution && item.specialContribution.length > 0 ?
+                                    item.specialContribution.map(p =>
+                                        <li key={p}>{p}</li>
+                                    ) :
+                                    <span>N/A</span>
+                                }
+                            </ul>
+                        </motion.div>
+
+                        <div className="w-full flex flex-col justify-center items-center cursor-pointer relative z-10"
+                            onClick={() => toggleItemDetail(item)}>
+                            {!item.isOpen ?
+                                <>
+                                    <span>Read More</span>
+                                    <p>V</p>
+                                </> :
+                                <>
+                                    <span>Close</span>
+                                    <p>^</p>
+                                </>
+                            }
+                        </div>
                     </div>
                 </motion.div>
             ))}

@@ -304,12 +304,12 @@ export default function ExperiencesTimeline() {
     videoUrl: '/bestvision.mp4'
   }];
 
-  const showItemDetail = (selectedItem: TimelineItem) => {
+  const toggleItemDetail = (selectedItem: TimelineItem) => {
     const nextItems = items.map(item => {
       if (item.title === selectedItem.title) {
         return {
           ...item,
-          isOpen: true
+          isOpen: !item.isOpen
         }
       } else {
         return {
@@ -327,7 +327,7 @@ export default function ExperiencesTimeline() {
       <h1 className="font-poppins-bold text-center">
         WORK EXPERIENCE
       </h1>
-      <Timeline items={items} showItemDetail={showItemDetail} />
+      <Timeline items={items} toggleItemDetail={toggleItemDetail} />
     </>
   );
 }
