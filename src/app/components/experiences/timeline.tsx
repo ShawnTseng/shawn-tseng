@@ -120,7 +120,7 @@ export default function Timeline({ items, showItemDetail }: { items: TimelineIte
                             <div className="w-9 h-9 rounded-full bg-[#D9D9D9]" />
                         </div>
                         {/* Logo */}
-                        <h4 className="font-poppins-bold text-[#00000099]">{item.title}</h4>
+                        <h4 className="font-poppins-bold text-[#00000099] text-4xl">{item.title}</h4>
                     </div>
                     {/* Content */}
                     <div className="h-fit mt-5 ml-20 p-5 bg-[#EFEFEF]">
