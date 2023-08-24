@@ -1,3 +1,10 @@
+## 待辦:功能
+
+- 多語系
+- DarkMode
+- ChatBot https://www.youtube.com/watch?v=Bv8FORu-ACA
+- 各個工作的離職原因
+
 # 待辦:頁面
 
 - LaunchPage
@@ -82,15 +89,6 @@
   - Dance
   - Guitar
 
-
-## 待辦:功能
-- 多語系
-- DarkMode
-- ChatBot https://www.youtube.com/watch?v=Bv8FORu-ACA
-- 各個工作的離職原因
-- 職稱放哪裡?
-
 ### 學習
-
 - Nextjs
 - Tailwind
