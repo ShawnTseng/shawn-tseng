@@ -17,14 +17,17 @@ export default function LaunchPage() {
                             <span className="font-poppins-extrabold text-5xl">Shawn</span>
                         </div>
                         <span className="text-xl">
-                            5+ years of frontend
+                            5y+ Front-End
                         </span>
                         <span className="text-xl">
-                            3+ years of full-stack
+                            3y+ Full Stack
+                        </span>
+                        <span className="text-xl">
+                            1y entrepreneurial experience
                         </span>
                     </div>
                     <div className="flex justify-center items-center">
-                        <Image src="/portrait.svg" width={506} height={646} alt="portrait" />
+                        <Image className="w-auto h-auto" src="/portrait.svg" width={506} height={646} alt="portrait" />
                     </div>
                 </div>
             </div>
