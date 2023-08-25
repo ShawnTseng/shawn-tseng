@@ -1,11 +1,11 @@
 export default function Brief() {
     return (
-        <div className="w-full min-h-[96px] flex justify-center items-center bg-sky-500">
-            <div className="max-w-7xl my-12 flex flex-col justify-center items-center mx-14 bg-[#D9D9D933]">
+        <div className="w-full h-screen flex justify-center items-center bg-sky-500">
+            <div className="max-w-7xl my-12 flex flex-col justify-center items-center mx-14">
                 <h1 className="font-poppins-bold text-4xl">
                     Career Summary
                 </h1>
-                <div className="grid grid-cols-3 p-10 gap-10">
+                <div className="grid grid-cols-2 p-10 gap-10">
                     <ul>
                         <h3 className="font-poppins-semibold text-xl">Expert in</h3>
                         <li>Angular</li>
@@ -13,7 +13,7 @@ export default function Brief() {
                     <ul>
                         <h3 className="font-poppins-semibold text-xl">Familiar with</h3>
                         <li>angular.js, react.js and vue.js</li>
-                        <li>git, TFS</li>
+                        <li>Git, TFS</li>
                         <li>Postman, YApi</li>
                         <li>IIS</li>
                         <li>MS SQL</li>
@@ -29,6 +29,10 @@ export default function Brief() {
                         <li>Matrox imaging library</li>
                         <li>Camera API, Machinery API</li>
                         <li>Trello, Jira, rocket chat, slack</li>
+                    </ul>
+                    <ul>
+                        <h3 className="font-poppins-semibold text-xl">Graduated from</h3>
+                        <li>B.S. in Information Management</li>
                     </ul>
                 </div>
             </div>
