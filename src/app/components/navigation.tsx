@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Navigation() {
     return (
         <header className="w-full shadow-[0_4px_10px_0_#00000033] flex justify-center">
-            <div className='max-w-[1440px] w-full h-20 px-[120px] py-4 flex items-center'>
+            <div className='max-w-7xl w-full h-20 px-[120px] py-4 flex items-center'>
                 <span className='inline-flex items-center gap-4'>
                     <Image src="/favicon.ico" className='w-8 h-8' width={32} height={32} alt="logo" />
                     <span className='text-[26px]'>

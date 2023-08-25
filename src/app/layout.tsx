@@ -20,6 +20,12 @@ const poppinsBold = Poppins({
   variable: '--font-poppins-bold'
 });
 
+const poppinsExtraBold = Poppins({
+  weight: '800',
+  subsets: ['latin'],
+  variable: '--font-poppins-extrabold'
+});
+
 export const metadata: Metadata = {
   title: 'Shawn TSENG',
   description: 'Shawn TSENG personal website',
@@ -36,6 +42,7 @@ export default function RootLayout({
       ${poppinsMedium.variable}
       ${poppinsSemibold.variable}
       ${poppinsBold.variable}
+      ${poppinsExtraBold.variable}
       ${poppinsMedium.className}`}
       >
         {children}

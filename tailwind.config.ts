@@ -25,7 +25,8 @@ const config: Config = {
       fontFamily: {
         'poppins-medium': ['var(--font-poppins-medium)'],
         'poppins-semibold': ['var(--font-poppins-semibold)'],
-        'poppins-bold': ['var(--font-poppins-bold)']
+        'poppins-bold': ['var(--font-poppins-bold)'],
+        'poppins-extrabold': ['var(--font-poppins-extrabold)']
       }
     }
   },
