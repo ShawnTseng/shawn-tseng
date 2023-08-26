@@ -8,7 +8,7 @@ export default function LaunchPage() {
             */}
             <div className="w-full h-[calc(100vh-80px)] flex justify-center items-center 
             bg-gradient-to-r from-[#B9E1FF] from-20% via-[#7BC6FF] via-[90.67%] to-[#49B1FF]">
-                <div className="max-w-7xl grid grid-cols-2">
+                <div className="h-full max-w-7xl grid grid-cols-2">
                     {/* Brief Intro */}
                     <div className="flex flex-col justify-center items-start ml-14">
                         <span className="text-3xl">Hello</span>
@@ -26,8 +26,8 @@ export default function LaunchPage() {
                             1y entrepreneurial experience
                         </span>
                     </div>
-                    <div className="flex justify-center items-center">
-                        <Image className="w-auto h-auto" src="/portrait.svg" width={506} height={646} alt="portrait" />
+                    <div className="relative flex justify-center items-center w-full">
+                        <Image src="/portrait.svg" fill alt="portrait" />
                     </div>
                 </div>
             </div>
