@@ -112,11 +112,11 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
         }
     }
 
-    return <div className="w-full px-10 mb-20 flex">
+    return <div className="w-full px-10 mb-20 flex justify-center">
         {/* vertical line */}
         <div className="w-[1px] h-auto bg-[#00000099] relative left-6 top-12 z-0" />
         {/* experience container */}
-        <div className="w-full z-10">
+        <div className="w-full max-w-4xl z-10">
             {items.map(item => (
                 <motion.div key={item.title} className="my-9"
                     initial={{ opacity: 0, y: 100 }}

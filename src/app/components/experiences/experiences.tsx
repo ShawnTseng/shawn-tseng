@@ -323,7 +323,7 @@ export default function Experiences() {
     const [items, setItems] = useState(itemsValue);
 
     return <>
-        <h1 className="font-poppins-bold text-center">
+        <h1 className="py-5 font-poppins-bold text-center text-4xl">
             WORK EXPERIENCE
         </h1>
         <Timeline items={items} toggleItemDetail={toggleItemDetail} />
