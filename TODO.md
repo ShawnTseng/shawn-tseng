@@ -1,5 +1,6 @@
 ## 待辦:功能
 - Tooltip
+- RWD(mobile)
 - 多語系
 - DarkMode
 - ChatBot https://www.youtube.com/watch?v=Bv8FORu-ACA
