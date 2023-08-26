@@ -11,7 +11,9 @@ export default function Footer() {
         <>
             <div className='max-w-[1440px] w-full h-20 px-[120px] py-4 flex flex-col items-center'>
                 <div className='inline-flex items-center gap-4'>
-                    <Image src="/favicon.ico" className='w-8 h-8' width={33} height={36.59} alt="logo" />
+                    <div className='relative w-8 h-8' >
+                        <Image src="/favicon.ico" fill alt="logo" />
+                    </div>
                     <span className='text-[26px]'>
                         <span className={`tracking-[-0.015em]`}>
                             SHAWN
@@ -33,19 +35,25 @@ export default function Footer() {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <Image className='w-6 h-6' src="linkedin.svg" width={24} height={24} alt="linkedin" />
+                        <div className='relative w-6 h-6'>
+                            <Image src="linkedin.svg" fill alt="linkedin" />
+                        </div>
                     </motion.a>
                     <motion.a href="https://github.com/ShawnTseng" target="_blank"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <Image className='w-6 h-6' src="github.svg" width={24} height={24} alt="github" />
+                        <div className='relative w-6 h-6'>
+                            <Image src="github.svg" fill alt="github" />
+                        </div>
                     </motion.a>
                     <motion.a href="https://shawntseng.blogspot.com/" target="_blank"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <Image className='w-6 h-6' src="blogger.svg" width={24} height={24} alt="blogger" />
+                        <div className='relative w-6 h-6'>
+                            <Image src="blogger.svg" fill alt="blogger" />
+                        </div>
                     </motion.a>
                 </div>
                 <span className='my-2'>
@@ -61,9 +69,15 @@ export default function Footer() {
                         <span className='mr-4'>
                             This site is built with
                         </span>
-                        <Image className='w-9 h-9 mr-4' src="react.svg" width={36} height={36} alt="react" />
-                        <Image className='w-9 h-9 mr-4' src="nextjs.svg" width={36} height={36} alt="nextjs" />
-                        <Image className='w-[72px] h-[72px] mr-4' src="vercel.svg" width={72} height={72} alt="vercel" />
+                        <div className='relative w-9 h-9 mr-4'>
+                            <Image src="react.svg" fill alt="react" />
+                        </div>
+                        <div className='relative w-9 h-9 mr-4'>
+                            <Image src="nextjs.svg" fill alt="nextjs" />
+                        </div>
+                        <div className='relative w-[72px] h-[72px] mr-4'>
+                            <Image src="vercel.svg" fill alt="vercel" />
+                        </div>
                     </div>
                     <div className="flex flex-col justify-center items-center mb-4">
                         <h1>Personal Info.</h1>
