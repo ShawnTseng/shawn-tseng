@@ -8,8 +8,8 @@ export default function Footer() {
     const age = moment().diff(moment("1992-02-15"), "years");
 
     return (
-        <>
-            <div className='max-w-[1440px] w-full h-20 px-[120px] py-4 flex flex-col items-center'>
+        <div className='w-full flex justify-center'>
+            <div className='max-w-7xl px-28 py-4 flex flex-col items-center'>
                 <div className='inline-flex items-center gap-4'>
                     <div className='relative w-8 h-8' >
                         <Image src="/favicon.ico" fill alt="logo" />
@@ -24,12 +24,12 @@ export default function Footer() {
                     </span>
                 </div>
                 {/* TODO: */}
-                <div className='grid gap-4 grid-cols-4 my-2'>
+                {/* <div className='grid gap-4 grid-cols-4 my-2'>
                     <span>Project</span>
                     <span>Project</span>
                     <span>Project</span>
                     <span>Project</span>
-                </div>
+                </div> */}
                 <div className='grid gap-4 grid-cols-3 my-2'>
                     <motion.a className='relative w-6 h-6' href="https://www.linkedin.com/in/%E5%AD%A3%E6%9A%98-%E6%9B%BE-551247166/" target="_blank"
                         whileHover={{ scale: 1.2 }}
@@ -54,7 +54,7 @@ export default function Footer() {
                     shawntseng40@gmail.com
                 </span>
                 <div className='h-[1px] w-96 border-[1px] border-[#000000]' />
-                <div className='py-8'>
+                <div className='py-2'>
                     © ShawnTSENG 2023
                 </div>
                 <div>
@@ -73,7 +73,7 @@ export default function Footer() {
                             <Image src="vercel.svg" fill alt="vercel" />
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center mb-4">
+                    {/* <div className="flex flex-col justify-center items-center mb-4">
                         <h1>Personal Info.</h1>
                         <div>Nationality: Taiwan(R.O.C.)</div>
                         <div>Name: Shawn TSENG</div>
@@ -82,12 +82,9 @@ export default function Footer() {
                     </div>
                     <div>
                         Designer: @Ting
-                    </div>
+                    </div> */}
                 </div>
             </div>
-
-
-
-        </>
+        </div>
     )
 }
