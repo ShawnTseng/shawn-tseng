@@ -31,29 +31,23 @@ export default function Footer() {
                     <span>Project</span>
                 </div>
                 <div className='grid gap-4 grid-cols-3 my-2'>
-                    <motion.a href="https://www.linkedin.com/in/%E5%AD%A3%E6%9A%98-%E6%9B%BE-551247166/" target="_blank"
+                    <motion.a className='relative w-6 h-6' href="https://www.linkedin.com/in/%E5%AD%A3%E6%9A%98-%E6%9B%BE-551247166/" target="_blank"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <div className='relative w-6 h-6'>
-                            <Image src="linkedin.svg" fill alt="linkedin" />
-                        </div>
+                        <Image src="linkedin.svg" fill alt="linkedin" />
                     </motion.a>
-                    <motion.a href="https://github.com/ShawnTseng" target="_blank"
+                    <motion.a className='relative w-6 h-6' href="https://github.com/ShawnTseng" target="_blank"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <div className='relative w-6 h-6'>
-                            <Image src="github.svg" fill alt="github" />
-                        </div>
+                        <Image src="github.svg" fill alt="github" />
                     </motion.a>
-                    <motion.a href="https://shawntseng.blogspot.com/" target="_blank"
+                    <motion.a className='relative w-6 h-6' href="https://shawntseng.blogspot.com/" target="_blank"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <div className='relative w-6 h-6'>
-                            <Image src="blogger.svg" fill alt="blogger" />
-                        </div>
+                        <Image src="blogger.svg" fill alt="blogger" />
                     </motion.a>
                 </div>
                 <span className='my-2'>

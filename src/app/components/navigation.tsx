@@ -5,7 +5,9 @@ export default function Navigation() {
         <header className="relative w-full flex justify-center shadow-lg">
             <div className='max-w-7xl w-full h-20 px-28 py-4 flex items-center'>
                 <span className='inline-flex items-center gap-4'>
-                    <Image src="/favicon.ico" className='w-8 h-8' width={32} height={32} alt="logo" />
+                    <div className='relative w-8 h-8' >
+                        <Image src="/favicon.ico" fill alt="logo" />
+                    </div>
                     <span className='text-2xl'>
                         <span>
                             SHAWN
