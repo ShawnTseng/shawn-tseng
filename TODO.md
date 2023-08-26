@@ -1,4 +1,5 @@
 ## 待辦:功能
+- 調整第二區塊
 - Tooltip
 - RWD(mobile)
 - 多語系
