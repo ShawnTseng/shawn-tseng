@@ -19,15 +19,14 @@ export default function Navigation() {
                 </span>
                 <div className='flex-1'></div>
                 <nav className="gap-6 inline-flex items-center">
-                    <div className="flex-1"></div>
                     {/* TODO:i18n icon */}
-                    <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">Resume</button>
+                    {/* <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">Resume</button>
                     <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">Portfolio</button>
                     <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">About me</button>
                     <button className="h-12 pt-5 pb-4 flex items-center btn-sky font-poppins-semibold text-[#000000] ">
-                        {/* TODO:phone icon */}
+                        TODO:phone icon
                         Contact me
-                    </button>
+                    </button> */}
                 </nav>
             </div>
         </header >
