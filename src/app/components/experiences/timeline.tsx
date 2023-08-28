@@ -112,7 +112,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
         }
     }
 
-    return <div className="w-full px-10 mb-20 flex justify-center">
+    return <div className="w-full sm:px-10 mb-20 flex justify-center">
         {/* vertical line */}
         <div className="w-[1px] h-auto bg-[#00000099] relative left-6 top-12 z-0" />
         {/* experience container */}
@@ -134,16 +134,16 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                         <h4 className="font-poppins-bold text-[#00000099] text-4xl">{item.title}</h4>
                     </div>
                     {/* Content */}
-                    <div className="h-fit mt-5 ml-20 p-5 bg-[#EFEFEF]">
+                    <div className="h-fit mt-5 sm:ml-20 p-5 bg-[#EFEFEF]">
                         {/* Top Section */}
-                        <div className="relative w-full top-[-32px] inline-flex justify-between px-5">
+                        <div className="relative w-full top-[-32px] inline-flex flex-col sm:flex-row justify-between px-5">
                             <span className="text-[#00000099]">{getDuration(item)}</span>
                             <span>{item.location}</span>
                         </div>
 
                         <h6 className="font-poppins-semibold underline underline-offset-4">SKILLS</h6>
                         {/* grid */}
-                        <div className="mx-10 my-5 grid grid-cols-2 gap-x-20 gap-y-3">
+                        <div className="sm:mx-10 my-5 grid md:grid-cols-2 gap-x-20 gap-y-3">
                             <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
                                 <h6>Framework:</h6>
                                 <p className="inline-flex gap-2 max-w-xs">
@@ -349,10 +349,10 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                             open: { opacity: 1 },
                             closed: { opacity: 0, height: 0, visibility: 'collapse' },
                         }}>
-                            <div className="grid grid-cols-2 gap-x-20 gap-y-3">
+                            <div className="grid md:grid-cols-2 gap-x-20 gap-y-3">
                                 <div>
                                     <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
-                                    <ul className="mx-14 my-5">
+                                    <ul className="sm:mx-10 my-5">
                                         {item.projects.length > 0 ?
                                             item.projects.map(p => (p.url ?
                                                 <li key={p.name}>
@@ -375,8 +375,8 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                     }
                                 </div>
                             </div>
-                            <h6 className="font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
-                            <ul className="mx-14 my-5">
+                            <h6 className="mt-5 font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
+                            <ul className="sm:mx-10 my-5">
                                 {item.specialContribution && item.specialContribution.length > 0 ?
                                     item.specialContribution.map(p =>
                                         <li key={p}>{p}</li>
