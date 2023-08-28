@@ -2,17 +2,17 @@ export default function Brief() {
     return (
         <div className="w-full h-full flex justify-center items-center bg-sky-500">
             <div className="max-w-7xl my-12 flex flex-col justify-center items-center mx-14">
-                <h1 className="font-poppins-bold text-4xl">
+                <h1 className="mb-4 font-poppins-bold text-4xl">
                     Career Summary
                 </h1>
-                <div className="grid grid-cols-1 p-10 gap-10">
-                    <div className="flex flex-col sm:flex-row">
+                <div className="grid grid-cols-1 gap-10">
+                    <div className="flex flex-col md:flex-row">
                         <h3 className="min-w-[200px] font-poppins-semibold text-xl">Expert in</h3>
                         <ul className="grid sm:grid-cols-2 flex-1">
                             <li>Angular</li>
                         </ul>
                     </div>
-                    <div className="flex flex-col sm:flex-row">
+                    <div className="flex flex-col md:flex-row">
                         <h3 className="min-w-[200px] font-poppins-semibold text-xl">Familiar with</h3>
                         <ul className="grid sm:grid-cols-2 flex-1">
                             <li>angular.js, react.js and vue.js</li>
@@ -24,7 +24,7 @@ export default function Brief() {
                             <li>REDFISH | DMTF</li>
                         </ul>
                     </div>
-                    <div className="flex flex-col sm:flex-row">
+                    <div className="flex flex-col md:flex-row">
                         <h3 className="min-w-[200px] font-poppins-semibold text-xl">Experiences with</h3>
                         <ul className="grid sm:grid-cols-2 flex-1">
                             <li>NGINX</li>
@@ -36,7 +36,7 @@ export default function Brief() {
                             <li>Trello, Jira, rocket chat, slack</li>
                         </ul>
                     </div>
-                    <div className="flex flex-col sm:flex-row">
+                    <div className="flex flex-col md:flex-row">
                         <h3 className="min-w-[200px] font-poppins-semibold text-xl">Graduated from</h3>
                         <ul className="grid sm:grid-cols-2 flex-1">
                             <li>B.S. in Information Management</li>
