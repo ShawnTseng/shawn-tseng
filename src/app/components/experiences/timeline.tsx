@@ -89,7 +89,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
         const yearString = years > 0 ? `${years}Y` : "";
         const monthString = months > 0 ? `${months}M` : "";
         const conjunction = yearString && monthString ? "" : "";
-        const duration = `${yearString}${conjunction}${monthString} (${startDate} - ${endDate})`;
+        const duration = `${yearString}${conjunction}${monthString} (${startDate} ~ ${endDate})`;
         return duration;
     };
 
