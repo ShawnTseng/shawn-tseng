@@ -3,8 +3,8 @@ import Image from 'next/image';
 export default function Navigation() {
     return (
         <header className="relative w-full flex justify-center shadow-lg">
-            <div className='max-w-7xl w-full h-20 px-28 py-4 flex items-center'>
-                <span className='inline-flex items-center gap-4'>
+            <div className='max-w-7xl w-full h-20 sm:px-28 sm:py-4 flex items-center'>
+                <span className='w-full sm:w-fit inline-flex items-center justify-center gap-4'>
                     <div className='relative w-8 h-8' >
                         <Image src="/favicon.ico" fill alt="logo" />
                     </div>
