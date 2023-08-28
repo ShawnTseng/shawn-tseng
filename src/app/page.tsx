@@ -1,6 +1,6 @@
 import Brief from "./components/brief";
 import Footer from "./components/footer";
-import LaunchPage from "./components/launch-page";
+import LaunchSection from "./components/launch-section";
 import Navigation from "./components/navigation";
 // import Skills from "./components/skills";
 // import Summary from "./components/summary";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <LaunchPage />
+      <LaunchSection />
       <Brief />
       <Experiences />
       {/* <Summary />

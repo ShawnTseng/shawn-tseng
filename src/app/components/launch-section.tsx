@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function LaunchPage() {
+export default function LaunchSection() {
     return (
         <>
             {/* TODO:fix gradient problem
@@ -27,7 +27,7 @@ export default function LaunchPage() {
                         </span>
                     </div>
                     <div className="hidden sm:flex relative justify-center items-center w-full">
-                        <Image src="/portrait.svg" fill alt="portrait" />
+                        <Image src="/portrait2.svg" fill alt="portrait" />
                     </div>
                 </div>
             </div>
