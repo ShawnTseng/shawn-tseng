@@ -27,7 +27,7 @@ export default function LaunchSection() {
                         </span>
                     </div>
                     <div className="hidden sm:flex relative justify-center items-center w-full">
-                        <Image src="/portrait2.svg" fill alt="portrait" />
+                        <Image src="/portrait.svg" fill alt="portrait" />
                     </div>
                 </div>
             </div>
