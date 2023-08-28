@@ -348,7 +348,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                         <motion.div animate={item.isOpen ? "open" : "closed"} variants={{
                             open: { opacity: 1 },
                             closed: { opacity: 0, height: 0, visibility: 'collapse' },
-                        }}>
+                        }} className="h-fit">
                             <div className="grid md:grid-cols-2 gap-x-20 gap-y-3">
                                 <div>
                                     <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
