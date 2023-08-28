@@ -8,9 +8,9 @@ export default function LaunchPage() {
             */}
             <div className="w-full h-[calc(100vh-80px)] flex justify-center items-center 
             bg-gradient-to-r from-[#B9E1FF] from-20% via-[#7BC6FF] via-[90.67%] to-[#49B1FF]">
-                <div className="h-full max-w-7xl grid grid-cols-2">
+                <div className="h-full max-w-7xl grid sm:grid-cols-2">
                     {/* Brief Intro */}
-                    <div className="flex flex-col justify-center items-start ml-14">
+                    <div className="w-full flex flex-col justify-center items-start">
                         <span className="text-3xl">Hello</span>
                         <div className="my-4">
                             <span className="text-3xl">I am </span>
@@ -26,7 +26,7 @@ export default function LaunchPage() {
                             1y entrepreneurial experience
                         </span>
                     </div>
-                    <div className="relative flex justify-center items-center w-full">
+                    <div className="hidden sm:flex relative justify-center items-center w-full">
                         <Image src="/portrait.svg" fill alt="portrait" />
                     </div>
                 </div>
