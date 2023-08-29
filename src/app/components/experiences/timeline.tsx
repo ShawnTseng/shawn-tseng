@@ -366,7 +366,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                         }
                                     </ul>
                                 </div>
-                                <div>
+                                <div className="hidden sm:block">
                                     {item.videoUrl ?
                                         <video controls muted>
                                             <source src={item.videoUrl} type="video/mp4" />
@@ -375,7 +375,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                     }
                                 </div>
                             </div>
-                            <h6 className="mt-5 font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
+                            <h6 className="mt-2 font-poppins-semibold underline underline-offset-4">SPECIAL CONTRIBUTION</h6>
                             <ul className="sm:mx-10 my-5">
                                 {item.specialContribution && item.specialContribution.length > 0 ?
                                     item.specialContribution.map(p =>
@@ -390,12 +390,10 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                             onClick={() => toggleItemDetail(item)}>
                             {!item.isOpen ?
                                 <>
-                                    <span>Read More</span>
-                                    <p>V</p>
+                                    V
                                 </> :
                                 <>
-                                    <span>Close</span>
-                                    <p>^</p>
+                                    ^
                                 </>
                             }
                         </div>
