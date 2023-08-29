@@ -9,7 +9,7 @@ export default function Footer() {
 
     return (
         <div className='w-full flex justify-center'>
-            <div className='max-w-7xl px-28 py-4 flex flex-col items-center'>
+            <div className='max-w-7xl sm:px-28 py-4 flex flex-col items-center'>
                 <div className='inline-flex items-center gap-4'>
                     <div className='relative w-8 h-8' >
                         <Image src="/favicon.ico" fill alt="logo" />

@@ -134,7 +134,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                         <h4 className="font-poppins-bold text-[#00000099] text-4xl">{item.title}</h4>
                     </div>
                     {/* Content */}
-                    <div className="h-fit mt-5 sm:ml-20 p-5 bg-[#EFEFEF]">
+                    <div className="mt-5 sm:ml-20 p-5 bg-[#EFEFEF]">
                         {/* Top Section */}
                         <div className="relative w-full top-[-32px] inline-flex flex-col sm:flex-row justify-between px-5">
                             <span className="text-[#00000099]">{getDuration(item)}</span>
@@ -144,9 +144,9 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                         <h6 className="font-poppins-semibold underline underline-offset-4">SKILLS</h6>
                         {/* grid */}
                         <div className="sm:mx-10 my-5 grid md:grid-cols-2 gap-x-20 gap-y-3">
-                            <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
+                            <div className="grid items-center grid-cols-2">
                                 <h6>Framework:</h6>
-                                <p className="inline-flex gap-2 max-w-xs">
+                                <p className="inline-flex gap-2">
                                     {item.skills.framework.length > 0 ?
                                         item.skills.framework.map(f => {
                                             switch (f) {
@@ -194,9 +194,9 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                     }
                                 </p>
                             </div>
-                            <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
+                            <div className="grid items-center grid-cols-2">
                                 <h6>Tool:</h6>
-                                <p className="inline-flex gap-2 max-w-xs">
+                                <p className="inline-flex gap-2">
                                     {item.skills.tool.length > 0 ?
                                         item.skills.tool.map(t => {
                                             switch (t) {
@@ -257,9 +257,9 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                 </p>
                             </div>
 
-                            <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
+                            <div className="grid items-center grid-cols-2">
                                 <h6>Library:</h6>
-                                <p className="inline-flex gap-2 max-w-xs">
+                                <p className="inline-flex gap-2">
                                     {item.skills.library.length > 0 ?
                                         item.skills.library.map(l => {
                                             switch (l) {
@@ -295,9 +295,9 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                     }
                                 </p>
                             </div>
-                            <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
+                            <div className="grid items-center grid-cols-2">
                                 <h6>Language:</h6>
-                                <p className="inline-flex gap-2 max-w-xs">
+                                <p className="inline-flex gap-2">
                                     {item.skills.language.length > 0 ?
                                         item.skills.language.map(l => {
                                             switch (l) {
@@ -337,9 +337,9 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                     }
                                 </p>
                             </div>
-                            <div className="grid items-center grid-cols-[120px_minmax(900px,_1fr)]">
+                            <div className="grid items-center grid-cols-2">
                                 <h6>Team Size:</h6>
-                                <p className="inline-flex gap-2 max-w-xs">
+                                <p className="inline-flex gap-2">
                                     {getTeamSizeDOM(item)}
                                     {item.teamSizeText}
                                 </p>
@@ -348,7 +348,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                         <motion.div animate={item.isOpen ? "open" : "closed"} variants={{
                             open: { opacity: 1 },
                             closed: { opacity: 0, height: 0, visibility: 'collapse' },
-                        }} className="h-fit">
+                        }}>
                             <div className="grid md:grid-cols-2 gap-x-20 gap-y-3">
                                 <div>
                                     <h6 className="font-poppins-semibold underline underline-offset-4">PROJECTS</h6>
@@ -366,7 +366,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                         }
                                     </ul>
                                 </div>
-                                <div className="max-w-xs">
+                                <div>
                                     {item.videoUrl ?
                                         <video controls muted>
                                             <source src={item.videoUrl} type="video/mp4" />
