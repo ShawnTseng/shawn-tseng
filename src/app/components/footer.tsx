@@ -12,7 +12,7 @@ export default function Footer() {
             <div className='max-w-7xl sm:px-28 py-4 flex flex-col items-center'>
                 <div className='inline-flex items-center gap-4'>
                     <div className='relative w-8 h-8' >
-                        <Image src="/favicon.ico" fill alt="logo" />
+                        <Image src="/logo.svg" fill alt="logo" />
                     </div>
                     <span className='text-[26px]'>
                         <span className={`tracking-[-0.015em]`}>

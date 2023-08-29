@@ -6,7 +6,7 @@ export default function Navigation() {
             <div className='max-w-7xl w-full h-20 sm:px-28 sm:py-4 flex items-center'>
                 <span className='w-full sm:w-fit inline-flex items-center justify-center gap-4'>
                     <div className='relative w-8 h-8' >
-                        <Image src="/favicon.ico" fill alt="logo" />
+                        <Image src="/logo.svg" fill alt="logo" />
                     </div>
                     <span className='text-2xl'>
                         <span>
