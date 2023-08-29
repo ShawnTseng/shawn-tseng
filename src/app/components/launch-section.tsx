@@ -8,7 +8,7 @@ export default function LaunchSection() {
             */}
             <div className="w-full h-[calc(100vh-80px)] flex justify-center items-center 
             bg-gradient-to-r from-[#B9E1FF] from-20% via-[#7BC6FF] via-[90.67%] to-[#49B1FF]">
-                <div className="h-full max-w-7xl grid sm:grid-cols-2">
+                <div className="h-full max-w-7xl grid sm:grid-cols-2 gap-4">
                     {/* Brief Intro */}
                     <div className="w-full flex flex-col justify-center items-start">
                         <span className="text-3xl">Hello</span>
