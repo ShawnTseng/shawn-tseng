@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Guide from "./guide";
 
 export default function LaunchSection() {
     return (
@@ -30,6 +31,7 @@ export default function LaunchSection() {
                     </div>
                 </div>
             </div>
+            <Guide />
         </>
     )
 }
