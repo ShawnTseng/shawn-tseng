@@ -26,7 +26,7 @@ export default function LaunchSection() {
                             1y entrepreneurial experience
                         </span>
                     </div>
-                    <div className="hidden sm:flex relative justify-center items-center w-full">
+                    <div className="hidden sm:flex relative justify-center items-center w-full min-w-[384px]">
                         <Image src="/portrait.svg" fill alt="portrait" />
                     </div>
                 </div>
