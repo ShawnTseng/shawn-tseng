@@ -345,7 +345,7 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                             </div>
                         </div>
                         <motion.div animate={item.isOpen ? "open" : "closed"} variants={{
-                            open: { opacity: 1 },
+                            open: { opacity: 1, height: 'fit-content' },
                             closed: { opacity: 0, height: 0, visibility: 'collapse' },
                         }}>
                             <div className="grid md:grid-cols-2 gap-x-20 gap-y-3">
