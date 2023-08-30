@@ -201,7 +201,7 @@ const bestVisionTechnique: WorkExperience = {
 
 export default function Experiences() {
     const itemsValue: Array<TimelineItem> = [{
-        title: vertiv.companyName,
+        title: `${vertiv.companyName}, ${vertiv.jobTitle}`,
         startDate: vertiv.startDate,
         endDate: vertiv.endDate,
         location: vertiv.location,
@@ -218,7 +218,7 @@ export default function Experiences() {
         isOpen: false,
         videoUrl: vertiv.videoUrl
     }, {
-        title: atGames.companyName,
+        title: `${atGames.companyName}, ${atGames.jobTitle}`,
         startDate: atGames.startDate,
         endDate: atGames.endDate,
         location: atGames.location,
@@ -235,7 +235,7 @@ export default function Experiences() {
         isOpen: false,
         videoUrl: atGames.videoUrl
     }, {
-        title: newegg.companyName,
+        title: `${newegg.companyName}, ${newegg.jobTitle}`,
         startDate: newegg.startDate,
         endDate: newegg.endDate,
         location: newegg.location,
@@ -252,7 +252,7 @@ export default function Experiences() {
         isOpen: false,
         videoUrl: newegg.videoUrl
     }, {
-        title: duotify.companyName,
+        title: `${duotify.companyName}, ${duotify.jobTitle}`,
         startDate: duotify.startDate,
         endDate: duotify.endDate,
         location: duotify.location,
@@ -269,7 +269,7 @@ export default function Experiences() {
         isOpen: false,
         // videoUrl: ''
     }, {
-        title: digiwin.companyName,
+        title: `${digiwin.companyName}, ${digiwin.jobTitle}`,
         startDate: digiwin.startDate,
         endDate: digiwin.endDate,
         location: digiwin.location,
@@ -286,7 +286,7 @@ export default function Experiences() {
         isOpen: false,
         videoUrl: digiwin.videoUrl
     }, {
-        title: bestVisionTechnique.companyName,
+        title: `${bestVisionTechnique.companyName}, ${bestVisionTechnique.jobTitle}`,
         startDate: bestVisionTechnique.startDate,
         endDate: bestVisionTechnique.endDate,
         location: bestVisionTechnique.location,
