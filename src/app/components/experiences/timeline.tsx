@@ -388,12 +388,12 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                         <div className="w-full flex flex-col justify-center items-center cursor-pointer relative z-10"
                             onClick={() => toggleItemDetail(item)}>
                             {!item.isOpen ?
-                                <>
-                                    V
-                                </> :
-                                <>
-                                    ^
-                                </>
+                                <motion.span className="relative w-6 h-6" whileHover={{ scale: 1.5 }}>
+                                    <Image src="/more.svg" fill alt="read more" />
+                                </motion.span> :
+                                <motion.span className="relative w-6 h-6" whileHover={{ scale: 1.5 }}>
+                                    <Image src="/more.svg" fill alt="read more" />
+                                </motion.span>
                             }
                         </div>
                     </div>
