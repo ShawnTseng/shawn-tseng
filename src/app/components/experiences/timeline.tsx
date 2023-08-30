@@ -128,13 +128,13 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                     <div className="inline-flex items-center gap-4">
                         {/* Indicator */}
                         <div className="w-12 h-12 rounded-full bg-[#ffffff] border-2 border-[#00000099] flex justify-center items-center" >
-                            <div className="w-9 h-9 rounded-full bg-[#D9D9D9]" />
+                            <div className="w-9 h-9 rounded-full bg-sky-500" />
                         </div>
                         {/* Logo */}
                         <h4 className="font-poppins-bold text-[#00000099] text-4xl">{item.title}</h4>
                     </div>
                     {/* Content */}
-                    <div className="mt-5 sm:ml-20 p-5 bg-[#EFEFEF]">
+                    <div className="mt-5 sm:ml-20 p-5 bg-[#DDEFFF]">
                         {/* Top Section */}
                         <div className="relative w-full top-[-32px] inline-flex flex-col sm:flex-row justify-between px-5">
                             <span className="text-[#00000099]">{getDuration(item)}</span>

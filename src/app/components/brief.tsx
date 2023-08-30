@@ -1,7 +1,7 @@
 export default function Brief() {
     return (
-        <div className="w-full h-full flex justify-center items-center bg-sky-500">
-            <div className="max-w-7xl my-12 flex flex-col justify-center items-center mx-14">
+        <div className="w-full h-full flex justify-center items-center bg-[#308BE0]">
+            <div className="max-w-7xl my-12 mx-2 sm:mx-14 border-2 rounded-2xl p-10 flex flex-col justify-center items-center bg-[#feffff82] border-[#ffffffb3]">
                 <h1 className="mb-4 font-poppins-bold text-4xl">
                     Career Summary
                 </h1>
