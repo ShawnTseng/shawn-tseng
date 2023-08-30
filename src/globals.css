@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-sky-100 text-[#000000B2];
+  @apply text-[#000000B2];
 }
 
 a {
