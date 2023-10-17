@@ -42,7 +42,38 @@ const openHandTableDefaultValue = [
     { rank: 37, openHand: 'K8s', winRate: 0.128, tieRate: 0.026 },
     { rank: 38, openHand: 'T8s', winRate: 0.127, tieRate: 0.027 },
     { rank: 39, openHand: 'A2s', winRate: 0.127, tieRate: 0.026 },
-    { rank: 40, openHand: '98s', winRate: 0.126, tieRate: 0.024 }
+    { rank: 40, openHand: '98s', winRate: 0.126, tieRate: 0.024 },
+    { rank: 41, openHand: 'J8s', winRate: 0.125, tieRate: 0.025 },
+    { rank: 42, openHand: 'ATo', winRate: 0.124, tieRate: 0.028 },
+    { rank: 43, openHand: 'Q8s', winRate: 0.124, tieRate: 0.025 },
+    { rank: 44, openHand: 'K7s', winRate: 0.122, tieRate: 0.027 },
+    { rank: 45, openHand: 'KTo', winRate: 0.122, tieRate: 0.028 },
+    { rank: 46, openHand: '55', winRate: 0.122, tieRate: 0.009 },
+    { rank: 47, openHand: 'JTo', winRate: 0.121, tieRate: 0.028 },
+    { rank: 48, openHand: '87s', winRate: 0.12, tieRate: 0.023 },
+    { rank: 49, openHand: 'QTo', winRate: 0.12, tieRate: 0.028 },
+    { rank: 50, openHand: '44', winRate: 0.119, tieRate: 0.007 },
+    { rank: 51, openHand: '22', winRate: 0.119, tieRate: 0.003 },
+    { rank: 52, openHand: '33', winRate: 0.119, tieRate: 0.005 },
+    { rank: 53, openHand: 'K6s', winRate: 0.118, tieRate: 0.028 },
+    { rank: 54, openHand: '97s', winRate: 0.117, tieRate: 0.024 },
+    { rank: 55, openHand: 'K5s', winRate: 0.116, tieRate: 0.029 },
+    { rank: 56, openHand: '76s', winRate: 0.115, tieRate: 0.023 },
+    { rank: 57, openHand: 'T7s', winRate: 0.115, tieRate: 0.027 },
+    { rank: 58, openHand: 'K4s', winRate: 0.114, tieRate: 0.027 },
+    { rank: 59, openHand: 'K2s', winRate: 0.113, tieRate: 0.023 },
+    { rank: 60, openHand: 'K3s', winRate: 11.3, tieRate: 0.025 },
+    { rank: 61, openHand: 'Q7s', winRate: 11.2, tieRate: 0.026 },
+    { rank: 62, openHand: '86s', winRate: 11.2, tieRate: 0.023 },
+    { rank: 63, openHand: '65s', winRate: 11.1, tieRate: 0.022 },
+    { rank: 64, openHand: 'J7s', winRate: 11.1, tieRate: 0.026 },
+    { rank: 65, openHand: '54s', winRate: 10.9, tieRate: 0.022 },
+    { rank: 66, openHand: 'Q6s', winRate: 10.9, tieRate: 0.027 },
+    { rank: 67, openHand: '75s', winRate: 10.7, tieRate: 0.023 },
+    { rank: 68, openHand: '96s', winRate: 10.7, tieRate: 0.024 },
+    { rank: 69, openHand: 'Q5s', winRate: 10.6, tieRate: 0.028 },
+
+    // { rank: 0, openHand: '', winRate: 0, tieRate: 0 },
 ];
 
 export default function Experiment() {
@@ -67,14 +98,37 @@ export default function Experiment() {
                         </thead>
                         <tbody>
                             {openHandTableDefaultValue
-                                .filter(oh => oh.openHand.indexOf(openHand) > -1)
+                                .filter(oh => {
+                                    const tryMatch = openHand.length === 2;
+                                    let isMatch = false;
+                                    if (tryMatch) {
+                                        let i = 0;
+                                        let currentOpenHand = oh.openHand.slice(0, 2);
+                                        const alpha1 = openHand[0];
+                                        const alpha2 = openHand[1];
+                                        const map = new Map();
+
+                                        while (i < 2) {
+                                            if (alpha1 === currentOpenHand[i]) {
+                                                if (!map.has(alpha1)) { map.set(alpha1, alpha1) };
+                                            }
+                                            if (alpha2 === currentOpenHand[i]) {
+                                                if (!map.has(alpha2)) { map.set(alpha2, alpha2) };
+                                            }
+                                            i++;
+                                        }
+
+                                        isMatch = map.size === 2;
+                                    }
+                                    return tryMatch ? isMatch : true;
+                                })
                                 .map(oh => {
                                     return (
                                         <tr key={oh.rank} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                             <td className="px-6 py-4">{oh.rank}</td>
                                             <td className="px-6 py-4">{oh.openHand}</td>
-                                            <td className="px-6 py-4">{(oh.winRate*100).toFixed(1)}%</td>
-                                            <td className="px-6 py-4">{(oh.tieRate*100).toFixed(2)}%</td>
+                                            <td className="px-6 py-4">{(oh.winRate * 100).toFixed(1)}%</td>
+                                            <td className="px-6 py-4">{(oh.tieRate * 100).toFixed(2)}%</td>
                                         </tr>
                                     )
                                 })
