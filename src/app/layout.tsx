@@ -5,25 +5,29 @@ import { Poppins } from 'next/font/google';
 const poppinsMedium = Poppins({
   weight: '500',
   subsets: ['latin'],
-  variable: '--font-poppins-medium'
+  variable: '--font-poppins-medium',
+  display: 'swap'
 });
 
 const poppinsSemibold = Poppins({
   weight: '600',
   subsets: ['latin'],
-  variable: '--font-poppins-semibold'
+  variable: '--font-poppins-semibold',
+  display: 'swap'
 });
 
 const poppinsBold = Poppins({
   weight: '700',
   subsets: ['latin'],
-  variable: '--font-poppins-bold'
+  variable: '--font-poppins-bold',
+  display: 'swap'
 });
 
 const poppinsExtraBold = Poppins({
   weight: '800',
   subsets: ['latin'],
-  variable: '--font-poppins-extrabold'
+  variable: '--font-poppins-extrabold',
+  display: 'swap'
 });
 
 export const metadata: Metadata = {
