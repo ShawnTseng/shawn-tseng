@@ -84,7 +84,7 @@ export default function Experiment() {
             <div className='max-w-7xl w-full h-20 sm:px-28 sm:py-4 flex flex-col items-center'>
                 <div>
                     <span className="mr-2">Open Hand:</span>
-                    <input className="border-2" value={openHand} onChange={(event) => { setOpenHand(event.target.value.toUpperCase()) }} />
+                    <input className="border-2" value={openHand} onChange={(event) => { setOpenHand(event.target.value) }} />
                 </div>
                 <div className="relative">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -104,21 +104,18 @@ export default function Experiment() {
                                     if (tryMatch) {
                                         let i = 0;
                                         let currentOpenHand = oh.openHand.slice(0, 2);
-                                        const alpha1 = openHand[0];
-                                        const alpha2 = openHand[1];
-                                        const map = new Map();
+                                        let compare = openHand.toUpperCase();
 
                                         while (i < 2) {
-                                            if (alpha1 === currentOpenHand[i]) {
-                                                if (!map.has(alpha1)) { map.set(alpha1, alpha1) };
-                                            }
-                                            if (alpha2 === currentOpenHand[i]) {
-                                                if (!map.has(alpha2)) { map.set(alpha2, alpha2) };
+                                            if (compare[0] === currentOpenHand[i]) {
+                                                compare = compare.substring(1, 2);
+                                            } else if (compare[1] === currentOpenHand[i]) {
+                                                compare = compare.substring(0, 1);
                                             }
                                             i++;
                                         }
 
-                                        isMatch = map.size === 2;
+                                        isMatch = compare.length === 0;
                                     }
                                     return tryMatch ? isMatch : true;
                                 })
