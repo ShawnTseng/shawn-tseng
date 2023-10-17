@@ -24,7 +24,7 @@ export default function Navigation() {
                 <nav className="gap-6 inline-flex items-center">
                     <Link href="/experiment">
                         <button className="px-1 py-[6px] h-9 min-w-[59px] text-base text-[#000000B2]">
-                            實驗區
+                            Experiment
                         </button>
                     </Link>
                     {/* TODO:i18n icon */}
