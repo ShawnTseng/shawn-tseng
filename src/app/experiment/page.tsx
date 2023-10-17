@@ -84,7 +84,7 @@ export default function Experiment() {
             <div className='max-w-7xl w-full h-20 sm:px-28 sm:py-4 flex flex-col items-center'>
                 <div>
                     <span className="mr-2">Open Hand:</span>
-                    <input className="border-2" value={openHand} onChange={(event) => { setOpenHand(event.target.value) }} />
+                    <input className="border-2" value={openHand} onChange={(event) => { setOpenHand(event.target.value.toUpperCase()) }} />
                 </div>
                 <div className="relative">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
