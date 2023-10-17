@@ -1,6 +1,7 @@
 import '../globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google';
+import Navigation from './components/navigation';
 
 const poppinsMedium = Poppins({
   weight: '500',
@@ -49,6 +50,7 @@ export default function RootLayout({
       ${poppinsExtraBold.variable}
       ${poppinsMedium.className}`}
       >
+        <Navigation />
         {children}
       </body>
     </html>
