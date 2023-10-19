@@ -84,7 +84,7 @@ const initDeckOfCards = () => {
 export default function Poker() {
     const deckOfCards: Array<PokerCard> = initDeckOfCards();
 
-    return <div className="w-full flex justify-center items-center m-8">
+    return <div className="w-full flex justify-center items-center p-8">
         <div className="max-w-7xl w-full grid grid-cols-13 gap-1">
             {deckOfCards.map((card, index) => {
                 return <div key={index}
