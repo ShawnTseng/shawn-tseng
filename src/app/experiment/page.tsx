@@ -81,57 +81,59 @@ export default function Experiment() {
 
     return (
         <>
-            <div className='max-w-7xl w-full h-20 sm:px-28 sm:py-4 flex flex-col items-center'>
-                <div>
-                    <span className="mr-2">Open Hand:</span>
-                    <input className="border-2" value={openHand} onChange={(event) => { setOpenHand(event.target.value) }} />
-                </div>
-                <div className="relative">
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" className="px-6 py-3">Rank</th>
-                                <th scope="col" className="px-6 py-3">Open Hand</th>
-                                <th scope="col" className="px-6 py-3">Win Rate</th>
-                                <th scope="col" className="px-6 py-3">Tie Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {openHandTableDefaultValue
-                                .filter(oh => {
-                                    const tryMatch = openHand.length === 2;
-                                    let isMatch = false;
-                                    if (tryMatch) {
-                                        let i = 0;
-                                        let currentOpenHand = oh.openHand.slice(0, 2);
-                                        let compare = openHand.toUpperCase();
+            <div className="w-full flex justify-center items-center">
+                <div className='max-w-7xl w-full h-20 sm:px-28 sm:py-4 flex flex-col items-center'>
+                    <div>
+                        <span className="mr-2">Open Hand:</span>
+                        <input className="border-2" value={openHand} onChange={(event) => { setOpenHand(event.target.value) }} />
+                    </div>
+                    <div className="relative">
+                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" className="px-6 py-3">Rank</th>
+                                    <th scope="col" className="px-6 py-3">Open Hand</th>
+                                    <th scope="col" className="px-6 py-3">Win Rate</th>
+                                    <th scope="col" className="px-6 py-3">Tie Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {openHandTableDefaultValue
+                                    .filter(oh => {
+                                        const tryMatch = openHand.length === 2;
+                                        let isMatch = false;
+                                        if (tryMatch) {
+                                            let i = 0;
+                                            let currentOpenHand = oh.openHand.slice(0, 2);
+                                            let compare = openHand.toUpperCase();
 
-                                        while (i < 2) {
-                                            if (compare[0] === currentOpenHand[i]) {
-                                                compare = compare.substring(1, 2);
-                                            } else if (compare[1] === currentOpenHand[i]) {
-                                                compare = compare.substring(0, 1);
+                                            while (i < 2) {
+                                                if (compare[0] === currentOpenHand[i]) {
+                                                    compare = compare.substring(1, 2);
+                                                } else if (compare[1] === currentOpenHand[i]) {
+                                                    compare = compare.substring(0, 1);
+                                                }
+                                                i++;
                                             }
-                                            i++;
-                                        }
 
-                                        isMatch = compare.length === 0;
-                                    }
-                                    return tryMatch ? isMatch : true;
-                                })
-                                .map(oh => {
-                                    return (
-                                        <tr key={oh.rank} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                            <td className="px-6 py-4">{oh.rank}</td>
-                                            <td className="px-6 py-4">{oh.openHand}</td>
-                                            <td className="px-6 py-4">{(oh.winRate * 100).toFixed(1)}%</td>
-                                            <td className="px-6 py-4">{(oh.tieRate * 100).toFixed(2)}%</td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </table>
+                                            isMatch = compare.length === 0;
+                                        }
+                                        return tryMatch ? isMatch : true;
+                                    })
+                                    .map(oh => {
+                                        return (
+                                            <tr key={oh.rank} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <td className="px-6 py-4">{oh.rank}</td>
+                                                <td className="px-6 py-4">{oh.openHand}</td>
+                                                <td className="px-6 py-4">{(oh.winRate * 100).toFixed(1)}%</td>
+                                                <td className="px-6 py-4">{(oh.tieRate * 100).toFixed(2)}%</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </>
