@@ -27,6 +27,9 @@ const config: Config = {
         'poppins-semibold': ['var(--font-poppins-semibold)'],
         'poppins-bold': ['var(--font-poppins-bold)'],
         'poppins-extrabold': ['var(--font-poppins-extrabold)']
+      },
+      gridTemplateColumns: {
+        '13': 'repeat(13, minmax(0, 1fr))',
       }
     }
   },

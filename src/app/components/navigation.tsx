@@ -27,14 +27,11 @@ export default function Navigation() {
                             Experiment
                         </button>
                     </Link>
-                    {/* TODO:i18n icon */}
-                    {/* <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">Resume</button>
-                    <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">Portfolio</button>
-                    <button className="px-1 py-[6px] h-9 min-w-[59px] text-base">About me</button>
-                    <button className="h-12 pt-5 pb-4 flex items-center btn-sky font-poppins-semibold text-[#000000] ">
-                        TODO:phone icon
-                        Contact me
-                    </button> */}
+                    <Link href="/poker">
+                        <button className="px-1 py-[6px] h-9 min-w-[59px] text-base text-[#000000B2]">
+                            Poker
+                        </button>
+                    </Link>
                 </nav>
             </div>
         </header >
