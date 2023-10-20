@@ -141,7 +141,7 @@ export default function Poker() {
 
     return <div className="w-full flex flex-col justify-center items-center p-8">
         <div className="max-w-7xl w-full text-right">
-            <button onClick={dealHandToMe}>Deal Hand</button>
+            <button className=" p-4 rounded-md bg-sky-500 shadow-md" onClick={dealHandToMe}>Deal Hand</button>
         </div>
         <h1 className="m-8">Hand</h1>
         <div className="max-w-7xl w-full flex justify-center gap-2">
