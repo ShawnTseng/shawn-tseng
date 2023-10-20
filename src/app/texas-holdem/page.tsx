@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Colors, PokerCard } from "../poker/_common/poker-card.type";
+import { PokerCard, Suits } from "../poker/_common/poker-card.type";
 import { initDeckOfCards } from "../poker/_common/poker-utility";
 
 // TODO:建立手牌比較的規則
@@ -45,7 +45,7 @@ export default function TexasHoldem() {
         <h1 className="m-8">Hand</h1>
         <div className="max-w-7xl w-full flex justify-center poker-card-hand">
             {hand.map((card, index) => {
-                return <div key={index} className={`poker-card ${card.color === Colors.Red ? 'poker-card-red' : 'poker-card-black'}`}>
+                return <div key={index} className={`poker-card ${(card.suit === Suits.Diamond || card.suit === Suits.Heart) ? 'poker-card-red' : 'poker-card-black'}`}>
                     <span>{card.suit}</span>
                     <span>{card.rank}</span>
                 </div>
@@ -56,7 +56,7 @@ export default function TexasHoldem() {
             {handCombinations.map((handCombination, index) => {
                 return <div key={index} className="flex poker-card-hand"> {
                     handCombination.map((card, index) => {
-                        return <div key={index} className={`poker-card ${card.color === Colors.Red ? 'poker-card-red' : 'poker-card-black'}`}>
+                        return <div key={index} className={`poker-card ${(card.suit === Suits.Diamond || card.suit === Suits.Heart) ? 'poker-card-red' : 'poker-card-black'}`}>
                             <span>{card.suit}</span>
                             <span>{card.rank}</span>
                         </div>

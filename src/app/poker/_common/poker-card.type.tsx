@@ -1,7 +1,6 @@
 export interface PokerCard {
     suit: Suits;
     rank: string;
-    color: Colors;
 }
 
 export enum Suits {
@@ -9,9 +8,4 @@ export enum Suits {
     Heart = '♥',
     Diamond = '♦',
     Club = '♣'
-}
-
-export enum Colors {
-    Red,
-    Black
 }

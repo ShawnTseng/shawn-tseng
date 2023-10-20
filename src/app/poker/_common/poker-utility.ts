@@ -1,35 +1,12 @@
-import { Colors, PokerCard, Suits } from "./poker-card.type";
+import { PokerCard, Suits } from "./poker-card.type";
 
 const initDeckOfCards = () => {
     let deckOfCards: Array<PokerCard> = [];
     deckOfCards = [...Array(13 * 4)].map((_, i) => i).map(n => {
         const rank = getRank((n % 13) + 1);
         const suitIndex = Math.floor(n / 13);
-        let suit = Suits.Spade;
-        let color = Colors.Black;
-        switch (suitIndex) {
-            case 0:
-                suit = Suits.Spade;
-                color = Colors.Black;
-                break;
-            case 1:
-                suit = Suits.Heart;
-                color = Colors.Red;
-                break;
-            case 2:
-                suit = Suits.Diamond;
-                color = Colors.Red;
-                break;
-            case 3:
-                suit = Suits.Club;
-                color = Colors.Black;
-                break;
-            default:
-                suit = Suits.Spade;
-                color = Colors.Black;
-                break;
-        }
-        return { suit, rank, color }
+        let suit = getSuit(suitIndex);
+        return { suit, rank }
     });
 
     // default: random deal, set index: getting assigned card
@@ -83,6 +60,28 @@ const getRank = (n: number): any => {
         case 13:
             return 'K';
     }
+}
+
+const getSuit = (suitIndex: number) => {
+    let suit = Suits.Spade;
+    switch (suitIndex) {
+        case 0:
+            suit = Suits.Spade;
+            break;
+        case 1:
+            suit = Suits.Heart;
+            break;
+        case 2:
+            suit = Suits.Diamond;
+            break;
+        case 3:
+            suit = Suits.Club;
+            break;
+        default:
+            suit = Suits.Spade;
+            break;
+    }
+    return suit;
 }
 
 export { initDeckOfCards };
