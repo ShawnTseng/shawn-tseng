@@ -22,4 +22,17 @@ ul {
   .btn-sky:hover {
     @apply bg-sky-400;
   }
+  .poker-card {
+    @apply border-2 w-10 min-w-[40px] h-16 rounded-md;
+    @apply flex justify-center items-center;            
+  }
+  .poker-card-red {
+    @apply text-[#f00];
+  }
+  .poker-card-black {
+    @apply text-[#000];
+  }
+  .poker-card-hand {
+    @apply gap-1;
+  }
 }
