@@ -107,7 +107,7 @@ const initDeckOfCards = () => {
 
 // TODO:建立手牌比較的規則
 const cardSizeRules = () => {
-    const highCard = (hand1, hand2) => {
+    const highCard = (hand1: any, hand2: any) => {
 
     }
 }
