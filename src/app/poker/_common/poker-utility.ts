@@ -14,7 +14,9 @@ const initDeckOfCards = () => {
         if (index === -1) {
             index = Math.floor(Math.random() * 52);
         }
+        // TODO:沒牌會壞掉
         const card = deckOfCards.splice(index, 1)[0];
+        console.log(index, deckOfCards.length);
         return card;
     }
 
