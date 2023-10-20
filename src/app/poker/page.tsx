@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from "react";
+
 enum Suits {
     Spade = '♠',
     Heart = '♥',
@@ -81,10 +83,50 @@ const initDeckOfCards = () => {
     });
 }
 
+// TODO:建立手牌比較的規則
+const cardSizeRules = () => {
+    const highCard = (hand1, hand2) => {
+
+    }
+}
+
 export default function Poker() {
     const deckOfCards: Array<PokerCard> = initDeckOfCards();
+    const [hand, sethand] = useState<Array<PokerCard>>([]);
 
-    return <div className="w-full flex justify-center items-center p-8">
+    const dealHands = () => {
+        const cardSet = [];
+        while (cardSet.length < 2) {
+            const index = Math.floor(Math.random() * 52);
+            const card = deckOfCards.splice(index, 1);
+            cardSet.push(...card);
+        }
+        return cardSet;
+    }
+
+    const dealHandToMe = () => {
+        const myHand = dealHands();
+        sethand(myHand);
+    }
+
+    return <div className="w-full flex flex-col justify-center items-center p-8">
+        <div className="max-w-7xl w-full text-right">
+            <button onClick={dealHandToMe}>Deal Hand</button>
+        </div>
+        <h1 className="m-8">Hand</h1>
+        <div className="max-w-7xl w-full flex justify-center gap-2">
+            {hand && hand.map((card, index) => {
+                return <div key={index}
+                    className={`border-2 w-10 min-w-[40px] h-16 gap-1 
+            flex justify-center items-center 
+            rounded-md ${card.color === Colors.Red ? 'text-[#f00]' : 'text-[#000]'}`}>
+                    <span>{card.suit}</span>
+                    <span>{card.rank}</span>
+                </div>
+            })}
+        </div>
+        <h1 className="m-8">Possible Pre-Flop Hand Combinations</h1>
+        <h1 className="m-8">All cards</h1>
         <div className="max-w-7xl w-full grid grid-cols-13 gap-1">
             {deckOfCards.map((card, index) => {
                 return <div key={index}
