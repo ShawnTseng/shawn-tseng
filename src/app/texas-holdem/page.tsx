@@ -1,42 +1,25 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PokerCard, Suits } from "../poker/_common/poker-card.type";
 import { initDeckOfCards } from "../poker/_common/poker-utility";
-
-// TODO:建立手牌比較的規則
-const cardSizeRules = () => {
-    const highCard = (hand1: any, hand2: any) => {
-
-    }
-}
+import { initHandCombinations } from "./_common/texas-holdem-utility";
 
 export default function TexasHoldem() {
+    // TODO: 將這個函式移到全域
     const { deckOfCards, dealHands } = initDeckOfCards();
     const [hand, sethand] = useState<Array<PokerCard>>([]);
-    let handCombinations: Array<Array<PokerCard>> = [];
+    const [handCombinations, sethandCombinations] = useState<Array<Array<PokerCard>>>([]);
 
     const dealHandToMe = () => {
-        const myHand = dealHands();
+        const myHand = dealHands() || [];
         sethand(myHand);
     }
 
-    const initHandCombinations = () => {
-        const { deckOfCards } = initDeckOfCards();
-        const handCombinations: Array<Array<PokerCard>> = [];
-
-        for (let i = 0; i < 52; i++) {
-            for (let j = i + 1; j < 52; j++) {
-                handCombinations.push([deckOfCards[i], deckOfCards[j]]);
-            }
-        }
-
-        return handCombinations;
-    }
-
-    if (handCombinations.length === 0) {
-        handCombinations = initHandCombinations();
-    }
+    useEffect(() => {
+        const handCombinations = initHandCombinations();
+        sethandCombinations(handCombinations);
+    }, []);
 
     return <div className="w-full flex flex-col justify-center items-center p-8">
         <div className="max-w-7xl w-full text-right">
