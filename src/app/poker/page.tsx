@@ -52,7 +52,8 @@ const getRank = (n: number): any => {
 }
 
 const initDeckOfCards = () => {
-    return [...Array(13 * 4)].map((_, i) => i).map(n => {
+    let deckOfCards: Array<PokerCard> = [];
+    deckOfCards = [...Array(13 * 4)].map((_, i) => i).map(n => {
         const rank = getRank((n % 13) + 1);
         const suitIndex = Math.floor(n / 13);
         let suit = Suits.Spade;
@@ -81,6 +82,27 @@ const initDeckOfCards = () => {
         }
         return { suit, rank, color }
     });
+
+    // default: random deal, set index: getting assigned card
+    const dealAHand = (index = -1): PokerCard => {
+        if (index === -1) {
+            index = Math.floor(Math.random() * 52);
+        }
+        const card = deckOfCards.splice(index, 1)[0];
+        return card;
+    }
+
+    const dealHands = (): Array<PokerCard> => {
+        const cardSet = [];
+        while (cardSet.length < 2) {
+            const index = Math.floor(Math.random() * 52);
+            const card = dealAHand(index);
+            cardSet.push(card);
+        }
+        return cardSet;
+    }
+
+    return { deckOfCards, dealAHand, dealHands };
 }
 
 // TODO:建立手牌比較的規則
@@ -91,22 +113,30 @@ const cardSizeRules = () => {
 }
 
 export default function Poker() {
-    const deckOfCards: Array<PokerCard> = initDeckOfCards();
+    const { deckOfCards, dealHands } = initDeckOfCards();
     const [hand, sethand] = useState<Array<PokerCard>>([]);
-
-    const dealHands = () => {
-        const cardSet = [];
-        while (cardSet.length < 2) {
-            const index = Math.floor(Math.random() * 52);
-            const card = deckOfCards.splice(index, 1);
-            cardSet.push(...card);
-        }
-        return cardSet;
-    }
+    let handCombinations: Array<Array<PokerCard>> = [];
 
     const dealHandToMe = () => {
         const myHand = dealHands();
         sethand(myHand);
+    }
+
+    const initHandCombinations = () => {
+        const { deckOfCards } = initDeckOfCards();
+        const handCombinations: Array<Array<PokerCard>> = [];
+
+        for (let i = 0; i < 52; i++) {
+            for (let j = i + 1; j < 52; j++) {
+                handCombinations.push([deckOfCards[i], deckOfCards[j]]);
+            }
+        }
+
+        return handCombinations;
+    }
+
+    if (handCombinations.length === 0) {
+        handCombinations = initHandCombinations();
     }
 
     return <div className="w-full flex flex-col justify-center items-center p-8">
@@ -115,7 +145,7 @@ export default function Poker() {
         </div>
         <h1 className="m-8">Hand</h1>
         <div className="max-w-7xl w-full flex justify-center gap-2">
-            {hand && hand.map((card, index) => {
+            {hand.map((card, index) => {
                 return <div key={index}
                     className={`border-2 w-10 min-w-[40px] h-16 gap-1 
             flex justify-center items-center 
@@ -125,7 +155,23 @@ export default function Poker() {
                 </div>
             })}
         </div>
-        <h1 className="m-8">Possible Pre-Flop Hand Combinations</h1>
+        <h1 className="m-8">Possible Pre-Flop Hand Combinations({handCombinations.length})</h1>
+        <div className="max-w-7xl w-full grid grid-cols-12 gap-2">
+            {handCombinations.map((handCombination) => {
+                return <div className="flex"> {
+                    handCombination.map((card, index) => {
+                        return <div key={index}
+                            className={`border-2 w-10 min-w-[40px] h-16 gap-1 
+                                        flex justify-center items-center 
+                                        rounded-md ${card.color === Colors.Red ? 'text-[#f00]' : 'text-[#000]'}`}>
+                            <span>{card.suit}</span>
+                            <span>{card.rank}</span>
+                        </div>
+                    })}
+                </div>
+            })}
+        </div>
+
         <h1 className="m-8">All cards</h1>
         <div className="max-w-7xl w-full grid grid-cols-13 gap-1">
             {deckOfCards.map((card, index) => {
