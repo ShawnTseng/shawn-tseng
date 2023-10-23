@@ -2,24 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { PokerCard, Suits } from "../poker/_common/poker-card.type";
-import { initDeckOfCards } from "../poker/_common/poker-utility";
-import { initHandCombinations } from "./_common/texas-holdem-utility";
+import { usePoker } from "../_hooks/usePoker";
 
 export default function TexasHoldem() {
-    // TODO: 將這個函式移到全域
-    const { deckOfCards, dealHands } = initDeckOfCards();
-    const [hand, sethand] = useState<Array<PokerCard>>([]);
-    const [handCombinations, sethandCombinations] = useState<Array<Array<PokerCard>>>([]);
+    const { deckOfCards, handCombinations, dealHands } = usePoker();
+    const [hand, sethand] = useState<Array<PokerCard | undefined>>([]);
 
     const dealHandToMe = () => {
-        const myHand = dealHands() || [];
+        const myHand = dealHands();
         sethand(myHand);
     }
-
-    useEffect(() => {
-        const handCombinations = initHandCombinations();
-        sethandCombinations(handCombinations);
-    }, []);
 
     return <div className="w-full flex flex-col justify-center items-center p-8">
         <div className="max-w-7xl w-full text-right">
@@ -28,6 +20,17 @@ export default function TexasHoldem() {
         <h1 className="m-8">Hand</h1>
         <div className="max-w-7xl w-full flex justify-center poker-card-hand">
             {hand.map((card, index) => {
+                return card ?
+                    <div key={index} className={`poker-card ${(card.suit === Suits.Diamond || card.suit === Suits.Heart) ? 'poker-card-red' : 'poker-card-black'}`}>
+                        <span>{card.suit}</span>
+                        <span>{card.rank}</span>
+                    </div> :
+                    <div key={index}></div>
+            })}
+        </div>
+        <h1 className="m-8">Remaining cards({deckOfCards.length})</h1>
+        <div className="max-w-7xl w-full grid grid-cols-13 poker-card-hand">
+            {deckOfCards.map((card, index) => {
                 return <div key={index} className={`poker-card ${(card.suit === Suits.Diamond || card.suit === Suits.Heart) ? 'poker-card-red' : 'poker-card-black'}`}>
                     <span>{card.suit}</span>
                     <span>{card.rank}</span>

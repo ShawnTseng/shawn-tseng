@@ -1,8 +1,8 @@
 import { Suits } from "./_common/poker-card.type";
-import { initDeckOfCards } from "./_common/poker-utility";
+import { usePoker } from "../_hooks/usePoker";
 
 export default function Poker() {
-    const { deckOfCards } = initDeckOfCards();
+    const { deckOfCards } = usePoker();
 
     return <div className="w-full flex flex-col justify-center items-center p-8">
         <h1 className="m-8">All cards</h1>
