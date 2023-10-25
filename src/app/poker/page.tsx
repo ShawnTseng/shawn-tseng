@@ -1,3 +1,5 @@
+'use client';
+
 import { Suits } from "./_common/poker-card.type";
 import { usePoker } from "../_hooks/usePoker";
 

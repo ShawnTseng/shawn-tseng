@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PokerCard, Suits } from "../poker/_common/poker-card.type";
 import { usePoker } from "../_hooks/usePoker";
 
