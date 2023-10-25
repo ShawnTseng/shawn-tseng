@@ -8,7 +8,7 @@ import { useTexasHoldemCardSizeRules } from "../_hooks/useTexasHoldemCardSizeRul
 export default function TexasHoldem() {
     const { deckOfCards, handCombinations, dealHands } = usePoker();
     const [hand, sethand] = useState<Array<PokerCard | undefined>>([]);
-    const { winRate } = useTexasHoldemCardSizeRules(deckOfCards, handCombinations, hand);
+    const { winRate, lossRate, tieRate } = useTexasHoldemCardSizeRules(deckOfCards, handCombinations, hand);
 
     const dealHandToMe = () => {
         const myHand = dealHands();
@@ -32,7 +32,11 @@ export default function TexasHoldem() {
                 })}
             </div>
             {hand && hand.length > 0 ?
-                <div>Win Rate:{winRate}</div> :
+                <>
+                    <div>Win Rate:{winRate}</div>
+                    <div>Loss Rate:{lossRate}</div>
+                    <div>Tie Rate:{tieRate}</div>
+                </> :
                 <></>}
         </div>
         <h1 className="m-8">Remaining cards({deckOfCards.length})</h1>

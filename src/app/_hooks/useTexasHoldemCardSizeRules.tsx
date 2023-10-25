@@ -5,6 +5,8 @@ export const useTexasHoldemCardSizeRules = (deckOfCards: Array<PokerCard> = [],
     handCombinations: Array<Array<PokerCard>> = [],
     hand: Array<PokerCard | undefined> = []) => {
     const [winRate, setWinRate] = useState<string>('100%');
+    const [lossRate, setLossRate] = useState<string>('0%');
+    const [tieRate, setTieRate] = useState<string>('0%');
 
     useEffect(() => {
         console.log('Initialize card value for texas holdem', deckOfCards);
@@ -38,6 +40,10 @@ export const useTexasHoldemCardSizeRules = (deckOfCards: Array<PokerCard> = [],
         console.log(winCount, lossCount, tieCount);
         const winRate = `${(winCount / total * 100).toFixed(2)}%`;
         setWinRate(winRate);
+        const lossRate = `${(lossCount / total * 100).toFixed(2)}%`;
+        setLossRate(lossRate);
+        const tieRate = `${(tieCount / total * 100).toFixed(2)}%`;
+        setTieRate(tieRate);
         // TODO:建立手牌比較的規則
         // const cardSizeRules = () => {
         //     const highCard = (hand1: any, hand2: any) => {
@@ -50,7 +56,7 @@ export const useTexasHoldemCardSizeRules = (deckOfCards: Array<PokerCard> = [],
 
     }, [JSON.stringify(handCombinations)])
 
-    return { winRate };
+    return { winRate, lossRate, tieRate };
 }
 
 const getValue = (n: string): any => {
@@ -86,18 +92,30 @@ const getValue = (n: string): any => {
 
 // TODO:確認公式是否正確
 const compareHighCard = (hand1: Array<PokerCard | undefined>, hand2: Array<PokerCard | undefined>) => {
-    for (let i = hand1.length - 1; i >= 0; i--) {
-        const cardValue1 = hand1[i]?.value;
-        const cardValue2 = hand2[i]?.value;
+    const hand01 = [...hand1].sort((a, b) => {
+        if (a && a.value && b && b.value) {
+            return b.value - a.value;
+        }
+        return 0;
+    });
 
-        if (cardValue1 && cardValue2) {
-            if (cardValue1 > cardValue2) {
-                return ComparisonResult.Win;
-            } else if (cardValue1 < cardValue2) {
-                return ComparisonResult.Loss;
-            } else {
-                return ComparisonResult.Tie;
-            }
+    const hand02 = [...hand2].sort((a, b) => {
+        if (a && a.value && b && b.value) {
+            return b.value - a.value;
+        }
+        return 0;
+    });
+
+    const cardValue1 = hand01[0]?.value;
+    const cardValue2 = hand02[0]?.value;
+
+    if (cardValue1 && cardValue2) {
+        if (cardValue1 > cardValue2) {
+            return ComparisonResult.Win;
+        } else if (cardValue1 < cardValue2) {
+            return ComparisonResult.Loss;
+        } else {
+            return ComparisonResult.Tie;
         }
     }
 }
