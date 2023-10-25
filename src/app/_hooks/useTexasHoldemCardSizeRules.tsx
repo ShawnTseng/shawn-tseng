@@ -9,9 +9,9 @@ export const useTexasHoldemCardSizeRules = (deckOfCards: Array<PokerCard> = [],
     const [tieRate, setTieRate] = useState<string>('0%');
 
     useEffect(() => {
-        console.log('Initialize card value for texas holdem', deckOfCards);
+        console.log('Initialize card score for texas holdem', deckOfCards);
         deckOfCards.map(card => {
-            card.value = getValue(card.rank);
+            card.score = getScore(card.rank);
         });
 
     }, [deckOfCards]);
@@ -23,8 +23,7 @@ export const useTexasHoldemCardSizeRules = (deckOfCards: Array<PokerCard> = [],
         let lossCount = 0;
         let tieCount = 0;
         for (const hand2 of handCombinations) {
-            // TODO:加入 pair 的計算
-            const result = compareHighCard(hand, hand2);
+            const result = compare(hand, hand2);
             switch (result) {
                 case ComparisonResult.Win:
                     winCount++;
@@ -35,6 +34,8 @@ export const useTexasHoldemCardSizeRules = (deckOfCards: Array<PokerCard> = [],
                 case ComparisonResult.Tie:
                     tieCount++;
                     break;
+                default:
+                    break;
             }
         }
         console.log(winCount, lossCount, tieCount);
@@ -44,22 +45,12 @@ export const useTexasHoldemCardSizeRules = (deckOfCards: Array<PokerCard> = [],
         setLossRate(lossRate);
         const tieRate = `${(tieCount / total * 100).toFixed(2)}%`;
         setTieRate(tieRate);
-        // TODO:建立手牌比較的規則
-        // const cardSizeRules = () => {
-        //     const highCard = (hand1: any, hand2: any) => {
-
-        //     }
-        //     const isOnePair = (hand: Array<PokerCard | undefined>) => {
-
-        //     }
-        // }
-
     }, [JSON.stringify(handCombinations)])
 
     return { winRate, lossRate, tieRate };
 }
 
-const getValue = (n: string): any => {
+const getScore = (n: string): any => {
     switch (n) {
         case '2':
             return 2;
@@ -90,29 +81,38 @@ const getValue = (n: string): any => {
     }
 }
 
-// TODO:確認公式是否正確
+const compare = (hand1: Array<PokerCard | undefined>, hand2: Array<PokerCard | undefined>) => {
+    comparePair(hand1, hand2);
+    const result = compareHighCard(hand1, hand2);
+    return result;
+}
+
+const comparePair = (hand1: Array<PokerCard | undefined>, hand2: Array<PokerCard | undefined>) => {
+    // TODO:加入 pair 的計算
+}
+
 const compareHighCard = (hand1: Array<PokerCard | undefined>, hand2: Array<PokerCard | undefined>) => {
-    const hand01 = [...hand1].sort((a, b) => {
-        if (a && a.value && b && b.value) {
-            return b.value - a.value;
+    const myHand = [...hand1].sort((a, b) => {
+        if (a && a.score && b && b.score) {
+            return b.score - a.score;
         }
-        return 0;
+        return -1;
     });
 
-    const hand02 = [...hand2].sort((a, b) => {
-        if (a && a.value && b && b.value) {
-            return b.value - a.value;
+    const opponentHand = [...hand2].sort((a, b) => {
+        if (a && a.score && b && b.score) {
+            return b.score - a.score;
         }
-        return 0;
+        return -1;
     });
 
-    const cardValue1 = hand01[0]?.value;
-    const cardValue2 = hand02[0]?.value;
+    const myCard = myHand[0]?.score;
+    const opponentCard = opponentHand[0]?.score;
 
-    if (cardValue1 && cardValue2) {
-        if (cardValue1 > cardValue2) {
+    if (myCard && opponentCard) {
+        if (myCard > opponentCard) {
             return ComparisonResult.Win;
-        } else if (cardValue1 < cardValue2) {
+        } else if (myCard < opponentCard) {
             return ComparisonResult.Loss;
         } else {
             return ComparisonResult.Tie;

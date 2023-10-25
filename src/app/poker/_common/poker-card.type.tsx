@@ -1,7 +1,7 @@
 export interface PokerCard {
     suit: Suits;
     rank: string;
-    value?: number; // each game can set their own rules
+    score?: number; // each game can set their own rules
 }
 
 export enum Suits {
