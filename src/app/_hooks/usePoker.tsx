@@ -10,7 +10,7 @@ export const usePoker = () => {
             const rank = getRank((n % 13) + 1);
             const suitIndex = Math.floor(n / 13);
             let suit = getSuit(suitIndex);
-            return { suit, rank }
+            return { suit, rank };
         });
 
         setDeckOfCards(deckOfCards);
@@ -18,7 +18,6 @@ export const usePoker = () => {
 
     useEffect(() => {
         const handCombinations: Array<Array<PokerCard>> = [];
-        // TODO:應該移除和手排排列組合的那些組合
         for (let i = 0; i < deckOfCards.length; i++) {
             for (let j = i + 1; j < deckOfCards.length; j++) {
                 handCombinations.push([deckOfCards[i], deckOfCards[j]]);

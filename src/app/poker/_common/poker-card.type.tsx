@@ -1,6 +1,7 @@
 export interface PokerCard {
     suit: Suits;
     rank: string;
+    value?: number; // each game can set their own rules
 }
 
 export enum Suits {
@@ -8,4 +9,10 @@ export enum Suits {
     Heart = '♥',
     Diamond = '♦',
     Club = '♣'
+}
+
+export enum ComparisonResult {
+    Win,
+    Loss,
+    Tie
 }
