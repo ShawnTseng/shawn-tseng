@@ -21,23 +21,6 @@ export default function Navigation() {
                     </span>
                 </Link>
                 <div className='flex-1'></div>
-                <nav className="gap-6 inline-flex items-center">
-                    <Link href="/experiment">
-                        <button className="px-1 py-[6px] h-9 min-w-[59px] text-base text-[#000000B2]">
-                            Experiment
-                        </button>
-                    </Link>
-                    <Link href="/poker">
-                        <button className="px-1 py-[6px] h-9 min-w-[59px] text-base text-[#000000B2]">
-                            Poker
-                        </button>
-                    </Link>
-                    <Link href="/texas-holdem">
-                        <button className="px-1 py-[6px] h-9 min-w-[59px] text-base text-[#000000B2]">
-                            Texas hold'em
-                        </button>
-                    </Link>
-                </nav>
             </div>
         </header >
     )
