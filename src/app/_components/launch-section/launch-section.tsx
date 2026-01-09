@@ -4,10 +4,7 @@ import Guide from "./guide";
 export default function LaunchSection() {
     return (
         <>
-            {/* TODO:fix gradient problem
-                background: radial-gradient(70% 79.55% at 17.54% 55.87%, rgba(185, 225, 255, 0.2) 0%, rgba(185, 225, 255, 0.8) 16.84%, rgba(123, 198, 255, 0.906667) 54.41%, #49B1FF 100%)
-            */}
-            <div className="w-full h-[calc(100vh-80px)] flex justify-center items-center bg-sky-500">
+            <div className="w-full h-[calc(100vh-80px)] flex justify-center items-center bg-[radial-gradient(70%_79.55%_at_17.54%_55.87%,_rgba(185,_225,_255,_0.2)_0%,_rgba(185,_225,_255,_0.8)_16.84%,_rgba(123,_198,_255,_0.906667)_54.41%,_#49B1FF_100%)]">
                 <div className="h-full max-w-7xl grid sm:grid-cols-2 gap-4">
                     {/* Brief Intro */}
                     <div className="w-full flex flex-col justify-center items-start">
