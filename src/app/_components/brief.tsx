@@ -10,11 +10,17 @@ export default function Brief() {
                         <h3 className="min-w-[200px] font-poppins-semibold text-xl">Expert in</h3>
                         <ul className="grid sm:grid-cols-2 flex-1">
                             <li>Angular</li>
+                            <li>React.js</li>
+                            <li>Azure Services</li>
                         </ul>
                     </div>
                     <div className="flex flex-col md:flex-row">
                         <h3 className="min-w-[200px] font-poppins-semibold text-xl">Familiar with</h3>
                         <ul className="grid sm:grid-cols-2 flex-1">
+                            <li>Azure CLI, Azure PowerShell</li>
+                            <li>ARM Templates, Bicep</li>
+                            <li>PowerShell, Bash</li>
+                            <li>Vulnerability Scanning Tools</li>
                             <li>angular.js, react.js and vue.js</li>
                             <li>Git, TFS</li>
                             <li>Postman, YApi</li>
