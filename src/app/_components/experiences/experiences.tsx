@@ -35,7 +35,7 @@ type SchoolExperience = {
 
 const vertiv: WorkExperience = {
   startDate: moment("2021-03"),
-  endDate: moment(),
+  endDate: moment("2023-11"),
   companyName: "VERTIV",
   jobTitle: "Senior Software Engineer",
   location: "TAIPEI, TAIWAN",
@@ -181,6 +181,30 @@ const bestVisionTechnique: WorkExperience = {
   ]
 };
 
+const witsCorp: WorkExperience = {
+  startDate: moment("2023-12"),
+  endDate: moment(),
+  companyName: "WITS Corp.",
+  jobTitle: "Senior Software Development Engineer",
+  location: "TAIPEI, TAIWAN",
+  projects: [
+    { name: "AVEVA's Cloud Hosted Platform" },
+  ],
+  specialContribution: [
+    "Develop and maintain AVEVA's Cloud Hosted Platform, enabling rapid deployment of AVEVA’s industrial software to Azure cloud services.",
+    "Integrated Azure services such as App Service, Cloud Services, and Function Apps, SQL Server, and more.",
+    "Utilize React.js, .NET Core (6–8), and .NET Framework (4.5+) for feature implementation and maintenance.",
+    "Develop and maintain automation scripts for deployment (PowerShell, Bash, Azure CLI, YAML, ARM templates).",
+    "Collaborate with cross-functional teams to gather requirements and implement solutions.",
+    "Conduct code reviews and provide consultancy for front-end projects.",
+    "Develop and maintain vulnerability scanning tools (Synopsys Black Duck, Polaris) and resolve security vulnerabilities.",
+    "Collaborate with global teams (U.S., India, U.K.) for project management and security.",
+    "Created sprint demo videos to demonstrate new features and progress to cross-functional teams.",
+    "Assist in the recruitment process by interviewing engineers."
+  ],
+  videoUrl: "",
+};
+
 // const yuntech: SchoolExperience = {
 //   startDate: moment("2010-09"),
 //   endDate: moment("2014-06"),
@@ -201,6 +225,23 @@ const bestVisionTechnique: WorkExperience = {
 
 export default function Experiences() {
     const itemsValue: Array<TimelineItem> = [{
+        title: `${witsCorp.companyName}, ${witsCorp.jobTitle}`,
+        startDate: witsCorp.startDate,
+        endDate: witsCorp.endDate,
+        location: witsCorp.location,
+        skills: {
+            framework: [Framework.React],
+            tool: [Tool.AzureDevOps, Tool.Git, Tool.VsCode],
+            library: [],
+            language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5, Language.PowerShell, Language.Bash]
+        },
+        teamSize: TeamSize.Large,
+        teamSizeText: '6-10',
+        projects: witsCorp.projects,
+        specialContribution: witsCorp.specialContribution,
+        isOpen: false,
+        videoUrl: witsCorp.videoUrl
+    }, {
         title: `${vertiv.companyName}, ${vertiv.jobTitle}`,
         startDate: vertiv.startDate,
         endDate: vertiv.endDate,

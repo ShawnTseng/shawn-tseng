@@ -40,7 +40,8 @@ export enum Tool {
     Trello = 'Trello',
     Word = 'Word',
     Powerpoint = 'Powerpoint',
-    TFS = 'TFS'
+    TFS = 'TFS',
+    AzureDevOps = 'AzureDevOps'
 }
 
 export enum Library {
@@ -65,7 +66,9 @@ export enum Language {
     Html5 = 'Html5',
     Java = 'Java',
     CSharp = 'CSharp',
-    TSQL = 'TSQL'
+    TSQL = 'TSQL',
+    PowerShell = 'PowerShell',
+    Bash = 'Bash'
 }
 
 export type Skills = {
@@ -248,6 +251,10 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                                     return <motion.span className="relative w-6 h-6" key={t} whileHover={{ scale: 1.2 }}>
                                                         <Image src="/tfs.svg" fill alt="tfs" />
                                                     </motion.span>
+                                                case Tool.AzureDevOps:
+                                                    return <motion.span className="relative w-6 h-6" key={t} whileHover={{ scale: 1.2 }}>
+                                                        <Image src="/azure-devops.svg" fill alt="azure devops" />
+                                                    </motion.span>
                                                 default:
                                                     return;
                                             }
@@ -327,6 +334,14 @@ export default function Timeline({ items, toggleItemDetail }: { items: TimelineI
                                                 case Language.TSQL:
                                                     return <motion.span className="relative w-6 h-6" key={l} whileHover={{ scale: 1.2 }}>
                                                         <Image src="/t-sql.svg" fill alt="T-SQL" />
+                                                    </motion.span>
+                                                case Language.Bash:
+                                                    return <motion.span className="relative w-6 h-6" key={l} whileHover={{ scale: 1.2 }}>
+                                                        <Image src="/bash.svg" fill alt="bash" />
+                                                    </motion.span>
+                                                case Language.PowerShell:
+                                                    return <motion.span className="relative w-6 h-6" key={l} whileHover={{ scale: 1.2 }}>
+                                                        <Image src="/powershell.svg" fill alt="powershell" />
                                                     </motion.span>
                                                 default:
                                                     return;
