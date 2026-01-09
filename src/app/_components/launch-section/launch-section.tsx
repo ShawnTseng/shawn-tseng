@@ -23,6 +23,9 @@ export default function LaunchSection() {
                             3y+ Full Stack
                         </span>
                         <span className="text-xl">
+                            2y+ DevOps (Azure)
+                        </span>
+                        <span className="text-xl">
                             1y entrepreneurial experience
                         </span>
                     </div>
