@@ -32,11 +32,6 @@ export default function Navigation() {
                             Poker
                         </button>
                     </Link>
-                    <Link href="/texas-holdem">
-                        <button className="px-1 py-[6px] h-9 min-w-[59px] text-base text-[#000000B2]">
-                            Texas hold'em
-                        </button>
-                    </Link>
                 </nav>
             </div>
         </header >
