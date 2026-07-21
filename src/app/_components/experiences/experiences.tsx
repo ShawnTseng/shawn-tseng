@@ -72,7 +72,7 @@ const atGames: WorkExperience = {
   startDate: moment("2020-08"),
   endDate: moment("2021-03"),
   companyName: "ATGames",
-  jobTitle: "Senior Front End Developer",
+  jobTitle: "Senior Software Engineer",
   location: "TAIPEI, TAIWAN",
   projects: [{
     name: 'Direct2Drive',
@@ -122,9 +122,24 @@ const newegg: WorkExperience = {
   videoUrl: '/newegg.mp4'
 };
 
+const hwao: WorkExperience = {
+  startDate: moment("2020-05"),
+  endDate: moment("2020-08"),
+  companyName: "Hwao Technology",
+  jobTitle: "Senior Software Engineer",
+  location: "TAIPEI, TAIWAN",
+  projects: [{
+    name: 'Admin Management System',
+    url: ''
+  }],
+  specialContribution: [
+    "Built a full admin management system from scratch within the first month using Vue.js under tight delivery timelines."
+  ]
+};
+
 const duotify: WorkExperience = {
   startDate: moment("2018-08"),
-  endDate: moment("2018-12"),
+  endDate: moment("2018-11"),
   companyName: "Duotify",
   jobTitle: "System Analyst",
   location: "TAIPEI, TAIWAN",
@@ -164,9 +179,9 @@ const digiwin: WorkExperience = {
 };
 
 const bestVisionTechnique: WorkExperience = {
-  startDate: moment("2014-10"),
-  endDate: moment("2015-03"),
-  companyName: "Best Vision Technique",
+  startDate: moment("2014-11"),
+  endDate: moment("2015-04"),
+  companyName: "Bestvisiontechnique",
   jobTitle: "Full Stack Developer",
   location: "TAICHUNG, TAIWAN",
   projects: [{
@@ -183,21 +198,21 @@ const bestVisionTechnique: WorkExperience = {
 
 const witsCorp: WorkExperience = {
   startDate: moment("2023-12"),
-  endDate: moment(),
-  companyName: "WITS Corp.",
-  jobTitle: "Senior Software Development Engineer",
+  endDate: moment("2026-06"),
+  companyName: "Wistron ITS",
+  jobTitle: "Senior Full-Stack Engineer (Platform Focus)",
   location: "TAIPEI, TAIWAN",
   projects: [
     { name: "AVEVA's Cloud Hosted Platform" },
   ],
   specialContribution: [
-    "Owned all frontend development as the sole frontend engineer on AVEVA's Cloud Hosted Platform — an Azure-based system managing ~1,000 concurrent VMs in production for enterprise clients in the energy sector.",
+    "Owned all frontend development as the sole frontend engineer on AVEVA's Cloud Hosted Platform, an Azure-based system managing ~1,000 concurrent VMs in production for enterprise clients in the energy sector.",
     "Led development of Engineering Mode, a complex VM image version management system (create/edit/stage/train workflows), built from an early prototype in collaboration with US-based product teams.",
     "Rewrote the automated test suite from a legacy .NET framework to Cypress (Node.js), reducing run time from 40 minutes to 7–15 minutes through parallel execution.",
     "Integrated Synopsys Black Duck and Polaris security scanning into CI/CD pipelines.",
     "Integrated Thinfinity one-time URL to enable browser-based VM access, working directly with the vendor on issue resolution.",
-    "Debugged production incidents across 15+ Azure services including Function Apps, Service Fabric, Front Door, Service Bus, Image Gallery, and Log Analytics.",
-    "Led GitHub Copilot adoption across 4 AVEVA sub-teams (~15 engineers), achieving near-full adoption within one quarter — delivered 6 training videos and 1 live workshop.",
+    "Supported resolution of production incidents across 15+ Azure services including Function Apps, Service Fabric, Front Door, Service Bus, Image Gallery, and Log Analytics.",
+    "Led GitHub Copilot adoption across 4 AVEVA sub-teams (~15 engineers), achieving near-full adoption within one quarter; delivered 6 training videos and 1 live workshop.",
     "Conducted ~30 technical interviews for frontend engineering roles across WITS India teams.",
   ],
   videoUrl: "",
@@ -273,6 +288,23 @@ export default function Experiences() {
         specialContribution: atGames.specialContribution,
         isOpen: false,
         videoUrl: atGames.videoUrl
+    }, {
+        title: `${hwao.companyName}, ${hwao.jobTitle}`,
+        startDate: hwao.startDate,
+        endDate: hwao.endDate,
+        location: hwao.location,
+        skills: {
+            framework: [Framework.Vue],
+            tool: [Tool.Git, Tool.VsCode],
+            library: [],
+            language: [Language.Typescript, Language.Javascript, Language.CSS, Language.Html5]
+        },
+        teamSize: TeamSize.Small,
+        teamSizeText: '1-3',
+        projects: hwao.projects,
+        specialContribution: hwao.specialContribution,
+        isOpen: false,
+        videoUrl: hwao.videoUrl
     }, {
         title: `${newegg.companyName}, ${newegg.jobTitle}`,
         startDate: newegg.startDate,
