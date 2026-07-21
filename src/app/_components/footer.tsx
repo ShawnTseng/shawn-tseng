@@ -31,7 +31,7 @@ export default function Footer() {
                     <span>Project</span>
                 </div> */}
                 <div className='grid gap-4 grid-cols-3 my-2'>
-                    <motion.a className='relative w-6 h-6' href="https://www.linkedin.com/in/ji-yang-tseng-551247166/" target="_blank"
+                    <motion.a className='relative w-6 h-6' href="https://www.linkedin.com/in/shawntsengau/" target="_blank"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                     >

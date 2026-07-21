@@ -23,7 +23,7 @@ export default function LaunchSection() {
                             .NET · React · AI Integration
                         </span>
                         <span className="text-xl mt-4 text-blue-900 font-semibold">
-                            📍 Relocating to Melbourne mid-2026
+                            📍 Based in Melbourne, Australia
                         </span>
                     </div>
                     <div className="hidden sm:flex relative justify-center items-center w-full min-w-[384px]">

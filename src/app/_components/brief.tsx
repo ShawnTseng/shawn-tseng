@@ -49,7 +49,8 @@ export default function Brief() {
                         <h3 className="min-w-[200px] font-poppins-semibold text-xl">Certifications</h3>
                         <ul className="grid sm:grid-cols-2 flex-1">
                             <li>AZ-900: Azure Fundamentals ✓</li>
-                            <li>AZ-204: Azure Developer Associate (in progress)</li>
+                            <li>AZ-204: Azure Developer Associate ✓</li>
+                            <li>AZ-400: Azure DevOps Engineer Expert ✓</li>
                         </ul>
                     </div>
                     <div className="flex flex-col md:flex-row">
